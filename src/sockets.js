@@ -15,6 +15,7 @@ export default (io) => {
     socket.on("client:newnote", async (data) => {
       const newNote = new Note(data);
       console.log(data);
+      console.log(newNote);
       const savedNote = await newNote.save();
       io.emit("server:newnote", savedNote);
     });
