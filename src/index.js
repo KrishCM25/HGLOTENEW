@@ -8,7 +8,7 @@ import { PORT } from "./config";
 connectDB();
 const server = http.createServer(app);
 const httpServer = server.listen(PORT);
-console.log("Server on http://localhost:", PORT);
+console.log("Server on PORT", PORT);
 
 const io = new WebSocketServer(httpServer);
 
