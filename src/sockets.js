@@ -8,12 +8,13 @@ export default (io) => {
     // Send all messages to the client
     const emitNotes = async () => {
       const notes = await Note.find();
-      socket.emit("server:loadnotes", notes);
+      io.emit("server:loadnotes", notes);
     };
     emitNotes();
 
     socket.on("client:newnote", async (data) => {
       const newNote = new Note(data);
+      console.log(data);
       const savedNote = await newNote.save();
       io.emit("server:newnote", savedNote);
     });
