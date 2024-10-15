@@ -30,8 +30,17 @@ Sockets(io);
 
 // Crear servidor HTTP para redirigir a HTTPS
 const httpServer = http.createServer((req, res) => {
-    res.writeHead(301, { "Location": `https://${req.headers.host}${req.url}` });
-    res.end();
+  const host = req.headers.host;
+
+  // Si el host es la IP, redirigir al dominio
+  if (host === '52.200.182.126') {
+      res.writeHead(301, { "Location": `https://campinhouse.com${req.url}` });
+      return res.end();
+  }
+
+  // Redirigir al equivalente en HTTPS
+  res.writeHead(301, { "Location": `https://${req.headers.host}${req.url}` });
+  res.end();
 });
 
 // Escucha en el puerto 80 para HTTP
