@@ -17,7 +17,7 @@ app.use((req, res, next) => {
 
 // Middleware para permitir solo vivehg.com y subdominios en iframes
 app.use((req, res, next) => {
-    res.setHeader('Content-Security-Policy', "frame-ancestors 'self' https://vivehg.com https://*.vivehg.com");
+    res.setHeader('Content-Security-Policy', "frame-ancestors 'self'");
     next();
 });
 
