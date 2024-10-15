@@ -1,25 +1,27 @@
-import express from "express";
-import path from "path";
-
-// Crear una instancia de Express
+import express from 'express';
+import path from 'path';
 const app = express();
 
-// Middleware para servir archivos estáticos (si tienes una carpeta 'public')
-app.use(express.static(path.join(__dirname, "/public")));
+// Middleware para servir archivos estáticos desde la carpeta 'public'
+app.use(express.static(path.join(__dirname, '/public')));
 
-// Middleware para redirigir HTTP a HTTPS (si usas HTTP y HTTPS)
+// Middleware para redirigir HTTP a HTTPS
 app.use((req, res, next) => {
-  if (req.secure) {
-    // La conexión es HTTPS, continúa
-    return next();
+  if (!req.secure) {
+    // Redirigir a HTTPS
+    return res.redirect(`https://${req.headers.host}${req.url}`);
   }
-  // Redirigir a HTTPS si la solicitud es HTTP
-  res.redirect(`https://${req.headers.host}${req.url}`);
+  next();
 });
 
-// Otras rutas o middlewares (si tienes alguna API o rutas adicionales)
+// Ruta para manejar GET /
+app.get('/', (req, res) => {
+  res.send('¡Bienvenido a CampinHouse!');
+});
+
+// Ruta para API
 app.get('/api', (req, res) => {
-  res.send("API está funcionando");
+  res.send('API está funcionando');
 });
 
 export default app;
