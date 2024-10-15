@@ -5,6 +5,8 @@ import express from 'express';
 import Sockets from './sockets';
 import { connectDB } from './db';
 import { PORT } from './config';
+import app from "./app";
+
 
 // Leer los archivos del certificado SSL
 const privateKey = fs.readFileSync("/etc/letsencrypt/live/campinhouse.com/privkey.pem", "utf8");
