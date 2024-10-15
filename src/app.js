@@ -15,6 +15,12 @@ app.use((req, res, next) => {
     next();
 });
 
+// Middleware para permitir solo vivehg.com y subdominios en iframes
+app.use((req, res, next) => {
+    res.setHeader('Content-Security-Policy', "frame-ancestors 'self' https://vivehg.com https://*.vivehg.com");
+    next();
+});
+
 // Ruta para manejar GET /
 app.get('/', (req, res) => {
     res.send('¡Bienvenido a CampinHouse!');
