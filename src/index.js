@@ -1,15 +1,30 @@
+import fs from "fs";
+import https from "https";
 import { Server as WebSocketServer } from "socket.io";
-import http from "http";
+import express from "express";
 import Sockets from "./sockets";
-import app from "./app";
 import { connectDB } from "./db";
 import { PORT } from "./config";
 
+// Leer los archivos del certificado SSL
+const privateKey = fs.readFileSync("/etc/letsencrypt/live/campinhouse.com/privkey.pem", "utf8");
+const certificate = fs.readFileSync("/etc/letsencrypt/live/campinhouse.com/fullchain.pem", "utf8");
+const ca = fs.readFileSync("/etc/letsencrypt/live/campinhouse.com/chain.pem", "utf8");
+
+const credentials = { key: privateKey, cert: certificate, ca: ca };
+
+// Configurar HTTPS en lugar de HTTP
+const app = express();
 connectDB();
-const server = http.createServer(app);
-const httpServer = server.listen(PORT);
-console.log("Server on PORT", PORT);
 
-const io = new WebSocketServer(httpServer);
+const httpsServer = https.createServer(credentials, app);
 
+const io = new WebSocketServer(httpsServer);
+
+// Iniciar servidor HTTPS
+httpsServer.listen(PORT, () => {
+  console.log(`Servidor corriendo en HTTPS en el puerto ${PORT}`);
+});
+
+// Configurar los sockets
 Sockets(io);
