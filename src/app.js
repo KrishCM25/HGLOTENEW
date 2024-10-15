@@ -5,7 +5,7 @@ const app = express();
 
 // Middleware para permitir solo campinhouse.com en iframes
 app.use((req, res, next) => {
-    res.setHeader('Content-Security-Policy', "frame-ancestors 'self' https://campinhouse.com");
+    res.setHeader('Content-Security-Policy', "frame-ancestors 'self' https://vivehg.com");
     console.log('Content-Security-Policy header set'); // Para depuración
     next();
 });
