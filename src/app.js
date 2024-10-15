@@ -3,6 +3,13 @@ import path from 'path';
 
 const app = express();
 
+// Middleware para permitir solo campinhouse.com en iframes
+app.use((req, res, next) => {
+    res.setHeader('Content-Security-Policy', "frame-ancestors 'self' https://campinhouse.com");
+    console.log('Content-Security-Policy header set'); // Para depuración
+    next();
+});
+
 // Middleware para servir archivos estáticos desde la carpeta 'public'
 app.use(express.static(path.join(__dirname, '/public')));
 
@@ -12,12 +19,6 @@ app.use((req, res, next) => {
         // Redirigir a HTTPS
         return res.redirect(`https://${req.headers.host}${req.url}`);
     }
-    next();
-});
-
-// Middleware para permitir solo vivehg.com y subdominios en iframes
-app.use((req, res, next) => {
-    res.setHeader('Content-Security-Policy', "frame-ancestors 'self' https://campinhouse.com");
     next();
 });
 
