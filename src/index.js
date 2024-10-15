@@ -1,3 +1,4 @@
+import fs from 'fs';
 import https from 'https';
 import { Server as WebSocketServer } from 'socket.io';
 import express from 'express';
@@ -12,7 +13,6 @@ const ca = fs.readFileSync("/etc/letsencrypt/live/campinhouse.com/chain.pem", "u
 
 const credentials = { key: privateKey, cert: certificate, ca: ca };
 
-// No es necesario volver a declarar 'app' si ya lo importas de './app'
 connectDB();
 
 const httpsServer = https.createServer(credentials, app);
