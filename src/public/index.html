@@ -37,20 +37,25 @@
             pattern="\d*" 
             placeholder="Ingresa tu DNI" 
             required="" 
-            oninput="validateInput(this, 8)">
+            oninput="validateInput(this, 8)"
             />
 
             <input
               type="email"
               name="mail"
               id="mail"
+              required
               placeholder="tucorreo@gmail.com"
               class="form-control rounded-0 mb-3"
             />
             <input
               name="lote"
               id="lote"
-              class="lote_input" type="text" minlength="1" maxlength="2" 
+              class="lote_input"
+              inputmode="numeric" 
+              minlength="1" maxlength="2" 
+              pattern="\d*" 
+              required
               oninput="validateInput(this, 2)"
             />
             <button class="btn btn-dark rounded-0">Descubrir</button>
