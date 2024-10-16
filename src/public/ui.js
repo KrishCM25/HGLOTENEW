@@ -51,29 +51,12 @@ export const fillForm = (note) => {
 
 export const onHandleSubmit = (e) => {
   e.preventDefault();
-
   if (savedId) {
-    updateNote(savedId, dni.value, mail.value, lote.value);
-    clearForm(); // Limpiar todos los campos si se actualiza correctamente
+    updateNote(savedId, dni.value, mail.value,lote.value);
   } else {
-    // Emitir el evento para crear la nueva nota
-    saveNote(dni.value, mail.value, lote.value);
-    
-    // Escuchar la respuesta del servidor para saber si se creó o no
-    onError((response) => {
-      if (response.error === "duplicate_lote") {
-        // Si el lote está duplicado, solo limpiar el campo lote
-        lote.value = "";
-        alert(response.message); // Mostrar un mensaje de alerta
-      } else {
-        alert("Ocurrió un error al agregar la nota.");
-      }
-    });
+    saveNote(dni.value, mail.value, lote.value);  
   }
-};
 
-// Función para limpiar todos los campos
-const clearForm = () => {
   dni.value = "";
   mail.value = "";
   lote.value = "";

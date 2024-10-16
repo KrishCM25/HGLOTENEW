@@ -18,7 +18,7 @@ export default (io) => {
         const existingNote = await Note.findOne({ lote: data.lote });
         if (existingNote) {
           console.log("Nota con este lote ya existe:", existingNote);
-          socket.emit("server:error", { message: "Ya existe una nota con este lote." , error : "duplicate_lote"});
+          socket.emit("server:error", { message: "Ya existe una nota con este lote." });
           return; // Detener aquí si ya existe una nota con el mismo lote
         }
     
