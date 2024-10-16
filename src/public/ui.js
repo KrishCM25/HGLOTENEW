@@ -49,31 +49,30 @@ export const fillForm = (note) => {
   savedId = note._id;
 };
 
-// Función para manejar la respuesta del servidor
-socket.on("server:error", (response) => {
-  if (response.error === "duplicate_lote") {
-    // Si el lote ya existe, solo limpiar el campo 'lote'
-    lote.value = "";
-    alert(response.message); // Muestra el mensaje de error en el cliente
-  } else {
-    alert("Ocurrió un error al agregar la nota.");
-  }
-});
-
 export const onHandleSubmit = (e) => {
   e.preventDefault();
 
   if (savedId) {
     updateNote(savedId, dni.value, mail.value, lote.value);
-    // Limpiar todos los campos después de la actualización
-    clearForm();
+    clearForm(); // Limpiar todos los campos si se actualiza correctamente
   } else {
-    // Aquí se envía el evento para guardar la nota
+    // Emitir el evento para crear la nueva nota
     saveNote(dni.value, mail.value, lote.value);
+    
+    // Escuchar la respuesta del servidor para saber si se creó o no
+    onError((response) => {
+      if (response.error === "duplicate_lote") {
+        // Si el lote está duplicado, solo limpiar el campo lote
+        lote.value = "";
+        alert(response.message); // Mostrar un mensaje de alerta
+      } else {
+        alert("Ocurrió un error al agregar la nota.");
+      }
+    });
   }
 };
 
-// Función para limpiar todos los campos del formulario
+// Función para limpiar todos los campos
 const clearForm = () => {
   dni.value = "";
   mail.value = "";
