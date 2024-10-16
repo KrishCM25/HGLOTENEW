@@ -56,3 +56,7 @@ export const onSelected = (callback) => {
 export const getNoteById = (noteId) => {
   socket.emit("client:getnote", noteId);
 };
+// Escuchar el evento de error del servidor
+export const errorNote = (callback) => {
+  socket.on("server:errornote", callback);
+};

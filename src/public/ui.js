@@ -1,4 +1,4 @@
-import { deleteNote, getNoteById, saveNote, updateNote } from "./sockets.js";
+import { deleteNote, getNoteById, saveNote, updateNote, errorNote} from "./sockets.js";
 
 const notesList = document.querySelector("#notes");
 const dni = document.querySelector("#dni");
@@ -45,7 +45,7 @@ export const fillForm = (note) => {
   dni.value = note.dni;
   mail.value = note.mail;
   lote.value = note.lote;
-
+  
   savedId = note._id;
 };
 
@@ -56,8 +56,12 @@ export const onHandleSubmit = (e) => {
   } else {
     saveNote(dni.value, mail.value, lote.value);  
   }
-
+  
   dni.value = "";
   mail.value = "";
   lote.value = "";
 };
+
+export const errorNote = () => {
+  lote.value = "";
+}
