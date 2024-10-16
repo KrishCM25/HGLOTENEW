@@ -58,5 +58,5 @@ export const getNoteById = (noteId) => {
 };
 // Escuchar el evento de error del servidor
 export const errorNote = (callback) => {
-  socket.on("server:errornote", callback);
+  socket.on("client:errornote", callback);
 };
