@@ -14,11 +14,10 @@ export default (io) => {
 
     socket.on("client:newnote", async (data) => {
       try {
-        // Verificar si ya existe una nota con el mismo valor de "lote"
         const existingNote = await Note.findOne({ lote: data.lote });
         if (existingNote) {
-          // Si el lote ya existe, enviar una respuesta al cliente indicando el error
-          socket.emit("server:saveresponse", { error: "duplicate_lote" });
+          // Enviar respuesta si el lote ya existe
+          socket.emit("server:error", { message: "Ya existe una nota con este lote.", error: "duplicate_lote" });
           return;
         }
     
@@ -28,7 +27,7 @@ export default (io) => {
         io.emit("server:newnote", savedNote); // Emitir la nota nueva a todos los clientes conectados
       } catch (error) {
         console.error("Error al guardar la nota:", error);
-        socket.emit("server:saveresponse", { error: "server_error" });
+        socket.emit("server:error", { message: "Error al agregar la nota.", error: "server_error" });
       }
     });
 

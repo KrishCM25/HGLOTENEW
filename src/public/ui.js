@@ -49,40 +49,31 @@ export const fillForm = (note) => {
   savedId = note._id;
 };
 
-export const onHandleSubmit = async (e) => {
+// Función para manejar la respuesta del servidor
+socket.on("server:error", (response) => {
+  if (response.error === "duplicate_lote") {
+    // Si el lote ya existe, solo limpiar el campo 'lote'
+    lote.value = "";
+    alert(response.message); // Muestra el mensaje de error en el cliente
+  } else {
+    alert("Ocurrió un error al agregar la nota.");
+  }
+});
+
+export const onHandleSubmit = (e) => {
   e.preventDefault();
 
-  const noteData = {
-    dni: dni.value,
-    mail: mail.value,
-    lote: lote.value
-  };
-
-  try {
-    if (savedId) {
-      // Actualizar una nota existente
-      await updateNote(savedId, noteData.dni, noteData.mail, noteData.lote);
-      // Limpiar todos los campos si la nota se envía correctamente
-      clearForm();
-    } else {
-      // Intentar guardar una nueva nota
-      const response = await saveNote(noteData.dni, noteData.mail, noteData.lote);
-      
-      if (response.success) {
-        // Limpiar todos los campos si la nota se envía correctamente
-        clearForm();
-      } else if (response.error && response.error === "duplicate_lote") {
-        // Si el lote está duplicado, solo limpiar el campo 'lote'
-        lote.value = "";
-        alert("El valor del lote ya existe. Por favor, ingresa otro valor.");
-      }
-    }
-  } catch (error) {
-    console.error("Error al enviar la nota:", error);
+  if (savedId) {
+    updateNote(savedId, dni.value, mail.value, lote.value);
+    // Limpiar todos los campos después de la actualización
+    clearForm();
+  } else {
+    // Aquí se envía el evento para guardar la nota
+    saveNote(dni.value, mail.value, lote.value);
   }
 };
 
-// Función para limpiar todos los campos
+// Función para limpiar todos los campos del formulario
 const clearForm = () => {
   dni.value = "";
   mail.value = "";
