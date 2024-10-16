@@ -3,14 +3,14 @@ import { Schema, model } from "mongoose";
 const schema = new Schema(
   {
     dni: {
-      type: Number,
+      type: String,
       required: true,
     },
     mail: {
       type: String,
     },
     lote : {
-      type: Number,
+      type: String,
     }
   },
   {

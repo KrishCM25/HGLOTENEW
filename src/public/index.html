@@ -28,12 +28,16 @@
             <h1 class="h3 mb-5">¡Gira la Ruleta y gana premios por tu reserva!</h1>
 
             <input 
-            placeholder="Ingresa tu DNI" 
-            required="" 
             id="dni" 
             name="dni" 
-            class="dni_input" type="text" minlength="8" maxlength="8" 
-            onkeypress="if ( isNaN( String.fromCharCode(event.keyCode) )) return false;"
+            class="dni_input" 
+            minlength="8"
+            maxlength="8" 
+            inputmode="numeric" 
+            pattern="\d*" 
+            placeholder="Ingresa tu DNI" 
+            required="" 
+            oninput="validateInput(this, 8)">
             />
 
             <input
@@ -47,7 +51,7 @@
               name="lote"
               id="lote"
               class="lote_input" type="text" minlength="1" maxlength="2" 
-              onkeypress="if ( isNaN( String.fromCharCode(event.keyCode) )) return false;"
+              oninput="validateInput(this, 2)"
             />
             <button class="btn btn-dark rounded-0">Descubrir</button>
           </form>
@@ -55,6 +59,18 @@
         <div class="col-md-8 py-3" id="notes"></div>
       </div>
     </div>
+
+    <script>
+      function validateInput(input, maxLength) {
+        // Eliminar caracteres no numéricos
+        input.value = input.value.replace(/\D/g, '');
+        
+        // Limitar la longitud según el parámetro maxLength
+        if (input.value.length > maxLength) {
+          input.value = input.value.slice(0, maxLength);
+        }
+      }
+    </script>
 
     <script src="/socket.io/socket.io.js"></script>
     <script src="main.js" type="module"></script>
