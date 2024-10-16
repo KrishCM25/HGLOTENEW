@@ -2,13 +2,15 @@ const socket = io.connect();
 
 /**
  * create a new note
- * @param {string} title a title for a new note
- * @param {string} description a description for a new note
+ * @param {string} dni a dni for a new note
+ * @param {string} mail a mail for a new note
+ * @param {string} lote a lote for a new note
  */
-export const saveNote = (title, description) => {
+export const saveNote = (dni, mail, lote) => {
   socket.emit("client:newnote", {
-    title,
-    description,
+    dni,
+    mail,
+    lote,
   });
 };
 
@@ -23,14 +25,15 @@ export const deleteNote = (id) => {
 /**
  *
  * @param {string} id note ID
- * @param {string} title note title
- * @param {string} description note description
+ * @param {string} dni note dni
+ * @param {string} mail note mail
  */
-export const updateNote = (_id, title, description) => {
+export const updateNote = (_id, dni, mail, lote) => {
   socket.emit("client:updatenote", {
     _id,
-    title,
-    description,
+    dni,
+    mail,
+    lote,
   });
 };
 
