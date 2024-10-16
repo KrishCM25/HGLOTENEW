@@ -32,8 +32,9 @@ export default (io) => {
 
     socket.on("client:updatenote", async (updatedNote) => {
       await Note.findByIdAndUpdate(updatedNote._id, {
-        title: updatedNote.title,
-        description: updatedNote.description,
+        dni: updatedNote.dni,
+        mail: updatedNote.mail,
+        lote: updatedNote.lote,
       });
       emitNotes();
     });

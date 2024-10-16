@@ -2,13 +2,16 @@ import { Schema, model } from "mongoose";
 
 const schema = new Schema(
   {
-    title: {
-      type: String,
+    dni: {
+      type: Number,
       required: true,
     },
-    description: {
+    mail: {
       type: String,
     },
+    lote : {
+      type: Number,
+    }
   },
   {
     timestamps: true,

@@ -32,16 +32,24 @@
             required="" 
             id="dni" 
             name="dni" 
-            class="dni_input" type="text" minlength="8" maxlength="8" onkeypress="if ( isNaN( String.fromCharCode(event.keyCode) )) return false;"
+            class="dni_input" type="text" minlength="8" maxlength="8" 
+            onkeypress="if ( isNaN( String.fromCharCode(event.keyCode) )) return false;"
             />
 
-            <textarea
-              name="description"
-              id="description"
-              rows="2"
-              placeholder="Describe your day"
+            <input
+              type="email"
+              name="mail"
+              id="mail"
+              placeholder="tucorreo@gmail.com"
               class="form-control rounded-0 mb-3"
-            ></textarea>
+            />
+            <input
+              type="number"
+              name="lote"
+              id="lote"
+              class="dni_input" type="text" minlength="1" maxlength="2" 
+              onkeypress="if ( isNaN( String.fromCharCode(event.keyCode) )) return false;"
+            />
             <button class="btn btn-dark rounded-0">Descubrir</button>
           </form>
         </div>

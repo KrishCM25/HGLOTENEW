@@ -1,8 +1,9 @@
 import { deleteNote, getNoteById, saveNote, updateNote } from "./sockets.js";
 
 const notesList = document.querySelector("#notes");
-const title = document.querySelector("#dni");
-const description = document.querySelector("#description");
+const dni = document.querySelector("#dni");
+const mail = document.querySelector("#mail");
+const lote = document.querySelector("#lote");
 
 let savedId = "";
 
@@ -11,13 +12,14 @@ const noteUI = (note) => {
   div.innerHTML = `
   <div class="card card-body rounded-0 animate__animated animate__fadeInUp mb-2">
       <div class="d-flex justify-content-between">
-          <h1 class="card-title h3">${note.title}</h1>
+          <h1 class="card-title h3">${note.dni}</h1>
           <div>
               <button class="btn btn-danger delete" data-id="${note._id}">delete</button>
               <button class="btn btn-secondary update" data-id="${note._id}">update</button>
           </div>
       </div>
-      <p>${note.description}</p>
+      <p>${note.mail}</p>
+      <p>${note.lote}</p>
   </div>
 `;
   const btnDelete = div.querySelector(".delete");
@@ -40,8 +42,9 @@ export const appendNote = (note) => {
 };
 
 export const fillForm = (note) => {
-  title.value = note.title;
-  description.value = note.description;
+  dni.value = note.dni;
+  mail.value = note.mail;
+  lote.value = note.lote;
 
   savedId = note._id;
 };
@@ -49,11 +52,12 @@ export const fillForm = (note) => {
 export const onHandleSubmit = (e) => {
   e.preventDefault();
   if (savedId) {
-    updateNote(savedId, title.value, description.value);
+    updateNote(savedId, dni.value, mail.value,lote.value);
   } else {
-    saveNote(title.value, description.value);
+    saveNote(dni.value, mail.value, lote.value);
   }
 
-  title.value = "";
-  description.value = "";
+  dni.value = "";
+  mail.value = "";
+  lote.value = "";
 };
