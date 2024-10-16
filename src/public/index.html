@@ -25,14 +25,14 @@
       <div class="row h-100">
         <div class="col-md-4 my-auto">
           <form id="noteForm" class="card card-body rounded-0">
-            <h1 class="h3 mb-5">Añadir Nota</h1>
-            <input
-              id="title"
-              type="text"
-              name="message"
-              placeholder="Escribe tu titulo"
-              class="form-control rounded-0 mb-3"
-              autofocus
+            <h1 class="h3 mb-5">¡Gira la Ruleta y gana premios por tu reserva!</h1>
+
+            <input 
+            placeholder="Ingresa tu DNI" 
+            required="" 
+            id="dni" 
+            name="dni" 
+            class="dni_input" type="text" minlength="8" maxlength="8" onkeypress="if ( isNaN( String.fromCharCode(event.keyCode) )) return false;"
             />
 
             <textarea
@@ -42,7 +42,7 @@
               placeholder="Describe your day"
               class="form-control rounded-0 mb-3"
             ></textarea>
-            <button class="btn btn-dark rounded-0">Enviar</button>
+            <button class="btn btn-dark rounded-0">Descubrir</button>
           </form>
         </div>
         <div class="col-md-8 py-3" id="notes"></div>

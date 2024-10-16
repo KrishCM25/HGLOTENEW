@@ -1,7 +1,7 @@
 import { deleteNote, getNoteById, saveNote, updateNote } from "./sockets.js";
 
 const notesList = document.querySelector("#notes");
-const title = document.querySelector("#title");
+const title = document.querySelector("#dni");
 const description = document.querySelector("#description");
 
 let savedId = "";
@@ -24,7 +24,7 @@ const noteUI = (note) => {
   const btnUpdate = div.querySelector(".update");
 
   btnDelete.addEventListener("click", () => deleteNote(btnDelete.dataset.id));
-  btnUpdate.addEventListener("click", () => getNoteById(btnDelete.dataset.id));
+  btnUpdate.addEventListener("click", () => getNoteById(btnUpdate.dataset.id));
 
   return div;
 };
