@@ -56,7 +56,7 @@
               minlength="1" maxlength="2" 
               pattern="\d*" 
               required
-              oninput="validateInput(this, 2)"
+              oninput="validateInput(this, 2,79)"
             />
             <button class="btn btn-dark rounded-0">Descubrir</button>
           </form>
@@ -66,13 +66,18 @@
     </div>
 
     <script>
-      function validateInput(input, maxLength) {
+      function validateInput(input, maxLength = null, maxValue = null) {
         // Eliminar caracteres no numéricos
         input.value = input.value.replace(/\D/g, '');
         
-        // Limitar la longitud según el parámetro maxLength
-        if (input.value.length > maxLength) {
+        // Limitar la longitud si se pasa el parámetro maxLength
+        if (maxLength && input.value.length > maxLength) {
           input.value = input.value.slice(0, maxLength);
+        }
+
+        // Validar el valor máximo si se pasa el parámetro maxValue
+        if (maxValue && Number(input.value) > maxValue) {
+          input.value = maxValue;
         }
       }
     </script>
