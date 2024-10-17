@@ -1,4 +1,4 @@
-import { deleteNote, getNoteById, saveNote, updateNote, errorNote} from "./sockets.js";
+import { deleteNote, getNoteById, saveNote, updateNote} from "./sockets.js";
 
 const notesList = document.querySelector("#notes");
 const dni = document.querySelector("#dni");
@@ -51,17 +51,35 @@ export const fillForm = (note) => {
 
 export const onHandleSubmit = (e) => {
   e.preventDefault();
+
   if (savedId) {
-    updateNote(savedId, dni.value, mail.value,lote.value);
+    updateNote(savedId, dni.value, mail.value, lote.value);
+    clearForm(); // Limpiar todos los campos si se actualiza correctamente
   } else {
-    saveNote(dni.value, mail.value, lote.value);  
+    // Emitir el evento para crear la nueva nota
+    saveNote(dni.value, mail.value, lote.value);
+    
+    // Escuchar la respuesta del servidor para saber si se creó o no
+    onError((response) => {
+      if (response.error === "duplicate_lote") {
+        // Si el lote está duplicado, solo limpiar el campo lote
+        lote.value = "";
+        alert(response.message); // Mostrar un mensaje de alerta
+      } else {
+        alert("Ocurrió un error al agregar la nota.");
+      }
+    });
   }
-  
+};
+
+// Función para limpiar todos los campos
+const clearForm = () => {
   dni.value = "";
   mail.value = "";
   lote.value = "";
 };
 
-export const errorNote = () => {
-  lote.value = "";
-}
+// Función para escuchar errores
+const onError = (callback) => {
+  socket.on("server:error", callback);
+};

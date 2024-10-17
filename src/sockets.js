@@ -14,22 +14,21 @@ export default (io) => {
 
     socket.on("client:newnote", async (data) => {
       try {
-        // Verificar si ya existe una nota con el mismo valor de "lote"
         const existingNote = await Note.findOne({ lote: data.lote });
         if (existingNote) {
           console.log("Nota con este lote ya existe:", existingNote);
-          socket.emit("server:errornote", data);
+          // Emitir el error al cliente
+          socket.emit("server:error", { message: "Ya existe una nota con este lote.", error: "duplicate_lote" });
           return; // Detener aquí si ya existe una nota con el mismo lote
         }
     
         // Si no existe una nota con el mismo lote, se crea una nueva
         const newNote = new Note(data);
-        console.log(newNote);
         const savedNote = await newNote.save();
         io.emit("server:newnote", savedNote); // Emitir la nota nueva a todos los clientes conectados
       } catch (error) {
         console.error("Error al agregar una nueva nota:", error);
-        socket.emit("server:errornote", { message: "Error al agregar la nota." });
+        socket.emit("server:error", { message: "Error al agregar la nota." });
       }
     });
 
