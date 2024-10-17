@@ -1,4 +1,4 @@
-import { deleteNote, getNoteById, saveNote, updateNote} from "./sockets.js";
+import { deleteNote, getNoteById, saveNote, updateNote, onError } from "./sockets.js";
 
 const notesList = document.querySelector("#notes");
 const dni = document.querySelector("#dni");
