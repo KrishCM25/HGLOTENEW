@@ -5,12 +5,14 @@ const socket = io.connect();
  * @param {string} dni a dni for a new note
  * @param {string} mail a mail for a new note
  * @param {string} lote a lote for a new note
+ * @param {string} nombre a lote for a new note
  */
 export const saveNote = (dni, mail, lote) => {
   socket.emit("client:newnote", {
     dni,
     mail,
     lote,
+    nombre,
   });
 };
 

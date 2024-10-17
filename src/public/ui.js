@@ -10,7 +10,6 @@ let savedId = "";
 const noteUI = (note) => {
   const div = document.createElement("div");
     // Convertir el objeto dniInfo a string usando JSON.stringify
-    const dniInfoString = note.dniInfo ? JSON.stringify(note.dniInfo, null, 2) : 'Información del DNI no disponible';
   div.innerHTML = `
   <div class="card card-body rounded-0 animate__animated animate__fadeInUp mb-2">
       <div class="d-flex justify-content-between">
@@ -22,7 +21,7 @@ const noteUI = (note) => {
       </div>
       <p>${note.mail}</p>
       <p>${note.lote}</p>
-      <pre>${dniInfoString}</pre> <!-- Mostrar la información del DNI en formato string -->
+      <pre>${note.nombre}</pre> <!-- Mostrar la información del DNI en formato string -->
     </div>
 `;
   const btnDelete = div.querySelector(".delete");

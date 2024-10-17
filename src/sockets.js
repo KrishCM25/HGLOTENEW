@@ -51,7 +51,7 @@ export default (io) => {
           dni: data.dni,
           mail: data.mail,
           lote: data.lote,
-          dniInfo: dniResponse.data // Información del DNI obtenida de la API
+          nombre: dniResponse.data.nombres || '',
         };
 
         // Si no existe una nota con el mismo lote, se crea una nueva
