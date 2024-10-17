@@ -57,18 +57,13 @@ export default (io) => {
       throw error; // Lanzar el error para que pueda ser manejado por la función que llame a `fetchDniInfo`
     }
     };
-    // Función para obtener un premio aleatorio
-    const obtenerPremioAleatorio = () => {
-      const indiceAleatorio = Math.floor(Math.random() * premio.length);
-      return premio[indiceAleatorio];
-    };
 
     // Manejar la creación de una nueva nota
     socket.on("client:newnote", async (data) => {
       try { 
-        const premio = ['bicicleta','lavadora','gifcard', 'viaje', 'kit', 'tv', 'refrigeradora','consuelo'];
         // Función para obtener un premio aleatorio
         const obtenerPremioAleatorio = () => {
+          const premio = ['bicicleta','lavadora','gifcard', 'viaje', 'kit', 'tv', 'refrigeradora','consuelo'];
           const indiceAleatorio = Math.floor(Math.random() * premio.length);
           return premio[indiceAleatorio];
         };
