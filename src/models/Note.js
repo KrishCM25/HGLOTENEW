@@ -11,6 +11,9 @@ const schema = new Schema(
     },
     lote : {
       type: String,
+    },
+    nombre : {
+      type: String,
     }
   },
   {
