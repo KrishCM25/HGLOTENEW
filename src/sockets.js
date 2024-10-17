@@ -78,7 +78,7 @@ export default (io) => {
         if (existingNote) {
           console.log("Nota con este lote ya existe:", existingNote);
           socket.emit("server:error", { message: "Ya existe una nota con este lote.", error: "duplicate_lote" });
-          return;
+          return; 
         }
 
         const nombre = fetchDniInfo(data.dni);
