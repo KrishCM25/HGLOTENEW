@@ -89,13 +89,12 @@ export default (io) => {
 
     socket.on("client:getnote", async (noteId) => {
       const note = await Note.findById(noteId);
-       // Aplicar la máscara de DNI y celular antes de enviar
-       const maskedNotesGet = {
-        ...note._doc,  // Clonar los datos de la nota original
-        dni: maskField(note.dni, 4),  // Ocultar los últimos 4 dígitos del DNI
-        celular: maskField(note.celular || '', 4)  // Ocultar los últimos 4 dígitos del celular (si existe)
-      };
-      socket.emit("server:selectednote", maskedNotesGet);
+      //  const maskedNotesGet = {
+      //   ...note._doc, 
+      //   dni: maskField(note.dni, 4), 
+      //   celular: maskField(note.celular || '', 4) 
+      // };
+      socket.emit("server:selectednote", note);
     });
 
     socket.on("client:updatenote", async (updatedNote) => {

@@ -10,7 +10,7 @@ const app = express();
 const token = 'apis-token-11030.SCSv4kKYWlHpNtJT2xmm5h0Wd4NEHhOw';
 
 // Ruta para consultar el DNI
-app.get('/consulta-dni/:dni', async (req, res) => {
+app.get('/dni/:dni', async (req, res) => {
     const dni = req.params.dni;
     
     try {
@@ -39,21 +39,13 @@ app.use((req, res, next) => {
 });
 
 // Middleware para servir archivos estáticos desde la carpeta 'public'
-app.use(express.static(path.join(__dirname, '/public')));
+app.use('/control', express.static(path.join(__dirname, '/public')));
 
-// Middleware para redirigir HTTP a HTTPS (solo si no está usando HTTPS)
-app.use((req, res, next) => {
-    if (!req.secure) {
-        // Redirigir a HTTPS
-        return res.redirect(`https://${req.headers.host}${req.url}`);
-    }
-    next();
-});
 
-// Ruta para manejar GET /
+// Servir otro contenido en la ruta principal "/"
 app.get('/', (req, res) => {
-    res.send('¡Bienvenido a CampinHouse!');
-});
+    res.send('Bienvenido a la página principal RuletaHG');
+  });
 
 // Ruta para API
 app.get('/api', (req, res) => {
