@@ -66,6 +66,7 @@ export const onHandleSubmit = (e) => {
         lote.value = "";
         alert(response.message); // Mostrar un mensaje de alerta
       } else {
+        clearForm();
         alert("Ocurrió un error al agregar la nota.");
       }
     });
@@ -79,3 +80,4 @@ const clearForm = () => {
   lote.value = "";
 };
 
+  
