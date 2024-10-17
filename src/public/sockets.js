@@ -7,12 +7,13 @@ const socket = io.connect();
  * @param {string} lote a lote for a new note
  * @param {string} nombre a nombre for a new note
  */
-export const saveNote = (dni, celular, lote,nombre) => {
+export const saveNote = (dni, celular, lote,nombre,regalo) => {
   socket.emit("client:newnote", {
     dni,
     celular,
     lote,
     nombre,
+    regalo,
   });
 };
 

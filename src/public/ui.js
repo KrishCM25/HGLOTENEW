@@ -22,6 +22,7 @@ const noteUI = (note) => {
       <p>${note.celular}</p>
       <p>${note.lote}</p>
       <pre>${note.nombre}</pre> <!-- Mostrar la información del DNI en formato string -->
+      <pre>${note.regalo}</pre> 
     </div>
 `;
   const btnDelete = div.querySelector(".delete");

@@ -18,7 +18,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
-    <link rel="stylesheet" href="../main.css" />
+    <link rel="stylesheet" href="/main.css" />
   </head>
   <body>
     <div class="container h-100">
@@ -44,6 +44,8 @@
               inputmode="numeric" 
               name="celular"
               id="celular"
+              pattern="\d*" 
+              placeholder="Ingresa tu número" 
               required
               class="form-control rounded-0 mb-3"
               oninput="validateInput(this, 9)"
@@ -58,6 +60,7 @@
               required
               oninput="validateInput(this, 2,79)"
             />
+
             <button class="btn btn-dark rounded-0">Descubrir</button>
           </form>
         </div>

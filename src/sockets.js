@@ -33,6 +33,13 @@ export default (io) => {
     // Función para consultar la API de DNI
     const fetchDniInfo = async (dni) => {
     const token = 'apis-token-11030.SCSv4kKYWlHpNtJT2xmm5h0Wd4NEHhOw'; // Token para la API
+    const premio = ['bicicleta','lavadora','gifcard', 'viaje', 'kit', 'tv', 'refrigeradora','consuelo'];
+    // Función para obtener un premio aleatorio
+    const obtenerPremioAleatorio = () => {
+      const indiceAleatorio = Math.floor(Math.random() * premios.length);
+      return premios[indiceAleatorio];
+    };
+
     try {
       console.log("Consultando API de DNI con el número:", dni);
 
@@ -77,6 +84,7 @@ export default (io) => {
           celular: data.celular,
           lote: data.lote,
           nombre: nombre || '',
+          regalo:  obtenerPremioAleatorio() || 'consuelo',
         };
 
         // Si no existe una nota con el mismo lote, se crea una nueva
