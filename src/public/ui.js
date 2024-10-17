@@ -79,7 +79,3 @@ const clearForm = () => {
   lote.value = "";
 };
 
-// Función para escuchar errores
-const onError = (callback) => {
-  socket.on("server:error", callback);
-};
