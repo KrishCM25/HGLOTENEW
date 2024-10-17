@@ -20,7 +20,6 @@ const noteUI = (note) => {
       </div>
       <p>${note.mail}</p>
       <p>${note.lote}</p>
-      <p><strong>Nombre desde DNI:</strong> ${note.dniInfo.nombres}</p> <!-- Mostrar datos de la consulta del DNI -->
   </div>
 `;
   const btnDelete = div.querySelector(".delete");
