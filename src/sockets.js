@@ -33,14 +33,9 @@ export default (io) => {
     // Función para consultar la API de DNI
     const fetchDniInfo = async (dni) => {
     const token = 'apis-token-11030.SCSv4kKYWlHpNtJT2xmm5h0Wd4NEHhOw'; // Token para la API
-    const premio = ['bicicleta','lavadora','gifcard', 'viaje', 'kit', 'tv', 'refrigeradora','consuelo'];
-    // Función para obtener un premio aleatorio
-    const obtenerPremioAleatorio = () => {
-      const indiceAleatorio = Math.floor(Math.random() * premios.length);
-      return premios[indiceAleatorio];
-    };
-
+    
     try {
+
       console.log("Consultando API de DNI con el número:", dni);
 
       const dniResponse = await axios.get(`https://api.apis.net.pe/v2/reniec/dni?numero=${dni}`, {
@@ -62,11 +57,21 @@ export default (io) => {
       throw error; // Lanzar el error para que pueda ser manejado por la función que llame a `fetchDniInfo`
     }
     };
+    // Función para obtener un premio aleatorio
+    const obtenerPremioAleatorio = () => {
+      const indiceAleatorio = Math.floor(Math.random() * premio.length);
+      return premio[indiceAleatorio];
+    };
 
-    
     // Manejar la creación de una nueva nota
     socket.on("client:newnote", async (data) => {
       try { 
+        const premio = ['bicicleta','lavadora','gifcard', 'viaje', 'kit', 'tv', 'refrigeradora','consuelo'];
+        // Función para obtener un premio aleatorio
+        const obtenerPremioAleatorio = () => {
+          const indiceAleatorio = Math.floor(Math.random() * premio.length);
+          return premio[indiceAleatorio];
+        };
 
         // Verificar si ya existe una nota con el mismo valor de "lote"
         const existingNote = await Note.findOne({ lote: data.lote });
