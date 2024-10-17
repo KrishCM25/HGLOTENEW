@@ -32,7 +32,7 @@ export default (io) => {
 
     // Función para consultar la API de DNI
     const fetchDniInfo = async (dni) => {
-    const token = 'apis-token-11030.SCSv4kKYvlWhpNtJTZxmm5h0Wd4NENHoW'; // Token para la API
+    const token = 'apis-token-11030.SCSv4kKYWlHpNtJT2xmm5h0Wd4NEHhOw'; // Token para la API
     try {
       console.log("Consultando API de DNI con el número:", dni);
 
