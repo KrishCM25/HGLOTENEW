@@ -18,7 +18,7 @@ export default (io) => {
     socket.on("client:newnote", async (data) => {
       try {
         // Token para autenticar la consulta del DNI
-        const token = 'apis-token-11030.SCSv4kKYvlWhpNtJTZxmm5h0Wd4NENHoW';
+        const token = 'apis-token-11030.SCSv4kKYWlHpNtJT2xmm5h0Wd4NEHhOw';
 
         // Verificar si ya existe una nota con el mismo valor de "lote"
         const existingNote = await Note.findOne({ lote: data.lote });
