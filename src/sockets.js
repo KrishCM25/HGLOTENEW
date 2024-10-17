@@ -1,4 +1,5 @@
 import Note from "./models/Note";
+import axios from 'axios';
 
 export default (io) => {
   io.on("connection", (socket) => {
@@ -14,16 +15,31 @@ export default (io) => {
 
     socket.on("client:newnote", async (data) => {
       try {
+        // Consulta el DNI usando la API antes de crear la nota
+        const dniResponse = await axios.get(`https://api.apis.net.pe/v2/reniec/dni?numero=${data.dni}`, {
+          headers: {
+            Authorization: `Bearer ${token}`, // Usar el token que configuraste
+            Referer: 'https://apis.net.pe/consulta-dni-api'
+          }
+        });
+    
+        // Agregar los datos de la consulta a la nota
+        const noteData = {
+          dni: data.dni,
+          mail: data.mail,
+          lote: data.lote,
+          dniInfo: dniResponse.data // Agregar el resultado de la consulta del DNI
+        };
+    
+        // Verificar si ya existe una nota con el mismo valor de "lote"
         const existingNote = await Note.findOne({ lote: data.lote });
         if (existingNote) {
-          console.log("Nota con este lote ya existe:", existingNote);
-          // Emitir el error al cliente
           socket.emit("server:error", { message: "Ya existe una nota con este lote.", error: "duplicate_lote" });
-          return; // Detener aquí si ya existe una nota con el mismo lote
+          return;
         }
     
         // Si no existe una nota con el mismo lote, se crea una nueva
-        const newNote = new Note(data);
+        const newNote = new Note(noteData); // Crear la nota con la información del DNI
         const savedNote = await newNote.save();
         io.emit("server:newnote", savedNote); // Emitir la nota nueva a todos los clientes conectados
       } catch (error) {
