@@ -19,8 +19,8 @@ export default (io) => {
         // Consulta el DNI usando la API antes de crear la nota
         const dniResponse = await axios.get(`https://api.apis.net.pe/v2/reniec/dni?numero=${data.dni}`, {
           headers: {
-            Authorization: `Bearer ${token}`, // Usar el token que configuraste
-            Referer: 'https://apis.net.pe/consulta-dni-api'
+            'Authorization': `Bearer ${token}`,
+            'Referer': 'https://apis.net.pe/consulta-dni-api'
           }
         });
     
@@ -29,7 +29,7 @@ export default (io) => {
           dni: data.dni,
           mail: data.mail,
           lote: data.lote,
-          dniInfo: dniResponse.data // Agregar el resultado de la consulta del DNI
+          dniInfo: res.json(dniResponse.data)// Agregar el resultado de la consulta del DNI
         };
     
         // Verificar si ya existe una nota con el mismo valor de "lote"
