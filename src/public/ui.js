@@ -20,8 +20,10 @@ const noteUI = (note) => {
       </div>
       <p>${note.mail}</p>
       <p>${note.lote}</p>
-      <p><strong>Nombre desde DNI:</strong> ${note.dniInfo}</p> <!-- Mostrar datos de la consulta del DNI -->
-  </div>
+      <!-- Mostrar la información de 'dniInfo' solo si existe -->
+      ${note.dniInfo ? `<p><strong>Nombres:</strong> ${note.dniInfo.nombres}</p>` : ''}
+      ${note.dniInfo ? `<p><strong>Apellidos:</strong> ${note.dniInfo.apellidoPaterno} ${note.dniInfo.apellidoMaterno}</p>` : ''}
+    </div>
 `;
   const btnDelete = div.querySelector(".delete");
   const btnUpdate = div.querySelector(".update");
