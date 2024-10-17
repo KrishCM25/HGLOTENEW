@@ -33,7 +33,7 @@ export default (io) => {
     
     // Manejar la creación de una nueva nota
     socket.on("client:newnote", async (data) => {
-      try {
+      try { 
         // Token para autenticar la consulta del DNI
         const token = 'apis-token-11030.SCSv4kKYWlHpNtJT2xmm5h0Wd4NEHhOw';
 
