@@ -94,8 +94,8 @@ export default (io) => {
 
     socket.on("client:updatenote", async (updatedNote) => {
       await Note.findByIdAndUpdate(updatedNote._id, {
-        dni: updatedNote.dni,
-        celular: updatedNote.celular,
+        dni: maskField(updatedNote.dni, 4),  // Ocultar los últimos 4 dígitos del DNI
+        celular: maskField(updatedNote.celular || '', 4),  // Ocultar los últimos 4 dígitos del celular
         lote: updatedNote.lote,
       });
       emitNotes();
