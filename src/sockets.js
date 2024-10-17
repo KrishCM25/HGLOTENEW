@@ -15,6 +15,7 @@ export default (io) => {
 
     socket.on("client:newnote", async (data) => {
       try {
+        const token = 'apis-token-11030.SCSv4kKYWlHpNtJT2xmm5h0Wd4NEHhOw';
         // Consulta el DNI usando la API antes de crear la nota
         const dniResponse = await axios.get(`https://api.apis.net.pe/v2/reniec/dni?numero=${data.dni}`, {
           headers: {
