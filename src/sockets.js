@@ -6,11 +6,28 @@ export default (io) => {
     // console.log(socket.handshake.url);
     console.log("nuevo socket connectado:", socket.id);
 
-    // Send all messages to the client
+    // Función genérica para ocultar los últimos "numDigits" dígitos de un número
+    const maskField = (field, numDigits) => {
+      if (field.length >= numDigits) {
+        return field.slice(0, -numDigits) + '*'.repeat(numDigits); // Mostrar los primeros dígitos y ocultar los últimos "numDigits"
+      }
+      return '*'.repeat(field.length); // Si el campo es más corto que "numDigits", ocultar todo con asteriscos
+    };
+
+    // Función para enviar todas las notas al cliente
     const emitNotes = async () => {
       const notes = await Note.find();
-      io.emit("server:loadnotes", notes);
+
+      // Aplicar la máscara de DNI y celular antes de enviar
+      const maskedNotes = notes.map(note => ({
+        ...note._doc,  // Clonar los datos de la nota original
+        dni: maskField(note.dni, 4),  // Ocultar los últimos 4 dígitos del DNI
+        celular: maskField(note.celular || '', 4)  // Ocultar los últimos 4 dígitos del celular (si existe)
+      }));
+
+      io.emit("server:loadnotes", maskedNotes);
     };
+
     emitNotes();
 
     
