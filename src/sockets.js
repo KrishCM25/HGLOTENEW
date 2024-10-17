@@ -73,7 +73,7 @@ export default (io) => {
           return; 
         }
 
-        const nombre = fetchDniInfo(data.dni);
+        const dniInfo = await fetchDniInfo(data.dni);
         const regalo = obtenerPremioAleatorio();
 
         // Agregar los datos de la consulta a la nota
@@ -81,7 +81,7 @@ export default (io) => {
           dni: data.dni,
           celular: data.celular,
           lote: data.lote,
-          nombre: nombre.nombres || '',
+          nombre: dniInfo.nombres || '',
           regalo:  regalo || 'consuelo',
         };
 
