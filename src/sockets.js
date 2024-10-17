@@ -32,30 +32,27 @@ export default (io) => {
 
     // Función para consultar la API de DNI
     const fetchDniInfo = async (dni) => {
-    const token = 'apis-token-11030.SCSv4kKYWlHpNtJT2xmm5h0Wd4NEHhOw'; // Token para la API
-    
-    try {
+      const token = 'apis-token-11030.SCSv4kKYWlHpNtJT2xmm5h0Wd4NEHhOw'; // Token para la API
+      try {
+        console.log("Consultando API de DNI con el número:", dni);
+        const dniResponse = await axios.get(`https://api.apis.net.pe/v2/reniec/dni?numero=${dni}`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+            Referer: 'https://apis.net.pe/consulta-dni-api',
+          }
+        });
 
-      console.log("Consultando API de DNI con el número:", dni);
+        console.log("Respuesta de la API de DNI:", dniResponse.data);
 
-      const dniResponse = await axios.get(`https://api.apis.net.pe/v2/reniec/dni?numero=${dni}`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-          Referer: 'https://apis.net.pe/consulta-dni-api',
+        if (!dniResponse.data || dniResponse.data.error) {
+          throw new Error("Error en la consulta de DNI");
         }
-      });
 
-      console.log("Respuesta de la API de DNI:", dniResponse.data);
-
-      if (!dniResponse.data || dniResponse.data.error) {
-        throw new Error("Error en la consulta de DNI");
+        return dniResponse.data; // Devuelve la respuesta de la API si todo está correcto
+      } catch (error) {
+        console.error("Error en la consulta de DNI:", error.message || error);
+        throw error; // Lanzar el error para que pueda ser manejado por la función que llame a `fetchDniInfo`
       }
-
-      return dniResponse.data; // Devuelve la respuesta de la API si todo está correcto
-    } catch (error) {
-      console.error("Error en la consulta de DNI:", error.message || error);
-      throw error; // Lanzar el error para que pueda ser manejado por la función que llame a `fetchDniInfo`
-    }
     };
 
     // Manejar la creación de una nueva nota
@@ -76,7 +73,7 @@ export default (io) => {
           return; 
         }
 
-        const nombre = fetchDniInfo(data.dni.nombres); 
+        const nombre = fetchDniInfo(data.dni);
         const regalo = obtenerPremioAleatorio();
 
         // Agregar los datos de la consulta a la nota
@@ -84,7 +81,7 @@ export default (io) => {
           dni: data.dni,
           celular: data.celular,
           lote: data.lote,
-          nombre: nombre || '',
+          nombre: nombre.nombres || '',
           regalo:  regalo || 'consuelo',
         };
 
