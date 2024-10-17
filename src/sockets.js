@@ -82,6 +82,7 @@ export default (io) => {
         }
 
         const nombre = fetchDniInfo(data.dni);
+        const regalo = obtenerPremioAleatorio();
 
         // Agregar los datos de la consulta a la nota
         const noteData = {
@@ -89,7 +90,7 @@ export default (io) => {
           celular: data.celular,
           lote: data.lote,
           nombre: nombre || '',
-          regalo:  obtenerPremioAleatorio() || 'consuelo',
+          regalo:  regalo || 'consuelo',
         };
 
         // Si no existe una nota con el mismo lote, se crea una nueva
