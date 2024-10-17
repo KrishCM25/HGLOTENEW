@@ -3,14 +3,14 @@ const socket = io.connect();
 /**
  * create a new note
  * @param {string} dni a dni for a new note
- * @param {string} mail a mail for a new note
+ * @param {string} celular a celular for a new note
  * @param {string} lote a lote for a new note
  * @param {string} nombre a nombre for a new note
  */
-export const saveNote = (dni, mail, lote,nombre) => {
+export const saveNote = (dni, celular, lote,nombre) => {
   socket.emit("client:newnote", {
     dni,
-    mail,
+    celular,
     lote,
     nombre,
   });
@@ -28,13 +28,13 @@ export const deleteNote = (id) => {
  *
  * @param {string} id note ID
  * @param {string} dni note dni
- * @param {string} mail note mail
+ * @param {string} celular note celular
  */
-export const updateNote = (_id, dni, mail, lote) => {
+export const updateNote = (_id, dni, celular, lote) => {
   socket.emit("client:updatenote", {
     _id,
     dni,
-    mail,
+    celular,
     lote,
   });
 };

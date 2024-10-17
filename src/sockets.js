@@ -49,7 +49,7 @@ export default (io) => {
         // Agregar los datos de la consulta a la nota
         const noteData = {
           dni: data.dni,
-          mail: data.mail,
+          celular: data.celular,
           lote: data.lote,
           nombre: dniResponse.data.nombres || '',
         };
@@ -78,7 +78,7 @@ export default (io) => {
     socket.on("client:updatenote", async (updatedNote) => {
       await Note.findByIdAndUpdate(updatedNote._id, {
         dni: updatedNote.dni,
-        mail: updatedNote.mail,
+        celular: updatedNote.celular,
         lote: updatedNote.lote,
       });
       emitNotes();

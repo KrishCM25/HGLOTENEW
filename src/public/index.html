@@ -41,12 +41,12 @@
             />
 
             <input
-              type="email"
-              name="mail"
-              id="mail"
+              inputmode="numeric" 
+              name="celular"
+              id="celular"
               required
-              placeholder="tucorreo@gmail.com"
               class="form-control rounded-0 mb-3"
+              oninput="validateInput(this, 9)"
             />
             <input
               name="lote"

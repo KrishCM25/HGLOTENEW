@@ -2,7 +2,7 @@ import { deleteNote, getNoteById, saveNote, updateNote, onError } from "./socket
 
 const notesList = document.querySelector("#notes");
 const dni = document.querySelector("#dni");
-const mail = document.querySelector("#mail");
+const celular = document.querySelector("#celular");
 const lote = document.querySelector("#lote");
 
 let savedId = "";
@@ -19,7 +19,7 @@ const noteUI = (note) => {
               <button class="btn btn-secondary update" data-id="${note._id}">update</button>
           </div>
       </div>
-      <p>${note.mail}</p>
+      <p>${note.celular}</p>
       <p>${note.lote}</p>
       <pre>${note.nombre}</pre> <!-- Mostrar la información del DNI en formato string -->
     </div>
@@ -45,7 +45,7 @@ export const appendNote = (note) => {
 
 export const fillForm = (note) => {
   dni.value = note.dni;
-  mail.value = note.mail;
+  celular.value = note.celular;
   lote.value = note.lote;
   
   savedId = note._id;
@@ -55,11 +55,11 @@ export const onHandleSubmit = (e) => {
   e.preventDefault();
 
   if (savedId) {
-    updateNote(savedId, dni.value, mail.value, lote.value);
+    updateNote(savedId, dni.value, celular.value, lote.value);
     clearForm(); // Limpiar todos los campos si se actualiza correctamente
   } else {
     // Emitir el evento para crear la nueva nota
-    saveNote(dni.value, mail.value, lote.value);
+    saveNote(dni.value, celular.value, lote.value);
     
     // Escuchar la respuesta del servidor para saber si se creó o no
     onError((response) => {
@@ -78,7 +78,7 @@ export const onHandleSubmit = (e) => {
 // Función para limpiar todos los campos
 const clearForm = () => {
   dni.value = "";
-  mail.value = "";
+  celular.value = "";
   lote.value = "";
 };
 
