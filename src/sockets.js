@@ -62,7 +62,7 @@ export default (io) => {
         const obtenerPremioAleatorio = () => {
           const premio = ['bicicleta','lavadora','gifcard', 'viaje', 'kit', 'tv', 'refrigeradora','consuelo'];
           const indiceAleatorio = Math.floor(Math.random() * premio.length);
-          return premio[indiceAleatorio];
+          return premio[indiceAleatorio].toUpperCase();
         };
 
         // Verificar si ya existe una nota con el mismo valor de "lote"
