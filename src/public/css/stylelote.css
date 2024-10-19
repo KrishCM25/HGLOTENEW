@@ -11,6 +11,9 @@ img{
 body{
   margin: 0;
 }
+a{
+  text-decoration: none;
+}
 
 #adv-search-header-mobile, .ads-hg-elem-down {
   display: none;
