@@ -5,6 +5,9 @@
   --content-width: min(100%, var(--container-max-width, 1140px));
   --container-max-width: 1255px;
 }
+img{
+  width: 100%;
+}
 
 #adv-search-header-mobile, .ads-hg-elem-down {
   display: none;
