@@ -42,9 +42,13 @@ app.use((req, res, next) => {
 app.get('/lotehg', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'lotehg.html'));
 });
+// Ruta para mostrar el archivo lotehg.html
+// app.get('/lotehg', (req, res) => {
+//     res.sendFile(path.join(__dirname, 'public', 'lotehg.html'));
+// });
 
 // Middleware para servir archivos estáticos desde la carpeta 'public'
-app.use('/control', express.static(path.join(__dirname, '/public')));
+app.use('/', express.static(path.join(__dirname, '/public')));
 
 
 // Servir otro contenido en la ruta principal "/"
