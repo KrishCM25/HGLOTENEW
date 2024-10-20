@@ -1,3 +1,6 @@
+:root {
+  --color-primary-lt: #660789;
+}
 body {
   font-family: 'Flexo';
   height: 100vh;
@@ -6,4 +9,28 @@ body {
 
 .container-principal-lt{
   display:flex;
+}
+.container-flex-lt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1300px;
+  margin: auto;
+}
+.container-form-lt {
+  width: 30%;
+}
+.container-data-lt {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* flex-direction: column; */
+}
+.title-hg{
+  color: var(--color-primary-lt)
+}
+.subtitle-hg{
+  color: var(--color-primary-lt)
 }
