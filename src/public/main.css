@@ -21,6 +21,7 @@ input{
   width: 100%;
   max-width: 1300px;
   margin: auto;
+  flex-wrap: wrap;
 }
 .container-form-lt {
   width: 30%;
