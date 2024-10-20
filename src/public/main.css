@@ -143,3 +143,10 @@ button.btn-form-lt {
 .img-ruleta-lt img {
   max-width: 430px;
 }
+
+@media screen and (max-width:768px){
+  .container-flex-lt {
+    flex-direction: column;
+  }
+
+}
