@@ -3,11 +3,11 @@
   --font-family-lt: 'Flexo';
 }
 body {
-  font-family: --var(--font-family-lt);
+  font-family: var(--font-family-lt);
   height: 100vh;
 }
 input{
-  font-family: --var(--font-family-lt);
+  font-family: var(--font-family-lt);
 }
 
 .container-principal-lt{
