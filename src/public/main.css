@@ -122,8 +122,22 @@ form#ltForm {
   font-size: 13px;
   font-weight: 600;
 }
-.btn-form-lt{
-
+button.btn-form-lt {
+  padding: 8px 16px;
+  background-color: var(--color-primary-lt);
+  height: 40px;
+  border-radius: 20px;
+  border: none;
+  color: #fff;
+  text-align: center;
+  font-family: var(--font-family-lt);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  cursor: pointer;
+  width: 100%;
+  width: 288px;
 }
 .img-ruleta-lt img {
   max-width: 430px;
