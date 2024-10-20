@@ -13,10 +13,11 @@ const noteUI = (note) => {
   const formattedDate = `${date.getDate()} de ${date.toLocaleString('es-PE', { month: 'long' })} del ${date.getFullYear()}`;
   
     // Convertir el objeto dniInfo a string usando JSON.stringify
+  div.classList.add('elem-reserva-data-lt');
   div.innerHTML = `
-  <div class="card card-body rounded-0 animate__animated animate__fadeInUp mb-2">
-      <div class="d-flex justify-content-between">
-          <h1 class="card-title h3">${note.dni}</h1>
+  <div class="container-elem-reserva-data-lt">
+      <div class="control-elem-reserva-lt">
+          <div class="card-title h3">${note.dni}</div>
           <div>
               <button class="btn btn-danger delete" data-id="${note._id}">delete</button>
               <button class="btn btn-secondary update" data-id="${note._id}">update</button>
