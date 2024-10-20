@@ -1,6 +1,6 @@
 
 
-@font-face {
+/* @font-face {
   font-family: 'Flexo';
   src: url('/fonts/flexo/Flexo-Demi.ttf') format('truetype');
   font-weight: 600;
@@ -23,4 +23,86 @@
   src: url('/fonts/flexo/Flexo-Thin.ttf') format('truetype');
   font-weight: thin;
   font-style: normal;
+}
+@font-face {
+  font-family: 'Flexo';
+  src: url('/fonts/flexo/Flexo-Thin.ttf') format('truetype');
+  font-weight: thin;
+  font-style: normal;
+} */
+/* 
+
+*/
+
+
+@font-face {
+  font-display: swap;
+  font-family: Flexo;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 400;
+  src: local("Flexo"),url(/fonts/flexo/Flexo-Regular-webfont.woff2) format("woff2"),url(/fonts/flexo/Flexo-Regular-webfont.woff) format("woff"),url(/fonts/flexo/Flexo-Regular-webfont.ttf) format("truetype")
+}
+
+@font-face {
+  font-display: swap;
+  font-family: Flexo;
+  font-stretch: normal;
+  font-style: italic;
+  font-weight: 400;
+  src: local("Flexo"),url(/fonts/flexo/Flexo-It-webfont.woff2) format("woff2"),url(/fonts/flexo/Flexo-It-webfont.woff) format("woff"),url(/fonts/flexo/Flexo-It-webfont.ttf) format("truetype")
+}
+
+@font-face {
+  font-display: swap;
+  font-family: Flexo;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 700;
+  src: local("Flexo"),url(/fonts/flexo/Flexo-Bold-webfont.woff2) format("woff2"),url(/fonts/flexo/Flexo-Bold-webfont.woff) format("woff"),url(/fonts/flexo/Flexo-Bold-webfont.ttf) format("truetype")
+}
+
+@font-face {
+  font-display: swap;
+  font-family: Flexo-Demi;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 400;
+  src: local("Flexo-Demi"),url(/fonts/flexo/Flexo-Demi-webfont.woff2) format("woff2"),url(/fonts/flexo/Flexo-Demi-webfont.woff) format("woff"),url(/fonts/flexo/Flexo-Demi-webfont.ttf) format("truetype")
+}
+
+@font-face {
+  font-display: swap;
+  font-family: Flexo-Heavy;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 400;
+  src: local("Flexo-Heavy"),url(/fonts/flexo/Flexo-Heavy-webfont.woff2) format("woff2"),url(/fonts/flexo/Flexo-Heavy-webfont.woff) format("woff"),url(/fonts/flexo/Flexo-Heavy-webfont.ttf) format("truetype")
+}
+
+@font-face {
+  font-display: swap;
+  font-family: Flexo-Light;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 400;
+  src: local("Flexo-Light"),url(/fonts/flexo/Flexo-Light-webfont.woff2) format("woff2"),url(/fonts/flexo/Flexo-Light-webfont.woff) format("woff"),url(/fonts/flexo/Flexo-Light-webfont.ttf) format("truetype")
+}
+
+@font-face {
+  font-display: swap;
+  font-family: Flexo-Medium;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 400;
+  src: local("Flexo-Medium"),url(/fonts/flexo/Flexo-Medium-webfont.woff2) format("woff2"),url(/fonts/flexo/Flexo-Medium-webfont.woff) format("woff"),url(/fonts/flexo/Flexo-Medium-webfont.ttf) format("truetype")
+}
+
+@font-face {
+  font-display: swap;
+  font-family: Flexo-Medium;
+  font-stretch: normal;
+  font-style: italic;
+  font-weight: 400;
+  src: local("Flexo-Medium"),url(/fonts/flexo/Flexo-MediumIt-webfont.woff2) format("woff2"),url(/fonts/flexo/Flexo-MediumIt-webfont.woff) format("woff"),url(/fonts/flexo/Flexo-MediumIt-webfont.ttf) format("truetype")
 }
