@@ -152,5 +152,8 @@ button.btn-form-lt {
   .container-data-lt {
     width: 100%;
   }
+  .container-list-data-lt{
+    flex-direction: column;
+  }
 
 }
