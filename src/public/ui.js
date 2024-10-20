@@ -15,19 +15,19 @@ const noteUI = (note) => {
     // Convertir el objeto dniInfo a string usando JSON.stringify
   div.classList.add('elem-reserva-data-lt');
   div.innerHTML = `
-  <div class="container-elem-reserva-data-lt">
-      <div class="control-elem-reserva-lt">
-          <div class="card-title h3">${note.dni}</div>
-          <div>
-              <button class="btn btn-danger delete" data-id="${note._id}">delete</button>
-              <button class="btn btn-secondary update" data-id="${note._id}">update</button>
+    <div class="container-elem-reserva-data-lt">
+        <div class="name-elem-reserva-lt data-elem-reserva-lt"><pre>${note.nombre}</pre></div>
+        <div class="dni-elem-reserva-lt data-elem-reserva-lt">${note.dni}</div>
+        <div class="celular-elem-reserva-lt data-elem-reserva-lt"><p>${note.celular}</p></div>
+        <div class="lote-elem-reserva-lt data-elem-reserva-lt"><p>${note.lote}</p></div>
+        <div class="regalo-elem-reserva-lt data-elem-reserva-lt"><pre>${note.regalo}</pre> </div>
+        <div class="fecha-elem-reserva-lt data-elem-reserva-lt"><pre>${formattedDate}</pre> </div>
+        <div class="control-elem-reserva-lt">
+          <div class="container-btn-control-elem">
+            <button class="btn btn-danger delete" data-id="${note._id}">delete</button>
+            <button class="btn btn-secondary update" data-id="${note._id}">update</button>
           </div>
-      </div>
-      <p>${note.celular}</p>
-      <p>${note.lote}</p>
-      <pre>${note.nombre}</pre> <!-- Mostrar la información del DNI en formato string -->
-      <pre>${note.regalo}</pre> 
-      <pre>${formattedDate}</pre> 
+        </div>
     </div>
 `;
   const btnDelete = div.querySelector(".delete");
