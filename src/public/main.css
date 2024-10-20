@@ -144,6 +144,25 @@ button.btn-form-lt {
   max-width: 430px;
 }
 
+.name-elem-reserva-lt.data-elem-reserva-lt{
+  font-family: 'Flexo';
+  font-family: 'Flexo';
+  font-size: 12px;
+  font-weight: 600;
+}
+.name-elem-reserva-lt.data-elem-reserva-lt {
+  font-weight: bold;
+  font-family: 'Flexo-Demi';
+}
+.data-elem-reserva-lt {
+  font-size: 13px;
+}
+.dni-elem-reserva-lt.data-elem-reserva-lt {
+  font-family: 'Flexo-Demi';
+}
+.regalo-elem-reserva-lt.data-elem-reserva-lt{
+  font-family: 'Flexo-Demi';
+}
 @media screen and (max-width:768px){
   .container-flex-lt {
     flex-direction: column;
@@ -162,6 +181,6 @@ button.btn-form-lt {
   .remember-wrapper-lt {
     width: 288px;
     margin: auto auto 12px;
-}
+  }
 
 }
