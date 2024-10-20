@@ -1,9 +1,13 @@
 :root {
   --color-primary-lt: #660789;
+  --font-family-lt: 'Flexo';
 }
 body {
-  font-family: 'Flexo';
+  font-family: --var(--font-family-lt);
   height: 100vh;
+}
+input{
+  font-family: --var(--font-family-lt);
 }
 
 .container-principal-lt{
@@ -41,3 +45,25 @@ body {
   font-size: 18px;
   margin: 0;
 } 
+.container-dni-input-btn {
+  border: 1px solid #660789;
+  display: flex;
+  max-width: 240px;
+  border-radius: 7px;
+  overflow: hidden;
+  margin: 10px 0;
+}
+.label-dni-input {
+  padding: 10px 20px;
+  border-right: 1px solid #660789;
+  font-size: 16px;
+  font-weight: 600;
+}
+.elem-dni-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  font-weight: 600;
+  font-family: 'Flexo';
+}
