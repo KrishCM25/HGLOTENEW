@@ -67,3 +67,38 @@ input{
   font-weight: 600;
   font-family: 'Flexo';
 }
+.remember-wrapper-lt {
+  background-color: #fffded;
+  width: 288px;
+  height: 58px;
+  display: flex;
+  margin-bottom: 32px;
+  border-radius: 8px;
+}
+.remember-wrapper-lt div {
+  padding: 8px;
+  display: flex;
+  align-items: center;
+}
+.remember-wrapper-lt p {
+  color: #202e44;
+  font-size: 12px;
+  font-weight: normal;
+  padding: 11px 0;
+  margin: 0;
+  margin-right: 12px;
+}
+.ruleta-content-privacy {
+  max-width: 485px;
+  color: #868f9e;
+  line-height: 16px;
+  font-size: 13px;
+}
+.ruleta-content-privacy a {
+  color: #868f9e;
+  font-size: 13px;
+  font-weight: 600;
+}
+.btn-form-lt{
+  
+}
