@@ -9,5 +9,5 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 // Save a new Note
-const noteForm = document.querySelector("#noteForm");
+const noteForm = document.querySelector("#ltForm");
 noteForm.addEventListener("submit", onHandleSubmit);
