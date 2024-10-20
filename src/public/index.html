@@ -31,42 +31,45 @@
             <h2 class="subtitle-hg">Beneficios de ser HG</h2>
             <h1 class="title-hg">¡Gira la Ruleta y gana premios por tu reserva!</h1>
           </div>
-          <form id="noteForm" class="card card-body rounded-0">
+          <form id="ltForm" class="elem-form-lt">
 
-            <input 
-            id="dni" 
-            name="dni" 
-            class="dni_input" 
-            minlength="8"
-            maxlength="8" 
-            inputmode="numeric" 
-            pattern="\d*" 
-            placeholder="Ingresa tu DNI" 
-            required="" 
-            oninput="validateInput(this, 8)"
-            />
-
-            <input
+            <div class="container-dni-input-btn">
+              <div class="label-dni-input">DNI</div>
+              <input 
+              id="dni" 
+              name="dni" 
+              class="elem-dni-input" 
+              minlength="8"
+              maxlength="8" 
               inputmode="numeric" 
-              name="celular"
-              id="celular"
               pattern="\d*" 
-              placeholder="Ingresa tu número de celular"  
-              required
-              class="form-control rounded-0 mb-3"
-              oninput="validateInput(this, 9)"
+              placeholder="Ingresa tu DNI" 
+              required="" 
+              oninput="validateInput(this, 8)"
+              />
+            </div>
+
+              <input
+                inputmode="numeric" 
+                name="celular"
+                id="celular"
+                pattern="\d*" 
+                placeholder="Ingresa tu número de celular"  
+                required
+                class="form-control rounded-0 mb-3"
+                oninput="validateInput(this, 9)"
               />
               <input
-              name="lote"
-              id="lote"
-              class="lote_input"
-              inputmode="numeric" 
-              minlength="1" maxlength="2" 
-              pattern="\d*" 
-              required
-              placeholder="Ingresa tu lote" 
-              oninput="validateInput(this, 2,79)"
-            />
+                name="lote"
+                id="lote"
+                class="lote_input"
+                inputmode="numeric" 
+                minlength="1" maxlength="2" 
+                pattern="\d*" 
+                required
+                placeholder="Ingresa tu lote" 
+                oninput="validateInput(this, 2,79)"
+              />
 
             <button class="btn btn-dark rounded-0">Descubrir</button>
           </form>
