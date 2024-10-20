@@ -33,7 +33,7 @@
           </div>
           <form id="ltForm" class="elem-form-lt">
 
-            <div class="container-dni-input-btn">
+            <div class="container-input-form">
               <div class="label-dni-input">DNI</div>
               <input 
               id="dni" 
@@ -49,6 +49,7 @@
               />
             </div>
 
+            <div class="container-input-form">
               <input
                 inputmode="numeric" 
                 name="celular"
@@ -59,7 +60,9 @@
                 class="form-control rounded-0 mb-3"
                 oninput="validateInput(this, 9)"
               />
-              <input
+            </div>
+            <div class="container-input-form">
+                <input
                 name="lote"
                 id="lote"
                 class="lote_input"
@@ -70,6 +73,7 @@
                 placeholder="Ingresa tu lote" 
                 oninput="validateInput(this, 2,79)"
               />
+            </div>
 
               <div class="remember-wrapper-lt">
                 <div>
