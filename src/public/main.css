@@ -29,7 +29,11 @@ input{
   display: flex;
   justify-content: center;
   align-items: center;
-  /* flex-direction: column; */
+  flex-direction: column;
+}
+.container-list-data-lt{
+  display: flex;
+  gap: 10px;
 }
 .container-title-lt{
   display: flex;
@@ -100,5 +104,8 @@ input{
   font-weight: 600;
 }
 .btn-form-lt{
-  
+
+}
+.img-ruleta-lt img {
+  max-width: 430px;
 }
