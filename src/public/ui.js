@@ -9,6 +9,9 @@ let savedId = "";
 
 const noteUI = (note) => {
   const div = document.createElement("div");
+  const date =new Date(note.createdAt);
+  const formattedDate = `${date.getDate()} de ${date.toLocaleString('es-PE', { month: 'long' })} del ${date.getFullYear()}`;
+  
     // Convertir el objeto dniInfo a string usando JSON.stringify
   div.innerHTML = `
   <div class="card card-body rounded-0 animate__animated animate__fadeInUp mb-2">
@@ -23,6 +26,7 @@ const noteUI = (note) => {
       <p>${note.lote}</p>
       <pre>${note.nombre}</pre> <!-- Mostrar la información del DNI en formato string -->
       <pre>${note.regalo}</pre> 
+      <pre>${formattedDate}</pre> 
     </div>
 `;
   const btnDelete = div.querySelector(".delete");
