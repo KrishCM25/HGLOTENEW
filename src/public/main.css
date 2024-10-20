@@ -155,5 +155,10 @@ button.btn-form-lt {
   .container-list-data-lt{
     flex-direction: column;
   }
+  .remember-wrapper-lt,
+  button.btn-form-lt,
+  form#ltForm{
+    width: 100%;
+  }
 
 }
