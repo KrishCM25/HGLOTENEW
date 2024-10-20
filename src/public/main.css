@@ -143,19 +143,13 @@ button.btn-form-lt {
 .img-ruleta-lt img {
   max-width: 430px;
 }
-
-.name-elem-reserva-lt.data-elem-reserva-lt{
-  font-family: 'Flexo';
-  font-family: 'Flexo';
-  font-size: 12px;
-  font-weight: 600;
+.data-elem-reserva-lt {
+  font-family: 'Flexo-Demi';
+  font-size: 13px;
 }
 .name-elem-reserva-lt.data-elem-reserva-lt {
-  font-weight: bold;
-  font-family: 'Flexo-Demi';
-}
-.data-elem-reserva-lt {
-  font-size: 13px;
+  font-size: 14px;
+  font-family: 'Flexo';
 }
 .dni-elem-reserva-lt.data-elem-reserva-lt {
   font-family: 'Flexo-Demi';
