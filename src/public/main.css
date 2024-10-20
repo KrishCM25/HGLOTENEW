@@ -27,9 +27,17 @@ body {
   align-items: center;
   /* flex-direction: column; */
 }
-.title-hg{
-  color: var(--color-primary-lt)
+.container-title-lt{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
-.subtitle-hg{
-  color: var(--color-primary-lt)
+.title-hg {
+  color: var(--color-primary-lt);
+  margin: 0;
 }
+.subtitle-hg {
+  color: var(--color-primary-lt);
+  font-size: 18px;
+  margin: 0;
+} 
