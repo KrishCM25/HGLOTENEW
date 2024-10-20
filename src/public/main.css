@@ -148,5 +148,9 @@ button.btn-form-lt {
   .container-flex-lt {
     flex-direction: column;
   }
+  .container-form-lt,
+  .container-data-lt {
+    width: 100%;
+  }
 
 }
