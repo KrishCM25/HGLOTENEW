@@ -24,6 +24,9 @@ input{
 }
 .container-form-lt {
   width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 .container-data-lt {
   width: 70%;
@@ -50,22 +53,31 @@ input{
   font-size: 18px;
   margin: 0;
 } 
+form#ltForm {
+  width: 288px !important;
+}
 .container-input-form {
   border: 1px solid var(--color-gray-lt);
   display: flex;
-  max-width: 240px;
+  align-items: center;
+  /* max-width: 240px; */
   border-radius: 7px;
   overflow: hidden;
   margin: 10px 0;
+  height: 50px;
 }
 .container-input-form:hover {
   border: 1px solid var(--color-primary-lt);
 }
 .label-dni-input {
-  padding: 10px 20px;
+  padding: 0px 20px;
   border-right: 1px solid var(--color-gray-lt);
   font-size: 16px;
   font-weight: 600;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .container-input-form:hover .label-dni-input {
   border-right: 1px solid var(--color-primary-lt);
@@ -76,7 +88,7 @@ input{
   outline: none;
   padding: 10px 20px;
   font-weight: 600;
-  font-family: 'Flexo';
+  font-family: var(--font-family-lt);
 }
 .remember-wrapper-lt {
   background-color: #fffded;
