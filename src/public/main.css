@@ -143,11 +143,22 @@ button.btn-form-lt {
 .img-ruleta-lt img {
   max-width: 430px;
 }
+.container-list-data-lt {
+  display: flex;
+  gap: 10px;
+}
+.container-elem-reserva-data-lt {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  border-radius: 10px;
+  border: 1px solid #000;
+}
 .data-elem-reserva-lt {
   font-family: 'Flexo-Demi';
   font-size: 13px;
 }
-.name-elem-reserva-lt{
+.name-elem-reserva-lt {
   font-size: 14px;
   font-family: 'Flexo';
   font-weight: 600;
@@ -162,6 +173,7 @@ button.btn-form-lt {
   font-size: 10px;
   color: #868f9e;
 }
+
 @media screen and (max-width:768px){
   .container-flex-lt {
     flex-direction: column;

@@ -24,6 +24,7 @@ const noteUI = (note) => {
         <div class="regalo-elem-reserva-lt data-elem-reserva-lt">${note.regalo} </div>
         <div class="fecha-elem-reserva-lt data-elem-reserva-lt">${formattedDate} </div>
       </div>
+      
       <div class="control-elem-reserva-lt">
         <div class="container-btn-control-elem">
           <button class="btn btn-danger delete" data-id="${note._id}">delete</button>
@@ -32,6 +33,7 @@ const noteUI = (note) => {
       </div>
     </div>
   `;
+  
   const btnDelete = div.querySelector(".delete");
   const btnUpdate = div.querySelector(".update");
 
