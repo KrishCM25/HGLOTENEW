@@ -34,11 +34,11 @@ const noteUI = (note) => {
       //     <button class="btn btn-secondary update" data-id="${note._id}">update</button>
       //   </div>
       // </div>
-  const btnDelete = div.querySelector(".delete");
-  const btnUpdate = div.querySelector(".update");
+  // const btnDelete = div.querySelector(".delete");
+  // const btnUpdate = div.querySelector(".update");
 
-  btnDelete.addEventListener("click", () => deleteNote(btnDelete.dataset.id));
-  btnUpdate.addEventListener("click", () => getNoteById(btnUpdate.dataset.id));
+  // btnDelete.addEventListener("click", () => deleteNote(btnDelete.dataset.id));
+  // btnUpdate.addEventListener("click", () => getNoteById(btnUpdate.dataset.id));
 
   return div;
 };
