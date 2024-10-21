@@ -4,6 +4,20 @@
   --color-gray-lt: #c0c0c0;
   --font-family-lt: 'Flexo';
 }
+container-list-data-lt::-webkit-scrollbar {
+  width: 12px;               /* width of the entire scrollbar */
+}
+
+container-list-data-lt::-webkit-scrollbar-track {
+  background: orange;        /* color of the tracking area */
+}
+
+container-list-data-lt::-webkit-scrollbar-thumb {
+  background-color: blue;    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+  border: 3px solid orange;  /* creates padding around scroll thumb */
+}
+
 body {
   font-family: var(--font-family-lt);
   height: 100vh;
@@ -177,22 +191,35 @@ button.btn-form-lt {
 .container-list-data-lt {
   display: flex;
   gap: 10px;
+  overflow-x: scroll;
+  margin: 20px 0;
+  padding: 30px 0 10px 10px;
 }
 .container-elem-reserva-data-lt {
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  /* padding: 10px; */
   border-radius: 10px;
-  border: 1px solid #000;
+  /* border: 1px solid #000; */
   aspect-ratio: 1;
-  width: 120px;
+  width: 210px;
   position: relative;
+  background-image: url(https://bunny-wp-pullzone-thxr2eln2h.b-cdn.net/wp-content/uploads/2024/10/PORTADA-CAMPING-CUADRO-HG-EXITO-MINI.jpg);
+  background-size: cover;
 }
 .container-data-elem-reserva-lt {
   display: flex;
   flex-direction: column;
   height: 100%;
-  justify-content: space-between;
+  justify-content: flex-end;
+  padding: 10px;
+  background: #000000b8;
+  color: #fff;
+  text-align: center;
+  background: rgb(0,0,0);
+  background: linear-gradient(180deg, rgba(0,0,0,0) 30%, rgba(0,0,0,1) 68%);
+  border-radius: 10px;
+  position: relative;
 }
 .container-data-elem-reserva-lt div {
   white-space: nowrap;
@@ -215,6 +242,7 @@ button.btn-form-lt {
 }
 .regalo-elem-reserva-lt.data-elem-reserva-lt{
   font-family: 'Flexo-Demi';
+  /* display: none; */
 }
 .fecha-elem-reserva-lt {
   font-size: 10px;
