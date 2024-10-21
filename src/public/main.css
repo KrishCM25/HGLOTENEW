@@ -147,15 +147,20 @@ button.btn-form-lt {
   font-family: 'Flexo-Demi';
   font-size: 13px;
 }
-.name-elem-reserva-lt.data-elem-reserva-lt {
+.name-elem-reserva-lt{
   font-size: 14px;
   font-family: 'Flexo';
+  font-weight: 600;
 }
 .dni-elem-reserva-lt.data-elem-reserva-lt {
   font-family: 'Flexo-Demi';
 }
 .regalo-elem-reserva-lt.data-elem-reserva-lt{
   font-family: 'Flexo-Demi';
+}
+.fecha-elem-reserva-lt {
+  font-size: 10px;
+  color: #868f9e;
 }
 @media screen and (max-width:768px){
   .container-flex-lt {

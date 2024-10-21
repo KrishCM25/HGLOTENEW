@@ -19,8 +19,8 @@ const noteUI = (note) => {
       <div class="container-data-elem-reserva-lt">
         <div class="name-elem-reserva-lt data-elem-reserva-lt">${note.nombre}</div>
         <div class="dni-elem-reserva-lt data-elem-reserva-lt">${note.dni}</div>
-        <div class="celular-elem-reserva-lt data-elem-reserva-lt"><p>${note.celular}</p></div>
-        <div class="lote-elem-reserva-lt data-elem-reserva-lt"><p>${note.lote}</p></div>
+        <div class="celular-elem-reserva-lt data-elem-reserva-lt">${note.celular}</div>
+        <div class="lote-elem-reserva-lt data-elem-reserva-lt">${note.lote}</div>
         <div class="regalo-elem-reserva-lt data-elem-reserva-lt">${note.regalo} </div>
         <div class="fecha-elem-reserva-lt data-elem-reserva-lt">${formattedDate} </div>
       </div>
