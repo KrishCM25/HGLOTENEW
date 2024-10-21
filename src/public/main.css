@@ -39,6 +39,8 @@ input{
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  gap: 20px;
+  padding: 10px;
 }
 .container-list-data-lt{
   display: flex;
