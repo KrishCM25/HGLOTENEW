@@ -1,5 +1,6 @@
 :root {
   --color-primary-lt: #660789;
+  --color-orange-lt: #ff8700;;
   --color-gray-lt: #c0c0c0;
   --font-family-lt: 'Flexo';
 }
@@ -53,7 +54,7 @@ input{
   margin: 0;
 }
 .subtitle-hg {
-  color: var(--color-primary-lt);
+  color: var(--color-orange-lt);
   font-size: 18px;
   margin: 0;
 } 
@@ -160,18 +161,26 @@ button.btn-form-lt {
   width: 120px;
   position: relative;
 }
+.container-data-elem-reserva-lt {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+.container-data-elem-reserva-lt div {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
 .data-elem-reserva-lt {
   font-family: 'Flexo-Demi';
   font-size: 13px;
 }
+
 .name-elem-reserva-lt {
   font-size: 14px;
   font-family: 'Flexo';
   font-weight: 600;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  max-width: 100%;
   text-align: center;
 }
 .dni-elem-reserva-lt.data-elem-reserva-lt {
