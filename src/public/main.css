@@ -150,9 +150,12 @@ button.btn-form-lt {
 .container-elem-reserva-data-lt {
   display: flex;
   flex-direction: column;
-  padding: 5px;
+  padding: 10px;
   border-radius: 10px;
   border: 1px solid #000;
+  aspect-ratio: 1;
+  width: 120px;
+  position: relative;
 }
 .data-elem-reserva-lt {
   font-family: 'Flexo-Demi';
@@ -162,6 +165,11 @@ button.btn-form-lt {
   font-size: 14px;
   font-family: 'Flexo';
   font-weight: 600;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 100%;
+  text-align: center;
 }
 .dni-elem-reserva-lt.data-elem-reserva-lt {
   font-family: 'Flexo-Demi';
