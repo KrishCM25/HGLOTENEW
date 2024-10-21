@@ -11,12 +11,32 @@ const noteUI = (note) => {
   const div = document.createElement("div");
   const date =new Date(note.createdAt);
   const formattedDate = `${date.getDate()} de ${date.toLocaleString('es-PE', { month: 'long' })} del ${date.getFullYear()}`;
-  
+  const imageRegalo ='';
+  if(note.regalo == 'REFRIGERADORA'){
+    imageRegalo = '/assets/images/refri-hg-30.webp';
+  }else if(note.regalo == 'LAVADORA'){
+    imageRegalo = '/assets/images/lavadora-hg-83.webp';
+  }else if(note.regalo == 'KIT'){
+    imageRegalo = '/assets/images/olla-hg-8736.webp';
+  }else if(note.regalo == 'REFRIGERADORA'){
+    imageRegalo ='/assets/images/refri-hg-30.webp';
+  }else if(note.regalo == 'GIFTCARD'){
+    imageRegalo = '/assets/images/giftcard-hg-92.webp';
+  }else if(note.regalo == 'TV'){
+    imageRegalo = '/assets/images/tv-hg-92.webp';
+  }else if(note.regalo == 'PREM. CONSUELO'){
+    imageRegalo = '/assets/images/ollas-hg-8736.webp';
+  }else if(note.regalo == 'VIAJE'){
+    imageRegalo = '/assets/images/avion-hg-982.webp';
+  }else if(note.regalo == 'BICICLETA'){
+    imageRegalo = '/assets/images/bici-hg-98.webp';
+  }
     // Convertir el objeto dniInfo a string usando JSON.stringify
   div.classList.add('elem-reserva-data-lt');
   div.innerHTML = `
     <div class="container-elem-reserva-data-lt">
       <div class="container-data-elem-reserva-lt">
+        <div class="image-regalo-elem-reserva-lt"><img src=""></div>
         <div class="name-elem-reserva-lt data-elem-reserva-lt">${note.nombre}</div>
         <div class="dni-elem-reserva-lt data-elem-reserva-lt">${note.dni}</div>
         <div class="celular-elem-reserva-lt data-elem-reserva-lt">${note.celular}</div>
