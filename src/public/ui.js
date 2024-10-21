@@ -25,15 +25,15 @@ const noteUI = (note) => {
         <div class="fecha-elem-reserva-lt data-elem-reserva-lt">${formattedDate} </div>
       </div>
       
-      <div class="control-elem-reserva-lt">
-        <div class="container-btn-control-elem">
-          <button class="btn btn-danger delete" data-id="${note._id}">delete</button>
-          <button class="btn btn-secondary update" data-id="${note._id}">update</button>
-        </div>
       </div>
-    </div>
-  `;
+      `;
   
+      // <div class="control-elem-reserva-lt">
+      //   <div class="container-btn-control-elem">
+      //     <button class="btn btn-danger delete" data-id="${note._id}">delete</button>
+      //     <button class="btn btn-secondary update" data-id="${note._id}">update</button>
+      //   </div>
+      // </div>
   const btnDelete = div.querySelector(".delete");
   const btnUpdate = div.querySelector(".update");
 
