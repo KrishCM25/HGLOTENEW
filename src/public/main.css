@@ -153,8 +153,8 @@ button.btn-form-lt {
 .puntero-hg-lt{
   position: absolute;
   top: 50%;
-  bottom:50%;
-  transform: translate(-50%,-50%);
+  left: 50%;
+  transform: translate(-50%, -65%);
   width: 55px;
   height: 80px;
   /* left: 173px; */
