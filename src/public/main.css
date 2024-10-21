@@ -144,8 +144,21 @@ button.btn-form-lt {
   width: 100%;
   width: 288px;
 }
-.img-ruleta-lt img {
+.container-ruleta-lt{
+  position: relative;
+}
+.container-ruleta-lt .ruleta-hg-lt {
   max-width: 430px;
+}
+.puntero-hg-lt{
+  position: absolute;
+  top: 50%;
+  bottom:50%;
+  transform: translate(-50%,-50%);
+  width: 55px;
+  height: 80px;
+  /* left: 173px; */
+  /* bottom: 282px; */
 }
 .container-list-data-lt {
   display: flex;
