@@ -91,6 +91,7 @@ input{
 }
 .elem-reserva-data-lt {
   margin-right: 10px;
+  scroll-snap-align: center;
 }
 .container-title-lt{
   display: flex;
