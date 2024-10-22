@@ -1,4 +1,4 @@
-import { deleteNote, getNoteById, saveNote, updateNote, onError} from "./sockets.js";
+import { deleteNote, getNoteById, saveNote, updateNote, onError, onGira} from "./sockets.js";
 
 const notesList = document.querySelector("#notes");
 const dni = document.querySelector("#dni");
@@ -116,7 +116,7 @@ export const giraRuleta = (rotacion) => {
 };
 
 // Escuchar el evento de giro de ruleta desde el servidor
-socket.on("client:giraruleta", (rotacion) => {
+onGira("client:giraruleta", (rotacion) => {
   console.log("Recibida rotación desde el servidor", rotacion);
   giraRuleta(rotacion); // Llama a la función para girar la ruleta
 });

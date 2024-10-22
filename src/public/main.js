@@ -1,4 +1,4 @@
-import { appendNote, renderNotes, fillForm, onHandleSubmit, giraRuleta } from "./ui.js";
+import { appendNote, renderNotes, fillForm, onHandleSubmit } from "./ui.js";
 import { loadNotes, onNewNote, onSelected } from "./sockets.js";
 
 // Load initial Notes
