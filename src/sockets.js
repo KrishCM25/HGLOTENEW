@@ -60,7 +60,7 @@ export default (io) => {
       try { 
         // Función para obtener un premio aleatorio 
         const obtenerPremioAleatorio = () => {
-          const premio = ['BICICLETA','LAVADORA','GIFTCARD', 'VIAJE', 'KIT', 'TV', 'REFRIGERADRA','PREM. CONSUELO'];
+          const premio = ['BICICLETA','LAVADORA','GIFTCARD', 'VIAJE', 'TV', 'REFRIGERADRA','PREM. CONSUELO'];
           const indiceAleatorio = Math.floor(Math.random() * premio.length);
           return premio[indiceAleatorio].toUpperCase();
         }; 

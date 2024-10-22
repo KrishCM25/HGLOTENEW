@@ -19,9 +19,6 @@ const noteUI = (note) => {
   }else if(note.regalo == 'LAVADORA'){
     imageRegalo = '/assets/images/lavadora-hg-83.webp';
     cssRegalo = 'style="width: 40%;top: -20px;right: 10px;"';
-  }else if(note.regalo == 'KIT'){
-    imageRegalo = '/assets/images/ollas-hg-8736.webp';
-    cssRegalo = 'style="width: 60%;top: -10px;right: 0px;"';
   }else if(note.regalo == 'GIFTCARD'){
     imageRegalo = '/assets/images/giftcard-hg-92.webp';
     cssRegalo = 'style="width: 40%;top: -20px;right: 10px;"';
