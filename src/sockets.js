@@ -98,6 +98,8 @@ export default (io) => {
           regalo:  regalo || 'consuelo',
         };
 
+        let rotacionRuleta = 0;
+
         if(regalo == 'REFRIGERADORA'){
           rotacionRuleta = 5*60;
         }else if(regalo == 'LAVADORA'){
