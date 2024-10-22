@@ -53,6 +53,7 @@ input{
 
 .container-principal-lt{
   display:flex;
+  padding: 10px;
 }
 .container-flex-lt {
   display: flex;
