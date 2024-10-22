@@ -80,8 +80,12 @@ input{
   gap: 20px;
   padding: 10px;
 }
-.container-list-data-lt{
+.container-list-data-lt {
   display: flex;
+  /* gap: 10px; */
+  overflow-x: scroll;
+  margin: 20px 0;
+  padding: 30px 0 10px 10px;
   user-select: none;
 }
 .elem-reserva-data-lt {
@@ -216,13 +220,7 @@ button.btn-form-lt {
   /* left: 173px; */
   /* bottom: 282px; */
 }
-.container-list-data-lt {
-  display: flex;
-  gap: 10px;
-  overflow-x: scroll;
-  margin: 20px 0;
-  padding: 30px 0 10px 10px;
-}
+
 .container-elem-reserva-data-lt {
   display: flex;
   flex-direction: column;
