@@ -315,6 +315,7 @@ button.btn-form-lt {
 .lote-elem-reserva-lt.data-elem-reserva-lt:before {
   content: "";
   position: absolute;
+  background: rgb(255, 152, 0);
 }
 .lote-elem-reserva-lt.data-elem-reserva-lt:after {
   content: "";
