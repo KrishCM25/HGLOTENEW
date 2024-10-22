@@ -89,14 +89,14 @@ input{
   padding: 30px 0 10px 10px;
   user-select: none;
 }
-.elem-reserva-data-lt {
-  margin-right: 10px;
-  scroll-snap-align: center;
-}
-.elem-reserva-data-lt.active {
+.container-list-data-lt.active {
   cursor: grabbing;
   cursor: -webkit-grabbing;
   transform: scale(1);
+}
+.elem-reserva-data-lt {
+  margin-right: 10px;
+  scroll-snap-align: center;
 }
 .container-title-lt{
   display: flex;
