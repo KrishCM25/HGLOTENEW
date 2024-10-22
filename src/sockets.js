@@ -97,7 +97,7 @@ export default (io) => {
           nombre: dniInfo.nombres || '',
           regalo:  regalo || 'consuelo',
         };
-        
+
         if(regalo == 'REFRIGERADORA'){
           rotacionRuleta = 5*60;
         }else if(regalo == 'LAVADORA'){
@@ -120,14 +120,15 @@ export default (io) => {
         const savedNote = await newNote.save();
         io.emit("server:newnote", savedNote); // Emitir la nota nueva a todos los clientes conectados
         
-      
-      
-
-        
       } catch (error) {
         console.error("Error al agregar una nueva nota:", error.response ? error.response.data : error.message);
         socket.emit("server:error", { message: "Error al agregar la nota." });
       }
+    });
+
+    socket.on("server:giraruleta", (rotacionRuleta) => {
+      console.log("Rotación recibida:", rotacionRuleta);
+      socket.emit("client:giraruleta", rotacionRuleta); 
     });
 
     socket.on("client:deletenote", async (noteId) => {

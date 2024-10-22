@@ -37,7 +37,7 @@ export const updateNote = (_id, dni, celular, lote) => {
     _id,
     dni,
     celular,
-    lote,
+    lote, 
   });
 };
 
@@ -59,9 +59,6 @@ export const onSelected = (callback) => {
 
 export const getNoteById = (noteId) => {
   socket.emit("client:getnote", noteId);
-};
-export const onGira = (callback) => {
-  socket.on("server:giraruleta", callback);
 };
 
 // Escuchar el evento de error del servidor
