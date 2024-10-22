@@ -60,10 +60,23 @@ export default (io) => {
       try { 
         // Función para obtener un premio aleatorio 
         const obtenerPremioAleatorio = () => {
-          const premio = ['BICICLETA','LAVADORA','GIFTCARD', 'VIAJE', 'TV', 'REFRIGERADRA','PREM. CONSUELO'];
-          const indiceAleatorio = Math.floor(Math.random() * premio.length);
-          return premio[indiceAleatorio].toUpperCase();
-        }; 
+          const premios = [
+            { nombre: 'BICICLETA', probabilidad: 5 },  
+            { nombre: 'LAVADORA', probabilidad: 5 },    
+            { nombre: 'GIFTCARD', probabilidad: 5 },   
+            { nombre: 'VIAJE', probabilidad: 1 },     
+            { nombre: 'TV', probabilidad: 5 },         
+            { nombre: 'REFRIGERADORA', probabilidad: 5 },
+            { nombre: 'PREM. CONSUELO', probabilidad: 4 } 
+          ];
+        
+          // Expandir el array según la probabilidad de cada premio
+          const bolsaDePremios = premios.flatMap(premio => Array(premio.probabilidad).fill(premio.nombre));
+        
+          // Seleccionar un premio aleatoriamente
+          const indiceAleatorio = Math.floor(Math.random() * bolsaDePremios.length);
+          return bolsaDePremios[indiceAleatorio].toUpperCase();
+        };
 
         // Verificar si ya existe una nota con el mismo valor de "lote"
         const existingNote = await Note.findOne({ lote: data.lote });
