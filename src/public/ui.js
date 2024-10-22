@@ -36,7 +36,7 @@ const noteUI = (note) => {
     cssRegalo = 'style="width: 60%;top: -10px;right: 0px;"';
   }else if(note.regalo == 'BICICLETA'){
     imageRegalo = '/assets/images/bici-hg-98.webp';
-    cssRegalo = 'style="width: 40%;top: -20px;right: 10px;"';
+    cssRegalo = 'style="width: 70%;top: -30px;right: -20px;"';
   }
     // Convertir el objeto dniInfo a string usando JSON.stringify
     div.classList.add('elem-reserva-data-lt');
