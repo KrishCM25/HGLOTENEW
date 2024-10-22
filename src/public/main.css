@@ -72,13 +72,25 @@ input{
 .container-list-data-lt .elem-reserva-data-lt-load{
   display: none;
 }
-.elem-reserva-data-lt-load{
-  aspect-ratio: 16/11;
+.elem-reserva-data-lt-load {
+  aspect-ratio: 16 / 11;
   width: 210px;
+  height: 140px;
   background-color: #c0c0c0;
   margin-right: 10px;
+  border-radius: 20px;
+  animation: skeleton-loading 1s linear infinite alternate;
 }
-
+@keyframes skeleton-loading {
+  0% {
+      background-color: hsl(200, 20%, 80%);
+      opacity:100%;
+    }
+    100% {
+      background-color: hsl(200, 20%, 95%);
+      opacity: 80%;
+    }
+}
 
 .elem-reserva-data-lt {
   margin-right: 10px;
