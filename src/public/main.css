@@ -226,6 +226,19 @@ button.btn-form-lt {
   text-overflow: ellipsis;
   overflow: hidden;
 }
+.image-regalo-elem-reserva-lt {
+  position: absolute;
+  width: 40%;
+  top: -20px;
+  right: 10px;
+  overflow: visible !important;
+}
+.image-regalo-elem-reserva-lt img {
+  object-fit: cover;
+  width: 100%;
+  -webkit-filter: drop-shadow(-1px 4px 2px #000);
+  filter: drop-shadow(-1px 4px 2px #000);
+}
 .data-elem-reserva-lt {
   font-family: 'Flexo-Demi';
   font-size: 13px;
