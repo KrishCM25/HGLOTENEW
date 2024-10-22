@@ -58,7 +58,7 @@ export default (io) => {
     // Manejar la creación de una nueva nota
     socket.on("client:newnote", async (data) => {
       try { 
-        // Función para obtener un premio aleatorio
+        // Función para obtener un premio aleatorio 
         const obtenerPremioAleatorio = () => {
           const premio = ['BICICLETA','LAVADORA','GIFTCARD', 'VIAJE', 'KIT', 'TV', 'REFRIGERADRA','PREM. CONSUELO'];
           const indiceAleatorio = Math.floor(Math.random() * premio.length);
