@@ -66,6 +66,19 @@ input{
   padding: 30px 0 10px 10px;
   user-select: none;
 }
+.container-list-data-lt.loading .elem-reserva-data-lt-load{
+  display: block;
+}
+.container-list-data-lt .elem-reserva-data-lt-load{
+  display: none;
+}
+.elem-reserva-data-lt-load{
+  aspect-ratio: 16/11;
+  width: 210px;
+  background-color: #c0c0c0;
+  margin-right: 10px;
+}
+
 
 .elem-reserva-data-lt {
   margin-right: 10px;
