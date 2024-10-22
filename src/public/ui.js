@@ -114,7 +114,7 @@ export const giraRuleta = (rotacion) => {
   if (ruletaD) {
     ruletaD.style.transform = `rotate(calc(${rotacion} + 360deg * 11))`;
   }
-  console.log("GIRANDO");
+  console.log("GIRANDO ",rotacion);
 
 };
 
