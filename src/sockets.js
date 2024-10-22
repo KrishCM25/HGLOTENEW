@@ -61,12 +61,12 @@ export default (io) => {
         // Función para obtener un premio aleatorio 
         const obtenerPremioAleatorio = () => {
           const premios = [
-            { nombre: 'BICICLETA', probabilidad: 5 },  
+            { nombre: 'BICICLETA', probabilidad: 7 },  
             { nombre: 'LAVADORA', probabilidad: 5 },    
-            { nombre: 'GIFTCARD', probabilidad: 5 },   
-            { nombre: 'VIAJE', probabilidad: 1 },     
-            { nombre: 'TV', probabilidad: 5 },         
-            { nombre: 'REFRIGERADORA', probabilidad: 5 },
+            { nombre: 'GIFTCARD', probabilidad: 4 },   
+            { nombre: 'VIAJE', probabilidad: 1 },
+            { nombre: 'TV', probabilidad: 5 },
+            { nombre: 'REFRIGERADORA', probabilidad: 4 },
             { nombre: 'PREM. CONSUELO', probabilidad: 4 } 
           ];
         
