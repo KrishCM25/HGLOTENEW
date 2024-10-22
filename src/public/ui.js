@@ -1,4 +1,4 @@
-import { deleteNote, getNoteById, saveNote, updateNote, onError , onGira} from "./sockets.js";
+import { deleteNote, getNoteById, saveNote, updateNote, onError} from "./sockets.js";
 
 const notesList = document.querySelector("#notes");
 const dni = document.querySelector("#dni");
@@ -109,7 +109,7 @@ export const onHandleSubmit = (e) => {
   }
 };
 
-const giraRuleta = (rotacion) =>{
+export const giraRuleta = (rotacion) =>{
  
   const ruleta = document.querySelector('.container-ruleta-lt .ruleta-hg-lt');
   ruleta.style.transform = `rotate(calc(-${rotacion} + 360deg* 11))`;
