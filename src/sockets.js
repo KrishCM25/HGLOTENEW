@@ -121,7 +121,9 @@ export default (io) => {
         // Emite el evento de rotación solo al cliente que envió la nota
         socket.emit("server:giraruleta", rotacionRuleta);
         const savedNote = await newNote.save();
-        io.emit("server:newnote", savedNote); // Emitir la nota nueva a todos los clientes conectados
+        setTimeout(()=>{
+          io.emit("server:newnote", savedNote); // Emitir la nota nueva a todos los clientes conectados
+        },7000);
         
       } catch (error) {
         console.error("Error al agregar una nueva nota:", error.response ? error.response.data : error.message);
