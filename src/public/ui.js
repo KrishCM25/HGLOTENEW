@@ -38,19 +38,19 @@ const noteUI = (note) => {
     // Convertir el objeto dniInfo a string usando JSON.stringify
     // <div class="regalo-elem-reserva-lt data-elem-reserva-lt">${note.regalo} </div>
     div.classList.add('elem-reserva-data-lt');
-    div.innerHTML = `
-    <div class="container-elem-reserva-data-lt">
-      <div class="container-data-elem-reserva-lt">
-        <div class="image-regalo-elem-reserva-lt" ${cssRegalo} ><img src="${imageRegalo}"></div>
-        <div class="name-elem-reserva-lt data-elem-reserva-lt">${note.nombre}</div>
-        <div class="dni-elem-reserva-lt data-elem-reserva-lt">${note.dni}</div>
-        <div class="celular-elem-reserva-lt data-elem-reserva-lt">${note.celular}</div>
-        <div class="lote-elem-reserva-lt data-elem-reserva-lt"><span>LOTE</span>${note.lote}</div>
-        <div class="fecha-elem-reserva-lt data-elem-reserva-lt">${formattedDate} </div>
-      </div>
+    // div.innerHTML = `
+    // <div class="container-elem-reserva-data-lt">
+    //   <div class="container-data-elem-reserva-lt">
+    //     <div class="image-regalo-elem-reserva-lt" ${cssRegalo} ><img src="${imageRegalo}"></div>
+    //     <div class="name-elem-reserva-lt data-elem-reserva-lt">${note.nombre}</div>
+    //     <div class="dni-elem-reserva-lt data-elem-reserva-lt">${note.dni}</div>
+    //     <div class="celular-elem-reserva-lt data-elem-reserva-lt">${note.celular}</div>
+    //     <div class="lote-elem-reserva-lt data-elem-reserva-lt"><span>LOTE</span>${note.lote}</div>
+    //     <div class="fecha-elem-reserva-lt data-elem-reserva-lt">${formattedDate} </div>
+    //   </div>
       
-    </div>
-    `; 
+    // </div>
+    // `; 
   
       // <div class="control-elem-reserva-lt">
       //   <div class="container-btn-control-elem">
