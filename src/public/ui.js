@@ -110,10 +110,12 @@ export const onHandleSubmit = (e) => {
 };
 
 export const giraRuleta = (rotacion) => {
-  const ruleta = document.querySelector('.container-ruleta-lt .ruleta-hg-lt');
-  if (ruleta) {
-    ruleta.style.transform = `rotate(calc(${rotacion} + 360deg * 11))`;
+  const ruletaD = document.querySelector('.container-ruleta-lt .ruleta-hg-lt');
+  if (ruletaD) {
+    ruletaD.style.transform = `rotate(calc(${rotacion} + 360deg * 11))`;
   }
+  console.log("GIRANDO");
+
 };
 
 // Escuchar el evento de giro de ruleta desde el servidor
