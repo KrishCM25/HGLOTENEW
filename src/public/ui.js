@@ -21,7 +21,7 @@ const noteUI = (note) => {
     cssRegalo = 'style="width: 40%;top: -20px;right: 10px;"';
   }else if(note.regalo == 'GIFTCARD'){
     imageRegalo = '/assets/images/giftcard-hg-92.webp';
-    cssRegalo = 'style="width: 40%;top: -20px;right: 10px;"';
+    cssRegalo = 'style="width: 44%;top: -20px;right: 10px;"';
   }else if(note.regalo == 'TV'){
     imageRegalo = '/assets/images/tv-hg-92.webp';
     cssRegalo = 'style="width: 60%;top: -25px;right: 0px;"';
