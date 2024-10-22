@@ -43,8 +43,8 @@ const noteUI = (note) => {
       <div class="container-data-elem-reserva-lt">
         <div class="image-regalo-elem-reserva-lt" ${cssRegalo} ><img src="${imageRegalo}"></div>
         <div class="name-elem-reserva-lt data-elem-reserva-lt">${note.nombre}</div>
-        <div class="dni-elem-reserva-lt data-elem-reserva-lt">${note.dni}</div>
-        <div class="celular-elem-reserva-lt data-elem-reserva-lt">${note.celular}</div>
+        <div class="dni-elem-reserva-lt data-elem-reserva-lt">DNI ${note.dni}</div>
+        <div class="celular-elem-reserva-lt data-elem-reserva-lt">TEL ${note.celular}</div>
         <div class="lote-elem-reserva-lt data-elem-reserva-lt"><span>LOTE</span>${note.lote}</div>
         <div class="fecha-elem-reserva-lt data-elem-reserva-lt">${formattedDate} </div>
       </div>
