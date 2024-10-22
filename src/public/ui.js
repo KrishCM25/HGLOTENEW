@@ -36,9 +36,9 @@ const noteUI = (note) => {
     cssRegalo = 'style="width: 70%;top: -30px;right: -20px;"';
   }
     // Convertir el objeto dniInfo a string usando JSON.stringify
+    // <div class="regalo-elem-reserva-lt data-elem-reserva-lt">${note.regalo} </div>
     div.classList.add('elem-reserva-data-lt');
     div.innerHTML = `
-    <div class="regalo-elem-reserva-lt data-elem-reserva-lt">${note.regalo} </div>
     <div class="container-elem-reserva-data-lt">
       <div class="container-data-elem-reserva-lt">
         <div class="image-regalo-elem-reserva-lt" ${cssRegalo} ><img src="${imageRegalo}"></div>
