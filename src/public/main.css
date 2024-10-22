@@ -80,7 +80,7 @@ input{
   background-color: #c0c0c0;
   margin-right: 10px;
   border-radius: 20px;
-  animation: skeleton-loading 1s linear infinite alternate;
+  animation: skeleton-loading 300ms linear infinite alternate;
 }
 @keyframes skeleton-loading {
   0% {
