@@ -18,6 +18,7 @@ body {
   font-family: var(--font-family-lt);
   height: 100vh;
   margin: 0;
+  scrollbar-color: transparent transparent;
 }
 div{
   box-sizing: border-box;
@@ -314,6 +315,9 @@ button.btn-form-lt {
 }
 
 @media screen and (max-width:768px){
+  body {
+    scrollbar-color: inherit;
+  }
   .container-flex-lt {
     flex-direction: column;
   }
