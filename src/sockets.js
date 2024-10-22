@@ -25,7 +25,7 @@ export default (io) => {
         celular: maskField(note.celular || '', 4)  // Ocultar los últimos 4 dígitos del celular (si existe)
       }));
 
-      io.emit("server:loadnotes", maskedNotes);
+      socket.emit("server:loadnotes", maskedNotes);
     };
 
     emitNotes();
@@ -97,32 +97,33 @@ export default (io) => {
           nombre: dniInfo.nombres || '',
           regalo:  regalo || 'consuelo',
         };
-
+        
+        if(regalo == 'REFRIGERADORA'){
+          rotacionRuleta = 5*60;
+        }else if(regalo == 'LAVADORA'){
+          rotacionRuleta = 1*60;
+        }else if(regalo == 'GIFTCARD'){
+          rotacionRuleta = 3*60;
+        }else if(regalo == 'TV'){
+          rotacionRuleta = 2*60;
+        }else if(regalo == 'PREM. CONSUELO'){
+          rotacionRuleta = 90;
+        }else if(regalo == 'VIAJE'){
+          rotacionRuleta = 0*60;
+        }else if(regalo == 'BICICLETA'){
+          rotacionRuleta = 4*60;
+        }
+          
         // Si no existe una nota con el mismo lote, se crea una nueva
         const newNote = new Note(noteData); // Crear la nota con la información del DNI
+        socket.emit("server:giraruleta", rotacionRuleta);
         const savedNote = await newNote.save();
         io.emit("server:newnote", savedNote); // Emitir la nota nueva a todos los clientes conectados
-        girarRuleta();
-        const girarRuleta = () =>{
-          if(regalo == 'REFRIGERADORA'){
-            rotacionRuleta = 5*60;
-          }else if(regalo == 'LAVADORA'){
-            rotacionRuleta = 1*60;
-          }else if(regalo == 'GIFTCARD'){
-            rotacionRuleta = 3*60;
-          }else if(regalo == 'TV'){
-            rotacionRuleta = 2*60;
-          }else if(regalo == 'PREM. CONSUELO'){
-            rotacionRuleta = 90;
-          }else if(regalo == 'VIAJE'){
-            rotacionRuleta = 0*60;
-          }else if(regalo == 'BICICLETA'){
-            rotacionRuleta = 4*60;
-          }
-          const ruleta = document.querySelector('.container-ruleta-lt .ruleta-hg-lt');
-          ruleta.style.transform = `rotate(calc(-${rotacionRuleta} + 360deg* 11))`;
+        
+      
+      
 
-        }
+        
       } catch (error) {
         console.error("Error al agregar una nueva nota:", error.response ? error.response.data : error.message);
         socket.emit("server:error", { message: "Error al agregar la nota." });
