@@ -84,6 +84,7 @@ input{
   display: flex;
   /* gap: 10px; */
   overflow-x: scroll;
+  overflow-y: none;
   margin: 20px 0;
   padding: 30px 0 10px 10px;
   user-select: none;
@@ -345,9 +346,10 @@ button.btn-form-lt {
   .elem-reserva-data-lt {
     padding-right: 5px;
   }
-  .container-list-data-lt{
-    /* flex-direction: column; */
-  }
+  .container-list-data-lt {
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+}
   button.btn-form-lt,
   form#ltForm{
     width: 100%;
