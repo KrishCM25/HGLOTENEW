@@ -11,7 +11,7 @@ const noteUI = (note) => {
   const div = document.createElement("div");
   const date =new Date(note.createdAt);
   const formattedDate = `${date.getDate()} de ${date.toLocaleString('es-PE', { month: 'long' })} del ${date.getFullYear()}`;
-  const imageRegalo ='';
+  let imageRegalo ='';
   if(note.regalo == 'REFRIGERADORA'){
     imageRegalo = '/assets/images/refri-hg-30.webp';
   }else if(note.regalo == 'LAVADORA'){
@@ -45,8 +45,8 @@ const noteUI = (note) => {
         <div class="fecha-elem-reserva-lt data-elem-reserva-lt">${formattedDate} </div>
       </div>
       
-      </div>
-      `;
+    </div>
+    `; 
   
       // <div class="control-elem-reserva-lt">
       //   <div class="container-btn-control-elem">
