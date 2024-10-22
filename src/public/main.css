@@ -329,7 +329,7 @@ button.btn-form-lt {
     width: 100%;
   }
   .container-list-data-lt{
-    flex-direction: column;
+    /* flex-direction: column; */
   }
   button.btn-form-lt,
   form#ltForm{
