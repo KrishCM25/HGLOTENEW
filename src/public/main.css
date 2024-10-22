@@ -82,8 +82,10 @@ input{
 }
 .container-list-data-lt{
   display: flex;
-  gap: 10px;
   user-select: none;
+}
+.elem-reserva-data-lt {
+  margin-right: 10px;
 }
 .container-title-lt{
   display: flex;
