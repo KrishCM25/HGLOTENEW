@@ -112,7 +112,8 @@ export const onHandleSubmit = (e) => {
 export const giraRuleta = (rotacion) => {
   const ruletaD = document.querySelector('.container-ruleta-lt .ruleta-hg-lt');
   if (ruletaD) {
-    ruletaD.style.transform = `rotate(calc(${rotacion}deg + 360deg * 11))`;
+    // ruletaD.style.transform = `rotate(calc(${rotacion}deg + 360deg * 11))`;
+    ruletaD.style.transform = `rotate(${rotacion}deg)`;
   }
   console.log("GIRANDO ",rotacion);
 
