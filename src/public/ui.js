@@ -20,7 +20,7 @@ const noteUI = (note) => {
     imageRegalo = '/assets/images/lavadora-hg-83.webp';
     cssRegalo = 'style="width: 40%;top: -20px;right: 10px;"';
   }else if(note.regalo == 'KIT'){
-    imageRegalo = '/assets/images/olla-hg-8736.webp';
+    imageRegalo = '/assets/images/ollas-hg-8736.webp';
     cssRegalo = 'style="width: 60%;top: -10px;right: 0px;"';
   }else if(note.regalo == 'REFRIGERADORA'){
     imageRegalo ='/assets/images/refri-hg-30.webp';
