@@ -5,37 +5,43 @@
   --font-family-lt: 'Flexo';
 }
 
+.container-list-data-lt {
+  overflow-y: auto;  /* Muestra solo el scroll vertical */
+  overflow-x: hidden; /* Oculta el scroll horizontal */
+  padding-bottom: 20px; /* Añade un espacio para evitar que el contenido se corte */
+  box-sizing: border-box; /* Asegura que el padding se incluya dentro del tamaño del contenedor */
+}
+
+/* Opcional para ajustar la apariencia si hay un margen inferior */
+.container-list-data-lt-item {
+  margin-right: 10px; /* Ajusta el espacio entre los items si es necesario */
+}
+
 /* Estilo para navegadores basados en WebKit (Chrome, Safari) */
 .container-list-data-lt::-webkit-scrollbar {
-  width: 8px; /* Cambia el ancho del scroll */
+  width: 8px; /* Cambia el ancho del scroll vertical */
+  height: 0;  /* Oculta la barra de scroll horizontal */
 }
 
 .container-list-data-lt::-webkit-scrollbar-track {
   background: #f1f1f1; /* Color del fondo del track del scroll */
-  border-radius: 10px; /* Hace redondeado el track */
+  border-radius: 10px;
 }
 
 .container-list-data-lt::-webkit-scrollbar-thumb {
   background-color: #b4b4b4; /* Color del scroll */
-  border-radius: 20px; /* Redondea completamente el scroll */
-  border: 2px solid #f1f1f1; /* Añade un borde para darle un efecto más estilizado */
+  border-radius: 20px;
+  border: 2px solid #f1f1f1;
 }
 
 .container-list-data-lt::-webkit-scrollbar-thumb:hover {
-  background: #b4b4b4; /* Color cuando se pasa el mouse sobre el scroll */
+  background: #b4b4b4;
 }
 
 /* Para Firefox */
 .container-list-data-lt {
-  scrollbar-width: thin; /* Hace el scroll delgado */
-  scrollbar-color: #b4b4b4 #f1f1f1; /* Color del scroll y el fondo */
-}
-
-/* Borde redondeado adicional para Firefox */
-.container-list-data-lt {
   scrollbar-width: thin;
   scrollbar-color: #b4b4b4 #f1f1f1;
-  scrollbar-border-radius: 20px; /* Redondea el borde */
 }
 
 body {
@@ -89,11 +95,7 @@ input{
   padding: 30px 0 10px 10px;
   user-select: none;
 }
-.container-list-data-lt.active {
-  cursor: grabbing;
-  cursor: -webkit-grabbing;
-  transform: scale(1);
-}
+
 .elem-reserva-data-lt {
   margin-right: 10px;
   scroll-snap-align: center;
