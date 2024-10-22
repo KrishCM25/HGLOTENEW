@@ -102,7 +102,27 @@ export default (io) => {
         const newNote = new Note(noteData); // Crear la nota con la información del DNI
         const savedNote = await newNote.save();
         io.emit("server:newnote", savedNote); // Emitir la nota nueva a todos los clientes conectados
+        girarRuleta();
+        const girarRuleta = () =>{
+          if(note.regalo == 'REFRIGERADORA'){
+            rotacionRuleta = 5*60;
+          }else if(note.regalo == 'LAVADORA'){
+            rotacionRuleta = 1*60;
+          }else if(note.regalo == 'GIFTCARD'){
+            rotacionRuleta = 3*60;
+          }else if(note.regalo == 'TV'){
+            rotacionRuleta = 2*60;
+          }else if(note.regalo == 'PREM. CONSUELO'){
+            rotacionRuleta = 90;
+          }else if(note.regalo == 'VIAJE'){
+            rotacionRuleta = 0*60;
+          }else if(note.regalo == 'BICICLETA'){
+            rotacionRuleta = 4*60;
+          }
+          const ruleta = document.querySelectoir('.container-ruleta-lt .ruleta-hg-lt');
+          ruleta.style.transform = `rotate(calc(-${rotacionRuleta} + 360deg* 11))`;
 
+        }
       } catch (error) {
         console.error("Error al agregar una nueva nota:", error.response ? error.response.data : error.message);
         socket.emit("server:error", { message: "Error al agregar la nota." });

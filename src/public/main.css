@@ -215,6 +215,8 @@ button.btn-form-lt {
 .container-ruleta-lt .ruleta-hg-lt {
   max-width: 430px;
   width: 100%;
+  transition: all 9s cubic-bezier(0.14, -0.31, 0, 0.96);
+  transform: rotate(calc(0deg* 11));
 }
 .puntero-hg-lt{
   position: absolute;
