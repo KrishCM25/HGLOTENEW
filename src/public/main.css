@@ -4,18 +4,38 @@
   --color-gray-lt: #c0c0c0;
   --font-family-lt: 'Flexo';
 }
-container-list-data-lt::-webkit-scrollbar {
-  width: 12px;               /* width of the entire scrollbar */
+
+
+/* Estilo para navegadores basados en WebKit (Chrome, Safari) */
+.container-list-data-lt::-webkit-scrollbar {
+  width: 8px; /* Cambia el ancho del scroll */
+  border-radius: 10px; /* Hace el scroll más redondeado */
 }
 
-container-list-data-lt::-webkit-scrollbar-track {
-  background: orange;        /* color of the tracking area */
+.container-list-data-lt::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Color del fondo del track del scroll */
+  border-radius: 10px; /* Hace redondeado el track */
 }
 
-container-list-data-lt::-webkit-scrollbar-thumb {
-  background-color: blue;    /* color of the scroll thumb */
-  border-radius: 20px;       /* roundness of the scroll thumb */
-  border: 3px solid orange;  /* creates padding around scroll thumb */
+.container-list-data-lt::-webkit-scrollbar-thumb {
+  background-color: #b4b4b4; /* Color del scroll */
+  border-radius: 10px; /* Hace el scroll más redondeado */
+  border: 2px solid #f1f1f1; /* Añade un borde para darle un efecto más estilizado */
+}
+
+.container-list-data-lt::-webkit-scrollbar-thumb:hover {
+  background: #b4b4b4; /* Color cuando se pasa el mouse sobre el scroll */
+}
+
+/* Para Firefox */
+.container-list-data-lt {
+  scrollbar-width: thin; /* Hace el scroll delgado */
+  scrollbar-color: #888 #f1f1f1; /* Color del scroll y el fondo */
+}
+
+/* Para otros navegadores */
+.container-list-data-lt {
+  overflow: auto;
 }
 
 body {
