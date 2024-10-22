@@ -12,37 +12,7 @@
   box-sizing: border-box; /* Asegura que el padding se incluya dentro del tamaño del contenedor */
 }
 
-/* Opcional para ajustar la apariencia si hay un margen inferior */
-.container-list-data-lt-item {
-  margin-right: 10px; /* Ajusta el espacio entre los items si es necesario */
-}
 
-/* Estilo para navegadores basados en WebKit (Chrome, Safari) */
-.container-list-data-lt::-webkit-scrollbar {
-  width: 8px; /* Cambia el ancho del scroll vertical */
-  height: 0;  /* Oculta la barra de scroll horizontal */
-}
-
-.container-list-data-lt::-webkit-scrollbar-track {
-  background: #f1f1f1; /* Color del fondo del track del scroll */
-  border-radius: 10px;
-}
-
-.container-list-data-lt::-webkit-scrollbar-thumb {
-  background-color: #b4b4b4; /* Color del scroll */
-  border-radius: 20px;
-  border: 2px solid #f1f1f1;
-}
-
-.container-list-data-lt::-webkit-scrollbar-thumb:hover {
-  background: #b4b4b4;
-}
-
-/* Para Firefox */
-.container-list-data-lt {
-  scrollbar-width: thin;
-  scrollbar-color: #b4b4b4 #f1f1f1;
-}
 
 body {
   font-family: var(--font-family-lt);
