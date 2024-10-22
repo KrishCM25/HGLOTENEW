@@ -109,14 +109,15 @@ export const onHandleSubmit = (e) => {
   }
 };
 
-// Escuchar la respuesta de rotación del servidor
 export const giraRuleta = (rotacion) => {
   const ruleta = document.querySelector('.container-ruleta-lt .ruleta-hg-lt');
-  ruleta.style.transform = `rotate(calc(${rotacion} + 360deg * 11))`;
+  if (ruleta) {
+    ruleta.style.transform = `rotate(calc(${rotacion} + 360deg * 11))`;
+  }
 };
 
 // Escuchar el evento de giro de ruleta desde el servidor
-onGira("client:giraruleta", (rotacion) => {
+onGira((rotacion) => {
   console.log("Recibida rotación desde el servidor", rotacion);
   giraRuleta(rotacion); // Llama a la función para girar la ruleta
 });

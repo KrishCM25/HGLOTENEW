@@ -1,11 +1,12 @@
 import { appendNote, renderNotes, fillForm, onHandleSubmit } from "./ui.js";
-import { loadNotes, onNewNote, onSelected } from "./sockets.js";
+import { loadNotes, onNewNote, onSelected, onGira } from "./sockets.js";
 
-// Load initial Notes
+// Cargar notas iniciales
 window.addEventListener("DOMContentLoaded", () => {
   loadNotes(renderNotes);
   onNewNote(appendNote);
   onSelected(fillForm);
+  onGira(giraRuleta); // Escuchar la rotación de la ruleta
 });
 
 // Save a new Note

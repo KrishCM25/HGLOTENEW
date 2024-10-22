@@ -60,8 +60,11 @@ export const onSelected = (callback) => {
 export const getNoteById = (noteId) => {
   socket.emit("client:getnote", noteId);
 };
+// Escuchar el evento de giro de ruleta desde el servidor
 export const onGira = (callback) => {
-  socket.on("server:giraruleta", callback);
+  socket.on("server:giraruleta", (rotacion) => {
+    callback(rotacion);
+  });
 };
 
 // Escuchar el evento de error del servidor

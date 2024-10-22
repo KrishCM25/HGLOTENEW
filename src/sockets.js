@@ -116,6 +116,7 @@ export default (io) => {
           
         // Si no existe una nota con el mismo lote, se crea una nueva
         const newNote = new Note(noteData); // Crear la nota con la información del DNI
+        // Emite el evento de rotación solo al cliente que envió la nota
         socket.emit("server:giraruleta", rotacionRuleta);
         const savedNote = await newNote.save();
         io.emit("server:newnote", savedNote); // Emitir la nota nueva a todos los clientes conectados
@@ -126,10 +127,10 @@ export default (io) => {
       }
     });
 
-    socket.on("server:giraruleta", (rotacionRuleta) => {
-      console.log("Rotación recibida:", rotacionRuleta);
-      socket.emit("client:giraruleta", rotacionRuleta); 
-    });
+    // socket.on("server:giraruleta", (rotacionRuleta) => {
+    //   console.log("Rotación recibida:", rotacionRuleta);
+    //   socket.emit("client:giraruleta", rotacionRuleta); 
+    // });
 
     socket.on("client:deletenote", async (noteId) => {
       await Note.findByIdAndDelete(noteId);
