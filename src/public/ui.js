@@ -69,8 +69,8 @@ const noteUI = (note) => {
 
 export const renderNotes = (notes) => {
   savedId = "";
-  notesList.innerHTML = "";
-  notes.forEach((note) => notesList.append(noteUI(note)));
+  // notesList.innerHTML = "";
+  // notes.forEach((note) => notesList.append(noteUI(note)));
 };
 
 export const appendNote = (note) => {
