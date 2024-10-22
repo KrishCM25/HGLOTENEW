@@ -13,35 +13,27 @@ const noteUI = (note) => {
   const formattedDate = `${date.getDate()} de ${date.toLocaleString('es-PE', { month: 'long' })} del ${date.getFullYear()}`;
   let imageRegalo ='';
   let cssRegalo ='';
-  let rotacionRuleta ='';
   if(note.regalo == 'REFRIGERADORA'){
     imageRegalo = '/assets/images/refri-hg-30.webp';
     cssRegalo = 'style="width: 27%;top: -20px;right: 10px;"';
-    rotacionRuleta = 5*60;
   }else if(note.regalo == 'LAVADORA'){
     imageRegalo = '/assets/images/lavadora-hg-83.webp';
     cssRegalo = 'style="width: 40%;top: -20px;right: 10px;"';
-    rotacionRuleta = 1*60;
   }else if(note.regalo == 'GIFTCARD'){
     imageRegalo = '/assets/images/giftcard-hg-92.webp';
     cssRegalo = 'style="width: 44%;top: -20px;right: 10px;"';
-    rotacionRuleta = 3*60;
   }else if(note.regalo == 'TV'){
     imageRegalo = '/assets/images/tv-hg-92.webp';
     cssRegalo = 'style="width: 60%;top: -25px;right: 0px;"';
-    rotacionRuleta = 2*60;
   }else if(note.regalo == 'PREM. CONSUELO'){
     imageRegalo = '/assets/images/ollas-hg-8736.webp'; 
     cssRegalo = 'style="width: 60%;top: -20px;right: 10px;"';
-    rotacionRuleta = 90;
   }else if(note.regalo == 'VIAJE'){
     imageRegalo = '/assets/images/avion-hg-982.webp';
     cssRegalo = 'style="width: 60%;top: -10px;right: 0px;"';
-    rotacionRuleta = 0*60;
   }else if(note.regalo == 'BICICLETA'){
     imageRegalo = '/assets/images/bici-hg-98.webp';
     cssRegalo = 'style="width: 70%;top: -30px;right: -20px;"';
-    rotacionRuleta = 4*60;
   }
     // Convertir el objeto dniInfo a string usando JSON.stringify
     // <div class="regalo-elem-reserva-lt data-elem-reserva-lt">${note.regalo} </div>

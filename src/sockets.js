@@ -119,7 +119,7 @@ export default (io) => {
           }else if(regalo == 'BICICLETA'){
             rotacionRuleta = 4*60;
           }
-          const ruleta = document.querySelectoir('.container-ruleta-lt .ruleta-hg-lt');
+          const ruleta = document.querySelector('.container-ruleta-lt .ruleta-hg-lt');
           ruleta.style.transform = `rotate(calc(-${rotacionRuleta} + 360deg* 11))`;
 
         }
