@@ -22,9 +22,6 @@ const noteUI = (note) => {
   }else if(note.regalo == 'KIT'){
     imageRegalo = '/assets/images/ollas-hg-8736.webp';
     cssRegalo = 'style="width: 60%;top: -10px;right: 0px;"';
-  }else if(note.regalo == 'REFRIGERADORA'){
-    imageRegalo ='/assets/images/refri-hg-30.webp';
-    cssRegalo = 'style="width: 40%;top: -20px;right: 10px;"';
   }else if(note.regalo == 'GIFTCARD'){
     imageRegalo = '/assets/images/giftcard-hg-92.webp';
     cssRegalo = 'style="width: 40%;top: -20px;right: 10px;"';
@@ -42,9 +39,9 @@ const noteUI = (note) => {
     cssRegalo = 'style="width: 40%;top: -20px;right: 10px;"';
   }
     // Convertir el objeto dniInfo a string usando JSON.stringify
-    // <div class="regalo-elem-reserva-lt data-elem-reserva-lt">${note.regalo} </div>
-  div.classList.add('elem-reserva-data-lt');
-  div.innerHTML = `
+    div.classList.add('elem-reserva-data-lt');
+    div.innerHTML = `
+    <div class="regalo-elem-reserva-lt data-elem-reserva-lt">${note.regalo} </div>
     <div class="container-elem-reserva-data-lt">
       <div class="container-data-elem-reserva-lt">
         <div class="image-regalo-elem-reserva-lt" ${cssRegalo} ><img src="${imageRegalo}"></div>
