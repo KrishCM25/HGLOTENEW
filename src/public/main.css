@@ -306,11 +306,15 @@ button.btn-form-lt {
   box-shadow: rgba(0, 0, 0, 0.73) 7px 8px 4px -2px;
   overflow: visible;
 }
-.lote-elem-reserva-lt.data-elem-reserva-lt:before {
-  position: relative;
+.lote-elem-reserva-lt span{
+    position: relative;
   content: "Lote";
   font-family: "Bebas Neue";
   font-size: 20px;
+}
+.lote-elem-reserva-lt.data-elem-reserva-lt:before {
+  content: "";
+  position: absolute;
 }
 .lote-elem-reserva-lt.data-elem-reserva-lt:after {
   content: "";
