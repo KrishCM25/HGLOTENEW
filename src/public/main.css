@@ -344,6 +344,9 @@ button.btn-form-lt {
   .container-data-lt {
     width: 100%;
   }
+  .elem-reserva-data-lt {
+    padding-right: 5px;
+  }
   .container-list-data-lt{
     /* flex-direction: column; */
   }
