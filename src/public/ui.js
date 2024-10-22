@@ -25,7 +25,7 @@ const noteUI = (note) => {
   }else if(note.regalo == 'TV'){
     imageRegalo = '/assets/images/tv-hg-92.webp';
   }else if(note.regalo == 'PREM. CONSUELO'){
-    imageRegalo = '/assets/images/ollas-hg-8736.webp';
+    imageRegalo = '/assets/images/ollas-hg-8736.webp'; 
   }else if(note.regalo == 'VIAJE'){
     imageRegalo = '/assets/images/avion-hg-982.webp';
   }else if(note.regalo == 'BICICLETA'){

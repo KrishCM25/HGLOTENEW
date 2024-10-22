@@ -63,7 +63,7 @@ export default (io) => {
           const premio = ['BICICLETA','LAVADORA','GIFTCARD', 'VIAJE', 'KIT', 'TV', 'REFRIGERADRA','PREM. CONSUELO'];
           const indiceAleatorio = Math.floor(Math.random() * premio.length);
           return premio[indiceAleatorio].toUpperCase();
-        };
+        }; 
 
         // Verificar si ya existe una nota con el mismo valor de "lote"
         const existingNote = await Note.findOne({ lote: data.lote });
