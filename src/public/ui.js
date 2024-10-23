@@ -10,10 +10,17 @@ let savedId = "";
 const noteUI = (note) => {
   const div = document.createElement("div");
   const date =new Date(note.createdAt);
-  const formattedDate = `${date.getDate()} de ${date.toLocaleString('es-PE', { month: 'long' })} del ${date.getFullYear()}`;
 
-  const diffInHours = (new Date() - new Date(note.createdAt)) / (1000 * 60 * 60);
+
+  // Usar la función para mostrar la fecha formateada
+  const formattedDate = formatearFechaRelativa(date);
+
+  // Lógica para determinar si es 'Nuevo' o no (usando 24 horas)
+  const diffInHours = (new Date() - date) / (1000 * 60 * 60);
+
   const isNewNoteText = diffInHours < 24 ? 'Nuevo' : '';
+
+  
 
   let imageRegalo ='';
   let cssRegalo ='';
@@ -147,3 +154,24 @@ const clearForm = () => {
 };
 
   
+// Función para calcular el formato relativo
+const formatearFechaRelativa = (fecha) => {
+    const ahora = new Date();
+    const diferenciaMs = ahora - fecha;
+    const diferenciaSegundos = Math.floor(diferenciaMs / 1000);
+    const diferenciaMinutos = Math.floor(diferenciaSegundos / 60);
+    const diferenciaHoras = Math.floor(diferenciaMinutos / 60);
+    const diferenciaDias = Math.floor(diferenciaHoras / 24);
+
+    if (diferenciaSegundos < 60) {
+        return "Hace instantes";
+    } else if (diferenciaMinutos < 60) {
+        return `Hace ${diferenciaMinutos} ${diferenciaMinutos === 1 ? 'minuto' : 'minutos'}`;
+    } else if (diferenciaHoras < 24) {
+        return `Hace ${diferenciaHoras} ${diferenciaHoras === 1 ? 'hora' : 'horas'}`;
+    } else if (diferenciaDias < 5) {
+        return `Hace ${diferenciaDias} ${diferenciaDias === 1 ? 'día' : 'días'}`;
+    } else {
+        return `${fecha.getDate()} de ${fecha.toLocaleString('es-PE', { month: 'long' })} del ${fecha.getFullYear()}`;
+    }
+};
