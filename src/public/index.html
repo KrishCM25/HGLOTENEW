@@ -227,33 +227,42 @@
     <script>
 
       // Seleccionamos el input donde se ingresa el lote, los elementos que contienen los lotes existentes y el div del estado
-      const loteInputEnter = document.querySelector('input[name="lote"]');
+      const loteInputA = document.querySelector('input[name="lote"]');
       const lotesExistentes = document.querySelectorAll('.lote-elem-reserva-lt');
       const statusLoteDiv = document.querySelector('.status-lote'); // Div para mostrar el estado
 
       // Función que valida si el lote ya está subido o no
       function verificarLote() {
-          const loteIngresado = loteInputEnter.value.trim();
+          const loteIngresado = loteInputA.value.trim();
+
+          // Si el valor ingresado no es un número válido, salir de la función
+          if (!loteIngresado || isNaN(loteIngresado)) {
+              statusLoteDiv.style.backgroundColor = ''; // No cambiar color si el valor no es válido
+              return;
+          }
+
           let loteEncontrado = false;
 
           // Recorremos todos los lotes existentes para ver si alguno coincide con el lote ingresado
           lotesExistentes.forEach(lote => {
               const loteData = lote.getAttribute('data-lote');
-              if (loteIngresado === loteData) {
+              if (parseInt(loteIngresado) === parseInt(loteData)) {
                   loteEncontrado = true; // Si encontramos coincidencia, marcamos como encontrado
               }
           });
 
           // Modificamos el atributo data-status del input según si se encontró el lote o no
           if (loteEncontrado) {
+              loteInputA.setAttribute('data-status', 'OFF'); // El lote ya existe, estado OFF
               statusLoteDiv.style.backgroundColor = 'red';  // Cambiar a rojo
           } else {
+              loteInputA.setAttribute('data-status', 'ON');  // El lote no existe, estado ON
               statusLoteDiv.style.backgroundColor = 'green';  // Cambiar a verde
           }
       }
 
       // Agregar un evento listener para verificar el lote cada vez que se ingresa un valor
-      loteInputEnter.addEventListener('input', verificarLote);
+      loteInputA.addEventListener('input', verificarLote);
 
     </script>
 
