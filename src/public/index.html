@@ -228,11 +228,11 @@
 
       // Seleccionamos el input donde se ingresa el lote, los elementos que contienen los lotes existentes y el div del estado
       const loteInputA = document.querySelector('input[name="lote"]');
+      const lotesExistentes = document.querySelectorAll('.lote-elem-reserva-lt');
       const statusLoteDiv = document.querySelector('.status-lote'); // Div para mostrar el estado
-      
+
       // Función que valida si el lote ya está subido o no
       function verificarLote() {
-        const lotesExistentes = document.querySelectorAll('.lote-elem-reserva-lt');
           const loteIngresado = loteInputA.value.trim();
 
           // Si el valor ingresado no es un número válido, salir de la función
