@@ -436,7 +436,7 @@ span.tag-new-elem-reserva-lt.Nuevo {
   place-content: center;
   font-family: 'Flexo-Demi';
   color: #fff;
-  width: calc(100% - 3px);
+  width: calc(100% - 4px);
 }
 
 @media screen and (max-width:768px){
