@@ -320,7 +320,7 @@ button.btn-form-lt {
   border-radius: 0 0 10px 10px;
   background: #630080;
 }
-.container-data-elem-reserva-lt:after {
+.regalo-elem-reserva-lt {
   bottom: 10px;
   position: absolute;
   content: 'GIFTCARD';
@@ -373,7 +373,7 @@ button.btn-form-lt {
   font-size: 10px;
   color: #868f9e;
 }
-.regalo-elem-reserva-lt{
+.lote-elem-reserva-lt.data-elem-reserva-lt{
   flex-direction: column;
   position: absolute;
   top: -10px;
