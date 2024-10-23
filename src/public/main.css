@@ -421,6 +421,18 @@ button.btn-form-lt {
   height: 10px;
   background: linear-gradient(to right top, rgb(255, 152, 0) 50%, transparent 0px);
 }
+span.tag-new-elem-reserva-lt.Nuevo {
+  position: relative;
+  border-radius: 2px;
+  background: linear-gradient(90deg, rgb(102 7 137) 65%, rgb(192 0 255) 100%);
+  padding: 1px 3px;
+  font-size: 9px;
+  /* top: 31%; */
+  left: 50%;
+  transform: translate(-50%, 0%);
+  text-transform: uppercase;
+  width: fit-content;
+}
 
 @media screen and (max-width:768px){
   body {

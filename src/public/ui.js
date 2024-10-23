@@ -46,6 +46,7 @@ const noteUI = (note) => {
     <div class="container-elem-reserva-data-lt">
       <div class="container-data-elem-reserva-lt">
         <div class="image-regalo-elem-reserva-lt" ${cssRegalo} ><img src="${imageRegalo}"></div>
+        <span class="tag-new-elem-reserva-lt ${isNewNoteText}">${isNewNoteText}</span>
         <div class="name-elem-reserva-lt data-elem-reserva-lt">${note.nombre}</div>
         <div class="dni-elem-reserva-lt data-elem-reserva-lt">DNI ${note.dni}</div>
         <div class="celular-elem-reserva-lt data-elem-reserva-lt">TEL ${note.celular}</div>
@@ -53,7 +54,6 @@ const noteUI = (note) => {
         <div class="fecha-elem-reserva-lt data-elem-reserva-lt">${formattedDate} </div>
         <span class="regalo-elem-reserva-lt">${note.regalo}</span>
         <span style="background: url(/assets/images/LOGO-HG-MINI-23.png);width: 15px;height: 15px;position: absolute;z-index: 3;bottom: 10px;right: 5px;background-repeat: no-repeat;background-size: contain;opacity: .6;"></span>
-        <span class="tag-new-elem-reserva-lt ${isNewNoteText}">${isNewNoteText}</span>
       </div>
       
     </div>
