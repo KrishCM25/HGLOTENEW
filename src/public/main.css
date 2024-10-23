@@ -436,6 +436,8 @@ span.tag-new-elem-reserva-lt.Nuevo {
   display: flex;
   justify-content: center;
   align-items: center;
+  place-content: center;
+  font-family: 'Flexo-Demi';
 }
 
 @media screen and (max-width:768px){
