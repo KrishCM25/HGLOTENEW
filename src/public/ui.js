@@ -11,6 +11,10 @@ const noteUI = (note) => {
   const div = document.createElement("div");
   const date =new Date(note.createdAt);
   const formattedDate = `${date.getDate()} de ${date.toLocaleString('es-PE', { month: 'long' })} del ${date.getFullYear()}`;
+
+  const diffInHours = (new Date() - new Date(note.createdAt)) / (1000 * 60 * 60);
+  const isNewNoteText = diffInHours < 24 ? 'Nuevo' : '';
+
   let imageRegalo ='';
   let cssRegalo ='';
   if(note.regalo == 'REFRIGERADORA'){
@@ -49,6 +53,7 @@ const noteUI = (note) => {
         <div class="fecha-elem-reserva-lt data-elem-reserva-lt">${formattedDate} </div>
         <span class="regalo-elem-reserva-lt">${note.regalo}</span>
         <span style="background: url(/assets/images/LOGO-HG-MINI-23.png);width: 15px;height: 15px;position: absolute;z-index: 3;bottom: 10px;right: 5px;background-repeat: no-repeat;background-size: contain;opacity: .6;"></span>
+        <span class="tag-new-elem-reserva-lt ${isNewNoteText}">${isNewNoteText}</span>
       </div>
       
     </div>
