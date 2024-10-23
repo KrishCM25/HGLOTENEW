@@ -456,7 +456,14 @@ span.tag-new-elem-reserva-lt.Nuevo {
 .puntero-hg-lt {
   animation: rotatePointer 1s ease-in-out infinite alternate;
 }
-
+.status-lote{
+  background:#868f9e;
+  width: 10px;
+  height: 100%;
+  position: relative;
+  left: 0;
+  top: 0;
+}
 
 @keyframes rotatePointer {
   0% {
