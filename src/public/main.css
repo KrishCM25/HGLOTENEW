@@ -427,7 +427,7 @@ span.tag-new-elem-reserva-lt.Nuevo {
   background: linear-gradient(90deg, rgb(102 7 137) 65%, rgb(192 0 255) 100%);
   padding: 2px 3px;
   font-size: 8px;
-  bottom: 0px;
+  bottom: -1px;
   text-transform: uppercase;
   line-height: 1;
   display: flex;
@@ -436,7 +436,7 @@ span.tag-new-elem-reserva-lt.Nuevo {
   place-content: center;
   font-family: 'Flexo-Demi';
   color: #fff;
-  width: 100%;
+  width: calc(100% - 3px);
 }
 
 @media screen and (max-width:768px){
