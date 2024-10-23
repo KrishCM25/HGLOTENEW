@@ -63,7 +63,7 @@ export default (io) => {
           const premios = [
             { nombre: 'BICICLETA', probabilidad: 7 },  
             { nombre: 'LAVADORA', probabilidad: 5 },    
-            { nombre: 'GIFTCARD', probabilidad: 4 },   
+            { nombre: 'GIFTCARD', probabilidad: 4 },
             { nombre: 'VIAJE', probabilidad: 1 },
             { nombre: 'TV', probabilidad: 5 },
             { nombre: 'REFRIGERADORA', probabilidad: 4 },

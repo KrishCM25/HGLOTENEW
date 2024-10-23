@@ -180,6 +180,55 @@ form#ltForm {
   font-size: 13px;
   font-weight: 600;
 }
+.container-ruleta-lt{
+  position: relative;
+}
+.premios-ruleta-lt-container{
+  position: absolute;
+}
+
+
+img.avion-ruleta {
+  position: absolute;
+  top: -23%;
+  left: 40%;
+  width: 350px;
+  transform: translateX(-50%);
+}
+img.tv-ruleta {
+  position: absolute;
+  top: -70px;
+  left: 46%;
+  z-index: 0;
+  width: 110px;
+  transform: translateX(-50%);
+}
+img.bici-ruleta {
+  position: absolute;
+  top: -110px;
+  left: 66%;
+  z-index: 1;
+  width: 240px;
+  transform: translateX(-50%);
+}
+img.refrigeradora-ruleta {
+  position: absolute;
+  top: -113px;
+  left: 60%;
+  z-index: 0;
+  width: 80px;
+  transform: translateX(-50%);
+}
+img.lavadora-ruleta {
+  position: absolute;
+  top: -79px;
+  left: 50%;
+  z-index: 0;
+  width: 95px;
+  transform: translateX(-50%);
+}
+
+
 .container-ruleta-lt:before {
   content: '';
   position: absolute;
