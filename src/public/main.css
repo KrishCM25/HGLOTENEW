@@ -57,6 +57,7 @@ input{
   gap: 20px;
   padding: 10px;
   pointer-events: none;
+  user-select: none;
 }
 .container-list-data-lt {
   display: flex;
