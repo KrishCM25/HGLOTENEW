@@ -422,22 +422,23 @@ button.btn-form-lt {
   background: linear-gradient(to right top, rgb(255, 152, 0) 50%, transparent 0px);
 }
 span.tag-new-elem-reserva-lt.Nuevo {
-  position: relative;
+  position: absolute;
   border-radius: 2px;
   background: linear-gradient(90deg, rgb(102 7 137) 65%, rgb(192 0 255) 100%);
   padding: 2px 3px;
-  font-size: 9px;
-  /* top: 31%; */
-  left: 50%;
-  transform: translate(-50%, 0%);
+  font-size: 8px;
+  bottom: 0;
+  /* left: 50%; */
+  /* transform: translate(-50%, 0%); */
   text-transform: uppercase;
-  width: fit-content;
+  /* width: fit-content; */
   line-height: 1;
   display: flex;
   justify-content: center;
   align-items: center;
   place-content: center;
   font-family: 'Flexo-Demi';
+  color: #fff;
 }
 
 @media screen and (max-width:768px){
