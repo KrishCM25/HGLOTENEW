@@ -438,6 +438,12 @@ span.tag-new-elem-reserva-lt.Nuevo {
   color: #fff;
   width: calc(100% - 4px);
 }
+.celular-elem-reserva-lt.data-elem-reserva-lt span {
+  color: #15cbd6;
+}
+.dni-elem-reserva-lt.data-elem-reserva-lt span {
+  color: #ff8700;
+}
 
 @media screen and (max-width:768px){
   body {
