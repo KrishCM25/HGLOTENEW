@@ -432,6 +432,7 @@ button.btn-form-lt {
   .container-form-lt,
   .container-data-lt {
     width: 100%;
+    overflow: hidden;
   }
   .elem-reserva-data-lt {
     padding-right: 5px;
