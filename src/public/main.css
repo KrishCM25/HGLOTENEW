@@ -31,7 +31,7 @@ input{
 
 .container-principal-lt{
   display:flex;
-  padding: 10px;
+  padding: 30px 10px 10px;
 }
 .container-flex-lt {
   display: flex;
