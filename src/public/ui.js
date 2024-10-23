@@ -48,6 +48,7 @@ const noteUI = (note) => {
         <div class="lote-elem-reserva-lt data-elem-reserva-lt"><span>LOTE</span>${note.lote}</div>
         <div class="fecha-elem-reserva-lt data-elem-reserva-lt">${formattedDate} </div>
         <span class="regalo-elem-reserva-lt">${note.regalo}</span>
+        <span style="background="url(/assets/images/LOGO-HG-MINI-23.png)"></span>
       </div>
       
     </div>
