@@ -446,6 +446,22 @@ span.tag-new-elem-reserva-lt.Nuevo {
   color: #ff8700;
 }
 
+.puntero-hg-lt {
+  animation: rotatePointer 7s ease-in-out;
+}
+
+@keyframes rotatePointer {
+  0% {
+      transform: rotate(0deg);
+  }
+  50% {
+      transform: rotate(40deg);
+  }
+  100% {
+      transform: rotate(0deg);
+  }
+}
+
 @media screen and (max-width:768px){
   body {
     scrollbar-color: inherit;
