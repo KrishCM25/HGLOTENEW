@@ -16,7 +16,7 @@ export default (io) => {
 
     // Función para enviar todas las notas al cliente
     const emitNotes = async () => {
-      const notes = await Note.find();
+      const notes = await Note.find().sort({ createdAt: -1 });
 
       // Aplicar la máscara de DNI y celular antes de enviar
       const maskedNotes = notes.map(note => ({
