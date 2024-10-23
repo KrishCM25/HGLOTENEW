@@ -432,6 +432,10 @@ span.tag-new-elem-reserva-lt.Nuevo {
   transform: translate(-50%, 0%);
   text-transform: uppercase;
   width: fit-content;
+  line-height: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media screen and (max-width:768px){
