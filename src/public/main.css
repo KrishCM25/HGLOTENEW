@@ -447,18 +447,19 @@ span.tag-new-elem-reserva-lt.Nuevo {
 }
 
 .puntero-hg-lt {
-  animation: rotatePointer 7s ease-in-out;
+  animation: rotatePointer 1s ease-in-out infinite alternate;
 }
+
 
 @keyframes rotatePointer {
   0% {
-      transform: rotate(0deg);
+      transform: translate(-57%, -64%) rotate(-20deg);
   }
   50% {
-      transform: rotate(40deg);
+      transform: translate(-50%, -65%) rotate(0deg);
   }
   100% {
-      transform: rotate(0deg);
+      transform: translate(-44%, -64%) rotate(20deg);
   }
 }
 
