@@ -335,6 +335,7 @@ button.btn-form-lt {
   width: 100%;
   -webkit-filter: drop-shadow(-6px 5px 2px #000);
   filter: drop-shadow(-6px 5px 2px #000);
+  pointer-events: none;
 }
 .data-elem-reserva-lt {
   font-family: 'Flexo-Demi';
