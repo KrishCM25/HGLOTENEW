@@ -47,6 +47,9 @@ input{
   display: flex;
   flex-direction: column;
   gap: 20px;
+  background: #ffffffb5;
+  padding: 20px;
+  border-radius: 20px;
 }
 .container-data-lt {
   width: 60%;
