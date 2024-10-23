@@ -253,7 +253,7 @@ img.lavadora-ruleta {
 }
 button.btn-form-lt {
   padding: 8px 16px;
-  background-color: var(--color-primary-lt);
+  background-color: #acacac;
   height: 40px;
   border-radius: 20px;
   border: none;
@@ -267,6 +267,9 @@ button.btn-form-lt {
   cursor: pointer;
   width: 100%;
   width: 288px;
+}
+button.btn-form-lt.active {
+  background-color: var(--color-primary-lt);
 }
 .container-ruleta-lt{
   position: relative;

@@ -47,7 +47,7 @@
       <div class="elem-reserva-data-lt-load"></div>
       <div class="elem-reserva-data-lt-load"></div>
       <div class="elem-reserva-data-lt-load"></div>
-      <div class="elem-reserva-data-lt-load"></div>
+      <div class="elem-reserva-data-lt-load"></div>  
       <div class="elem-reserva-data-lt-load"></div>
       <div class="elem-reserva-data-lt-load"></div>
       <div class="elem-reserva-data-lt-load"></div>
@@ -189,6 +189,36 @@
           input.value = maxValue;
         }
       }
+    </script>
+
+    <script>
+      // Selecciona los campos de entrada y el botón
+      const dniInput = document.querySelector('input[name="dni"]');
+      const loteInput = document.querySelector('input[name="lote"]');
+      const celularInput = document.querySelector('input[name="celular"]'); // Nuevo campo celular
+      const submitButton = document.querySelector('.btn-form-lt');
+
+      // Función para verificar si los campos están llenos
+      function validarFormulario() {
+          const dniValido = dniInput.value.trim() !== "";  // Comprueba si el campo de DNI no está vacío
+          const loteValido = loteInput.value.trim() !== "";  // Comprueba si el campo de lote no está vacío
+          const celularValido = celularInput.value.trim() !== "";  // Comprueba si el campo de celular no está vacío
+          
+          // Habilita el botón si todos los campos están llenos, de lo contrario, lo deshabilita
+          if (dniValido && loteValido && celularValido) {
+              submitButton.add.classList('active')  // Habilita el botón
+          } else {
+            submitButton.remove.classList('active')  // Deshabilita el botón
+          }
+      }
+
+      // Añadir eventos para verificar el estado de los campos cuando cambian
+      dniInput.addEventListener('input', validarFormulario);
+      loteInput.addEventListener('input', validarFormulario);
+      celularInput.addEventListener('input', validarFormulario); // Nuevo evento para celular
+
+      // Llama a la función para inicializar el estado del botón al cargar la página
+      validarFormulario();
     </script>
 
     <script src="/socket.io/socket.io.js"></script>
