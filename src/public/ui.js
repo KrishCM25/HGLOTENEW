@@ -51,20 +51,20 @@ const noteUI = (note) => {
       </div>
       
     </div>
-      <div class="control-elem-reserva-lt">
-        <div class="container-btn-control-elem">
-          <button class="btn btn-danger delete" data-id="${note._id}">delete</button>
-          <button class="btn btn-secondary update" data-id="${note._id}">update</button>
-        </div>
-      </div>
     `; 
 
   
-  const btnDelete = div.querySelector(".delete");
-  const btnUpdate = div.querySelector(".update");
+      // <div class="control-elem-reserva-lt">
+      //   <div class="container-btn-control-elem">
+      //     <button class="btn btn-danger delete" data-id="${note._id}">delete</button>
+      //     <button class="btn btn-secondary update" data-id="${note._id}">update</button>
+      //   </div>
+      // </div>
+  // const btnDelete = div.querySelector(".delete");
+  // const btnUpdate = div.querySelector(".update");
 
-  btnDelete.addEventListener("click", () => deleteNote(btnDelete.dataset.id));
-  btnUpdate.addEventListener("click", () => getNoteById(btnUpdate.dataset.id));
+  // btnDelete.addEventListener("click", () => deleteNote(btnDelete.dataset.id));
+  // btnUpdate.addEventListener("click", () => getNoteById(btnUpdate.dataset.id));
 
   return div;
 };
