@@ -440,6 +440,9 @@ button.btn-form-lt {
     scroll-snap-type: x mandatory;
     margin: 0 0 0px;
   }
+  .container-title-lt{
+    text-align: center;
+  }
   button.btn-form-lt,
   form#ltForm{
     width: 100%;
