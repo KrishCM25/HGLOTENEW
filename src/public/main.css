@@ -191,6 +191,7 @@ form#ltForm {
   left: 0;
   width: 100%;
   height: 100%;
+  display: none;
 }
 
 img.avion-ruleta {
@@ -318,7 +319,7 @@ button.btn-form-lt {
   transform: translate(-50%, 0);
   height: 5px;
   border-radius: 0 0 10px 10px;
-  background: #630080;
+  background: linear-gradient(90deg, rgb(102 7 137) 65%, rgb(192 0 255) 100%);
 }
 .regalo-elem-reserva-lt {
   position: absolute;
