@@ -321,15 +321,15 @@ button.btn-form-lt {
   background: #630080;
 }
 .regalo-elem-reserva-lt {
-  bottom: 10px;
   position: absolute;
   content: 'GIFTCARD';
   text-orientation: sideways;
   left: 5px;
+  bottom: 10px;
   writing-mode: vertical-lr;
   transform: rotate(180deg);
   z-index: 0;
-  color: #a7a7a7;
+  color: #b9b9b9;
   font-size: 10px;
 }
 .container-data-elem-reserva-lt div {
