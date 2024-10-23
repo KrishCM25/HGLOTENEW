@@ -207,8 +207,10 @@
           // Habilita el botón si todos los campos están llenos, de lo contrario, lo deshabilita
           if (dniValido && loteValido && celularValido) {
               submitButton.classList.add('active')  // Habilita el botón
+              submitButton.disabled = false; 
           } else {
               submitButton.classList.remove('active')  // Deshabilita el botón
+              submitButton.disabled = true;
           }
       }
 
