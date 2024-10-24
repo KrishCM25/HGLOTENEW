@@ -50,10 +50,9 @@ const noteUI = (note) => {
   let colorEstadoPago ='';
   if(notePago<100){
     textEstadoPago = 'RESERVADO'
-    colorEstadoPago ='green';
+    colorEstadoPago ='red';
   }else{
     textEstadoPago = 'PROPIETARIO 100%'
-    colorEstadoPago ='red';
   }
   // Convertir el objeto dniInfo a string usando JSON.stringify
     // <div class="regalo-elem-reserva-lt data-elem-reserva-lt">${note.regalo} </div>
