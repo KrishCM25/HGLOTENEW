@@ -49,7 +49,10 @@ const noteUI = (note) => {
   let textEstadoPago ='';
   let colorEstadoPago ='';
   if(notePago<100){
-    textEstadoPago = `RESERVADO ${notePago}%`;
+    textEstadoPago = `RESERVADO`;
+    if(notePago!=0){
+      textEstadoPago+= ` ${notePago}%`;
+    } 
     colorEstadoPago ='red';
   }else{
     textEstadoPago = 'PROPIETARIO 100%'
