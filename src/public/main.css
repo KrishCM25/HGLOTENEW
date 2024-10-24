@@ -395,7 +395,7 @@ button.btn-form-lt.active {
   align-items: center;
   line-height: 1;
   margin: 0px 10px;
-  padding: 5px 10px 10px;
+  padding: 5px 10px 13px;
   border-radius: 10px 0px 10px 10px;
   border: 1px solid rgb(255, 152, 0);
   background: linear-gradient(79deg, rgb(255, 154, 0) 0%, rgb(255, 255, 255) 50%, rgb(255, 154, 0) 100%);
