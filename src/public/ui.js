@@ -71,8 +71,6 @@ const noteUI = (note) => {
         <div class="fecha-elem-reserva-lt data-elem-reserva-lt">${formattedDate} </div>
         <span class="regalo-elem-reserva-lt">${note.regalo}</span>
         <span style="background: url(/assets/images/LOGO-HG-MINI-23.png);width: 15px;height: 15px;position: absolute;z-index: 3;bottom: 10px;right: 5px;background-repeat: no-repeat;background-size: contain;opacity: .6;"></span>
-        <span class="pago-elem-reserva-lt">${parseFloat(note.pago)/40}%</span>
-        
         <span class="pago-elem-reserva-lt ${colorEstadoPago}">${textEstadoPago}</span>
       </div>
        
