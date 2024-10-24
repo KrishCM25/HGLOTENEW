@@ -96,6 +96,7 @@ export default (io) => {
           lote: data.lote,
           nombre: dniInfo.nombres || '',
           regalo:  regalo || 'consuelo',
+          pago: data.pago || '',
         };
 
         let rotacionRuleta = 0;
