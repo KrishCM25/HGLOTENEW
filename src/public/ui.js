@@ -46,8 +46,8 @@ const noteUI = (note) => {
   }
 
   const notePago = parseFloat(note.pago)/40;
-  const textEstadoPago ='';
-  const colorEstadoPago ='';
+  let textEstadoPago ='';
+  let colorEstadoPago ='';
   if(notePago<100){
     textEstadoPago = 'RESERVADO'
     colorEstadoPago ='green';
