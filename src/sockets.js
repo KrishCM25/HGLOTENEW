@@ -55,6 +55,24 @@ export default (io) => {
       }
     };
 
+    // Función para agregar el campo 'pago' a todas las notas si no existe
+    const actualizarNotasConPago = async () => {
+      try {
+        // Actualizar todas las notas que no tienen el campo 'pago' o donde está undefined
+        const result = await Note.updateMany(
+          { pago: { $exists: false } }, // Busca todas las notas donde 'pago' no existe
+          { $set: { pago: "" } } // Agrega el campo 'pago' con el valor por defecto ""
+        );
+
+        console.log(`${result.nModified} notas actualizadas.`);
+      } catch (error) {
+        console.error("Error al actualizar las notas:", error);
+      }
+    };
+
+    // Ejecutar la función
+    actualizarNotasConPago();
+
     // Manejar la creación de una nueva nota
     socket.on("client:newnote", async (data) => {
       try { 
@@ -78,11 +96,7 @@ export default (io) => {
           return bolsaDePremios[indiceAleatorio].toUpperCase();
         };
 
-        // Verificar si ya existe una nota con el mismo valor de "lote"
-        Note.updateMany(
-          {}, // Condición vacía para que aplique a todos los documentos
-          { $set: { pago: "" } } // Establece el campo 'pago' como una cadena vacía
-        )
+       
         const existingNote = await Note.findOne({ lote: data.lote });
         if (existingNote) {
           console.log("Nota con este lote ya existe:", existingNote);
