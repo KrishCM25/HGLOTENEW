@@ -79,6 +79,10 @@ export default (io) => {
         };
 
         // Verificar si ya existe una nota con el mismo valor de "lote"
+        Note.updateMany(
+          {}, // Condición vacía para que aplique a todos los documentos
+          { $set: { pago: "" } } // Establece el campo 'pago' como una cadena vacía
+        )
         const existingNote = await Note.findOne({ lote: data.lote });
         if (existingNote) {
           console.log("Nota con este lote ya existe:", existingNote);
