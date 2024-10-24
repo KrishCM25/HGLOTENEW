@@ -63,8 +63,8 @@ const noteUI = (note) => {
         <span class="regalo-elem-reserva-lt">${note.regalo}</span>
         <span style="background: url(/assets/images/LOGO-HG-MINI-23.png);width: 15px;height: 15px;position: absolute;z-index: 3;bottom: 10px;right: 5px;background-repeat: no-repeat;background-size: contain;opacity: .6;"></span>
       </div>
-      
-    </div>
+       
+    </div> 
     `; 
 
   
