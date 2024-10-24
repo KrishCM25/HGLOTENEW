@@ -17,6 +17,9 @@ const schema = new Schema(
     },
     regalo : {
       type: String,
+    },
+    pago : {
+      type: String,
     }
   },
   {
