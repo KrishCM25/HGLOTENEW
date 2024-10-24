@@ -370,6 +370,7 @@ button.btn-form-lt.active {
   font-family: 'Flexo';
   font-weight: 600;
   text-align: center;
+  width: 85%;
 }
 .dni-elem-reserva-lt.data-elem-reserva-lt {
   font-family: 'Flexo-Demi';
