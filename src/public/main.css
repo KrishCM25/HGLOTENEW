@@ -464,6 +464,21 @@ span.tag-new-elem-reserva-lt.Nuevo {
   left: 0;
   top: 0;
 }
+span.pago-elem-reserva-lt {
+  position: absolute;
+  top: -21px;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  background: #00a100;
+  padding: 1px 6px;
+  border-radius: 5px 5px 0 0;
+  font-size: 10px;
+  font-family: 'Flexo-Demi';
+  z-index: -1;
+}
+span.pago-elem-reserva-lt.red {
+  background: #ff2f5d;
+}
 
 @keyframes rotatePointer {
   0% {
