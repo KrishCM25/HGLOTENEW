@@ -55,23 +55,23 @@ export default (io) => {
       }
     };
 
-    // Función para agregar el campo 'pago' a todas las notas si no existe
-    const actualizarNotasConPago = async () => {
-      try {
-        // Actualizar todas las notas que no tienen el campo 'pago' o donde está undefined
-        const result = await Note.updateMany(
-          { pago: { $exists: true } }, // Busca todas las notas donde 'pago' no existe
-          { $set: { pago: "4000" } } // Agrega el campo 'pago' con el valor por defecto ""
-        );
+    // // Función para agregar el campo 'pago' a todas las notas si no existe
+    // const actualizarNotasConPago = async () => {
+    //   try {
+    //     // Actualizar todas las notas que no tienen el campo 'pago' o donde está undefined
+    //     const result = await Note.updateMany(
+    //       { pago: { $exists: true } }, // Busca todas las notas donde 'pago' no existe
+    //       { $set: { pago: "4000" } } // Agrega el campo 'pago' con el valor por defecto ""
+    //     );
 
-        console.log(`${result.nModified} notas actualizadas.`);
-      } catch (error) {
-        console.error("Error al actualizar las notas:", error);
-      }
-    };
+    //     console.log(`${result.nModified} notas actualizadas.`);
+    //   } catch (error) {
+    //     console.error("Error al actualizar las notas:", error);
+    //   }
+    // };
 
-    // Ejecutar la función
-    actualizarNotasConPago();
+    // // Ejecutar la función
+    // actualizarNotasConPago();
 
     // Manejar la creación de una nueva nota
     socket.on("client:newnote", async (data) => {
