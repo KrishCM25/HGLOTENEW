@@ -143,6 +143,16 @@ form#ltForm {
   align-items: center;
   justify-content: center;
 }
+.label-lote-input {
+  padding: 0px 20px;
+  border-right: 1px solid var(--color-gray-lt);
+  font-size: 16px;
+  font-weight: 600;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .container-input-form:hover .label-dni-input {
   border-right: 1px solid var(--color-primary-lt);
 }
