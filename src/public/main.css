@@ -262,17 +262,18 @@ img.lavadora-ruleta {
   border-radius: 50%;
 }
 .container-ruleta-lt:after {
-    content: '';
-    position: absolute;
-    bottom: -20px;
-    background: #00000030;
-    height: 13px;
-    width: 120%;
-    left: 50%;
-    transform: translate(-50%, 10px);
-    border-radius: 50px;
-    /* shape-outside: ellipse(23% 30%); */
-    clip-path: ellipse(23% 30%);
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  background: #00000030;
+  height: 13px;
+  width: 120%;
+  left: 50%;
+  bottom: -30px;
+  transform: translateX(-50%);
+  border-radius: 50px;
+  /* shape-outside: ellipse(23% 30%); */
+  clip-path: ellipse(23% 30%);
 }
 button.btn-form-lt {
   padding: 8px 16px;
