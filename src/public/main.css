@@ -272,8 +272,9 @@ img.lavadora-ruleta {
   bottom: -30px;
   transform: translateX(-50%);
   border-radius: 50px;
-  /* shape-outside: ellipse(23% 30%); */
+  shape-outside: ellipse(23% 30%);
   clip-path: ellipse(23% 30%);
+  -webkit-clip-path: ellipse(23% 30%);
 }
 button.btn-form-lt {
   padding: 8px 16px;
