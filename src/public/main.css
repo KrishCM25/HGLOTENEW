@@ -59,7 +59,7 @@ input{
   align-items: center;
   flex-direction: column;
   gap: 20px;
-  padding: 10px;
+  padding: 10px 10px 40px;
   pointer-events: none;
   user-select: none;
 }
@@ -260,6 +260,20 @@ img.lavadora-ruleta {
   background: linear-gradient(70deg, rgb(197 0 255) 0%, rgb(190 0 126) 35%, rgb(143 0 112) 57%, rgb(161 0 205) 82%);
   z-index: -1;
   border-radius: 50%;
+}
+.container-ruleta-lt:after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    background: #00000030;
+    height: 13px;
+    width: 120%;
+    left: 50%;
+    transform: translate(-50%, 10px);
+    border-radius: 50px;
+    filter: blur(-7px);
+    shape-outside: ellipse(23% 30%);
+    clip-path: ellipse(23% 30%);
 }
 button.btn-form-lt {
   padding: 8px 16px;
