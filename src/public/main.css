@@ -325,7 +325,6 @@ button.btn-form-lt.active {
   aspect-ratio: 16 / 11;
   width: 210px;
   position: relative;
-  background-image: url(/assets/images/PORTADA-CAMPING-CUADRO-HG-SERGI-MINI.jpg);
   background-size: cover;
 }
 .container-data-elem-reserva-lt {
@@ -369,6 +368,17 @@ button.btn-form-lt.active {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
+}
+.img-back-mini {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+  z-index: -1;
+  object-position: top;
+  border-radius: 10px;
 }
 .image-regalo-elem-reserva-lt {
   position: absolute;
