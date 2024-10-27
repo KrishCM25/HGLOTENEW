@@ -63,7 +63,8 @@ const noteUI = (note) => {
     div.innerHTML = `
     <div class="container-elem-reserva-data-lt">
       <div class="container-data-elem-reserva-lt">
-        <div class="image-regalo-elem-reserva-lt" ${cssRegalo} ><img src="${imageRegalo}"></div>
+        <img class="img-back-mini" loading="lazy" src="/assets/images/PORTADA-CAMPING-CUADRO-HG-SERGI-MINI.jpg">
+        <div class="image-regalo-elem-reserva-lt" ${cssRegalo} ><img loading="lazy" src="${imageRegalo}"></div>
         <div class="name-elem-reserva-lt data-elem-reserva-lt">${note.nombre}</div>
         <div class="dni-elem-reserva-lt data-elem-reserva-lt"><span>DNI </span> ${ocultarUltimosCuatroDigitos(note.dni)}</div>
         <div class="celular-elem-reserva-lt data-elem-reserva-lt"><span>TEL </span> ${ocultarUltimosCuatroDigitos(note.celular)}</div>
