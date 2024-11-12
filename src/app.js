@@ -42,6 +42,9 @@ app.use((req, res, next) => {
 app.get('/lotehg', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'lotehg.html'));
 });
+app.get('/jamil', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'jamil.html'));
+});
 // Ruta para mostrar el archivo lotehg.html
 // app.get('/lotehg', (req, res) => {
 //     res.sendFile(path.join(__dirname, 'public', 'lotehg.html'));
