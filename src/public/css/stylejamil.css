@@ -158,3 +158,24 @@ a.h-lk i {
   background: url(https://s.leadgods.com/application-web/jk-one/dist/img/ico-lk.png) no-repeat;
   background-size: 100% 100%;
 }
+.contain-testimonio {
+  gap: 30px;
+  max-width: 1140px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+section.testimonios-container {
+  background: #000;
+  color: #fff;
+}
+
+.title-top-section {
+  font-size: 30px;
+}
+
+.container-testimonio-video {
+  display: flex;
+  gap: 20px;
+}
