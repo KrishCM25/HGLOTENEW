@@ -14,7 +14,7 @@ ul,li {
 }
 
 header.nav-header {
-  background: #000;
+  /* background: #000; */
   position: absolute;
   top: 0;
   width: 100%;
@@ -27,10 +27,13 @@ ul.list-menu a {
 
 .inner-nav {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   height: 70px;
   gap: 50px;
+  width: 100%;
+  max-width: 1140px;
+  margin: auto;
 }
 
 ul.list-menu {
@@ -43,7 +46,7 @@ ul.list-menu {
 
 .logo {
   height: 100%;
-  padding: 10px 10px;
+  padding: 10px 10px 10px 0;
 }
 
 
@@ -62,3 +65,61 @@ ul.list-menu {
   height: 100%;
 }
 
+a:focus,
+a:hover,
+a{
+  color:#fff;
+  text-decoration:none;
+}
+section.hero-container {
+  height: 70vh;
+  display: flex;
+  width: 100%;
+  background: url(https://s.leadgods.com/application-web/jk-one/dist/img/bg-slider.jpg?v1.834) no-repeat;
+  background-size: cover;
+}
+
+.hero-contain {
+  max-width: 1140px;
+  margin: 0 auto;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  color: #fff;
+  gap: 80px;
+  align-items: flex-start;
+  justify-content: end;
+  margin-bottom: 60px;
+}
+
+ul.redes-social-container {
+  display: flex;
+  gap: 20px;
+  font-size: 21px;
+}
+
+.hero-redes {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.hero-text {
+  font-size: 55px;
+  width: 830px;
+}
+
+.hero-number {
+  background: red;
+  display: inline-block;
+  position: relative;
+}
+
+.hero-number span {
+  position: absolute;
+  font-size: 22px;
+  font-weight: normal;
+  bottom: -35px;
+  left: 50%;
+  transform: translate(-50%,0%);
+}
