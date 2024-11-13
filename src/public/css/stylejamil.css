@@ -123,3 +123,24 @@ ul.redes-social-container {
   left: 50%;
   transform: translate(-50%,0%);
 }
+
+a.h-fb i {
+  background: url(https://s.leadgods.com/application-web/jk-one/dist/img/ico-fb.png) no-repeat;
+  background-size: 100% 100%;
+}
+a.h-it i {
+  background: url(https://s.leadgods.com/application-web/jk-one/dist/img/ico-it.png) no-repeat;
+  background-size: 100% 100%;
+}
+a.h-yt i {
+  background: url(	https://s.leadgods.com/application-web/jk-one/dist/img/ico-yt.png) no-repeat;
+  background-size: 100% 100%;
+}
+a.h-tw i {
+  background: url(	https://s.leadgods.com/application-web/jk-one/dist/img/ico-tw.png) no-repeat;
+  background-size: 100% 100%;
+}
+a.h-lk i {
+  background: url(https://s.leadgods.com/application-web/jk-one/dist/img/ico-lk.png) no-repeat;
+  background-size: 100% 100%;
+}
