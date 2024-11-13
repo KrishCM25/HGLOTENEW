@@ -72,7 +72,7 @@ a{
   text-decoration:none;
 }
 section.hero-container {
-  height: 70vh;
+  height: 63vh;
   display: flex;
   width: 100%;
   background: url(https://s.leadgods.com/application-web/jk-one/dist/img/bg-slider.jpg?v1.834) no-repeat;
@@ -89,7 +89,7 @@ section.hero-container {
   gap: 80px;
   align-items: flex-start;
   justify-content: end;
-  margin-bottom: 60px;
+  margin-bottom: 60PX;
 }
 
 ul.redes-social-container {
@@ -105,7 +105,7 @@ ul.redes-social-container {
 }
 
 .hero-text {
-  font-size: 55px;
+  font-size: 50px;
   width: 830px;
 }
 
@@ -117,15 +117,17 @@ ul.redes-social-container {
 
 .hero-number span {
   position: absolute;
-  font-size: 22px;
+  font-size: 18px;
   font-weight: normal;
-  bottom: -35px;
+  bottom: -25px;
   left: 50%;
   transform: translate(-50%,0%);
 }
 
 .redes-social-container a{
   position: relative;
+  padding-left: 38px;
+  FONT-SIZE: 18PX;
 }
 .redes-social-container a i{
   position: absolute;
