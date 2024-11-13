@@ -178,6 +178,7 @@ section.testimonios-container {
 .container-testimonio-video {
   display: flex;
   gap: 20px;
+  overflow-x: scroll;
 }
 .container-testimonio-video a {
   position: relative;
