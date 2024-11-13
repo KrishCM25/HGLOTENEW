@@ -165,7 +165,7 @@ a.h-lk i {
   margin: auto;
   display: flex;
   flex-direction: column;
-  padding: 30px 0;
+  padding: 50px 0;
 }
 
 section.testimonios-container {
@@ -247,4 +247,30 @@ section.testimonios-container {
   font-weight: 600;
   font-size: 30px;
   margin-left: 10px;
+  color: #8800bf;
+}
+section.banner-container {background: url( https://s.leadgods.com/application-web/jk-one/dist/img/bg-academic.jpg);background-size: cover;background-repeat: no-repeat;background-position: center;}
+
+.container-academy {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    text-align: center;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo-frase-b img {
+    width: 100%;
+}
+
+.btn-frase-b a {
+  background: red;padding: 10px;border-radius: 20px;
+}
+
+.frase-b-text {
+    font-size: 17px;
 }
