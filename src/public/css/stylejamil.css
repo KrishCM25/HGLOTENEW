@@ -1,0 +1,67 @@
+body {
+  font-family: 'Blinker';
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+ul,li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+header.nav-header {
+  background: #000;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+ul.list-menu a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.inner-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+  gap: 50px;
+}
+
+ul.list-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+img {
+}
+
+.logo {
+  height: 100%;
+  padding: 10px 10px;
+}
+
+h1 {}
+
+.logo h1 {
+  margin: 0;
+  height: 100%;
+}
+
+.logo a {
+  height: 100%;
+  display: block;
+}
+
+.logo img {
+  object-fit: cover;
+  height: 100%;
+}
+
