@@ -77,6 +77,7 @@ section.hero-container {
   width: 100%;
   background: url(https://s.leadgods.com/application-web/jk-one/dist/img/bg-slider.jpg?v1.834) no-repeat;
   background-size: cover;
+  background-position: center;
 }
 
 .hero-contain {
@@ -106,7 +107,7 @@ ul.redes-social-container {
 
 .hero-text {
   font-size: 50px;
-  width: 830px;
+  width: 740px;
 }
 
 .hero-number {
