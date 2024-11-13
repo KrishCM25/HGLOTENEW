@@ -124,6 +124,17 @@ ul.redes-social-container {
   transform: translate(-50%,0%);
 }
 
+.redes-social-container a{
+  position: relative;
+}
+.redes-social-container a i{
+  position: absolute;
+  left: 0;
+  top: -2px;
+  width: 30px;
+  height: 30px;
+}
+
 a.h-fb i {
   background: url(https://s.leadgods.com/application-web/jk-one/dist/img/ico-fb.png) no-repeat;
   background-size: 100% 100%;
