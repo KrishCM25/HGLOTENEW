@@ -239,3 +239,9 @@ section.testimonios-container {
   object-fit: cover;
   height: auto;
 }
+
+.title-top-section b {
+  font-weight: 600;
+  font-size: 30px;
+  margin-left: 10px;
+}
