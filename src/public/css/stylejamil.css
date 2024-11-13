@@ -179,6 +179,7 @@ section.testimonios-container {
   display: flex;
   gap: 20px;
   overflow-x: scroll;
+  padding: 10px 0;
 }
 .container-testimonio-video a {
   position: relative;
