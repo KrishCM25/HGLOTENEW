@@ -114,6 +114,7 @@ ul.redes-social-container {
   background: red;
   display: inline-block;
   position: relative;
+  padding: 0 10px;
 }
 
 .hero-number span {
@@ -173,7 +174,7 @@ section.testimonios-container {
 }
 
 .title-top-section {
-  font-size: 25px;
+  font-size: 23px;
 }
 
 .container-testimonio-video {
@@ -181,6 +182,7 @@ section.testimonios-container {
   gap: 20px;
   overflow-x: scroll;
   padding: 10px 0;
+  user-select: none;
 }
 .container-testimonio-video a {
   position: absolute;
@@ -238,6 +240,7 @@ section.testimonios-container {
   width: 100%;
   object-fit: cover;
   height: auto;
+  pointer-events: none;
 }
 
 .title-top-section b {
