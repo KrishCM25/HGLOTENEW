@@ -396,4 +396,5 @@ section.evento-container {
 }
 .scroll-hg{
   user-select: none;
+  cursor: grab;
 }
