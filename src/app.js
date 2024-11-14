@@ -58,12 +58,7 @@ app.use('/', express.static(path.join(__dirname, '/public')));
 app.get('/', (req, res) => {
     res.send('Bienvenido a la página principal RuletaHG');
   });
-
-// Ruta para API
-app.get('/api', (req, res) => {
-    res.send('¡API está funcionando!');
-});
-
+  
 // Ruta para obtener posts de WordPress
 app.get('/api/posts', async (req, res) => {
     try {
@@ -84,5 +79,10 @@ app.get('/api/posts', async (req, res) => {
         res.status(500).json({ message: `Error al obtener los posts ${error.message}` });
     }
 });
+// Ruta para API
+app.get('/api', (req, res) => {
+    res.send('¡API está funcionando!');
+});
+
 
 export default app;
