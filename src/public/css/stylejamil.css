@@ -393,3 +393,6 @@ section.evento-container {
   gap: 20px;
   overflow-x: scroll;
 }
+.scroll-hg{
+  user-select: none;
+}
