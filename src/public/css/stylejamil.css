@@ -309,6 +309,9 @@ section.evento-container {
 .container-elem-evento {
   display: flex;
   gap: 20px;
+  width: 100%;
+  flex-shrink: 0;
+  padding: 10px 0;
 }
 
 .text-title-evento {
@@ -383,4 +386,9 @@ section.evento-container {
   align-items: center;
   gap: 10px;
   font-size: 20px;
+}
+.container-multiple-elem-evento {
+  display: flex;
+  gap: 20px;
+  overflow-x: scroll;
 }
