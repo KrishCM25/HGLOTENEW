@@ -32,11 +32,11 @@ app.get('/dni/:dni', async (req, res) => {
 
 
 // Middleware para permitir solo campinhouse.com en iframes
-app.use((req, res, next) => {
-    res.setHeader('Content-Security-Policy', "frame-ancestors 'self' https://vivehg.com");
-    console.log('Content-Security-Policy header set'); // Para depuración
-    next();
-});
+// app.use((req, res, next) => {
+//     res.setHeader('Content-Security-Policy', "frame-ancestors 'self' https://vivehg.com");
+//     console.log('Content-Security-Policy header set'); // Para depuración
+//     next();
+// });
 
 // Ruta para mostrar el archivo lotehg.html
 app.get('/lotehg', (req, res) => {
@@ -79,7 +79,7 @@ app.get('/api/posts', async (req, res) => {
         }));
 
         res.json(processedPosts);
-    } catch (error) {   
+    } catch (error) {
         console.error('Error al obtener los posts:', error.message);
         res.status(500).json({ message: `Error al obtener los posts ${error.message}` });
     }
