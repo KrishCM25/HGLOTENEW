@@ -183,6 +183,7 @@ section.testimonios-container {
   overflow-x: scroll;
   padding: 10px 0;
   user-select: none;
+  scroll-snap-type: x mandatory;
 }
 .container-testimonio-video a {
   position: absolute;

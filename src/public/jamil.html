@@ -174,6 +174,98 @@
 
       </div>
     </section>
+    <section class="banner-container">
+      <div class="contain-testimonio">
+        <div class="title-top-section">
+          Testimoniales y casos de éxito de <b>Jamil Espinoza</b>
+        </div>
+        <div class="evento-hg-container">
+          <div class="fecha-evento"> Noviembre 2024</div>
+          <div class="container-elem-evento">
+            <div class="img-elem-evento">
+              <img src="https://leadgods-com.s3.amazonaws.com/imagenes/publications/6/mediun/leadgods_580886a5281d6521e285b27da0b375a7_76263.png?v1.835">
+            </div>
+            <div class="title-evento">
+              <div class="text-title-evento">
+                Vendes o vendes por Jamil Espinoza - Ecuador
+              </div>
+              <div class="btn-title-evento">
+                Informacion del evento
+              </div>
+
+            </div>
+            <div class="fecha-evento-container">
+              <div class="text-fecha-evento">
+                <b>Domingo</b>
+                <div>18 de noviembre de 2024</div>
+              </div>
+              <div class="contador-evento-hg">
+                El evento está cerca, quedan:
+                <div class="contador-elem-container">
+                  <div class="countdown">
+                    <div class="time-box">
+                      <span id="days">00</span>
+                      <small>Días</small>
+                    </div>
+                    <div class="time-box">
+                      <span id="hours">00</span>
+                      <small>Horas</small>
+                    </div>
+                    <div class="time-box">
+                      <span id="minutes">00</span>
+                      <small>Min</small>
+                    </div>
+                    <div class="time-box">
+                      <span id="seconds">00</span>
+                      <small>Seg</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </section>
+
+
+
+    <script>
+      function startCountdown(targetDate) {
+        const countdown = document.querySelector(".countdown");
+  
+        function updateTimer() {
+          const now = new Date();
+          const diff = targetDate - now;
+  
+          if (diff <= 0) {
+            countdown.innerHTML = "<h1>¡Tiempo Finalizado!</h1>";
+            clearInterval(interval);
+            return;
+          }
+  
+          const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+  
+          document.getElementById("days").textContent = String(days).padStart(2, "0");
+          document.getElementById("hours").textContent = String(hours).padStart(2, "0");
+          document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
+          document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
+        }
+  
+        updateTimer(); // Initial call
+        const interval = setInterval(updateTimer, 1000);
+      }
+  
+      // Configura la fecha de destino aquí
+      const targetDate = new Date("2024-12-01T00:00:00");
+      startCountdown(targetDate);
+    </script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fslightbox/3.0.9/index.js"></script>
     <script>
       
