@@ -66,17 +66,33 @@ app.get('/api/posts', async (req, res) => {
         const posts = response.data;
 
         // Procesar los datos antes de enviarlos al frontend
-        const processedPosts = posts.map(post => ({
-            title: post.title.rendered,
-            excerpt: post.excerpt.rendered,
-            link: post.link,
-            image: post.featured_media ? `https://vivehg.com/blog/wp-json/wp/v2/media/${post.featured_media}` : null
-        }));
+        const processedPosts = await Promise.all(
+            posts.map(async (post) => {
+                let image = null;
+
+                // Si hay featured_media, busca la URL de la imagen
+                if (post.featured_media) {
+                    try {
+                        const mediaResponse = await axios.get(`https://vivehg.com/blog/wp-json/wp/v2/media/${post.featured_media}`);
+                        image = mediaResponse.data.media_details.sizes.medium?.source_url || mediaResponse.data.source_url;
+                    } catch (error) {
+                        console.error(`Error al obtener la imagen destacada para el post ${post.id}:`, error.message);
+                    }
+                }
+
+                return {
+                    title: post.title.rendered,
+                    excerpt: post.excerpt.rendered,
+                    link: post.link,
+                    image,
+                };
+            })
+        );
 
         res.json(processedPosts);
     } catch (error) {
         console.error('Error al obtener los posts:', error.message);
-        res.status(500).json({ message: `Error al obtener los posts ${error.message}` });
+        res.status(500).json({ message: 'Error al obtener los posts' });
     }
 });
 // // Ruta para API
