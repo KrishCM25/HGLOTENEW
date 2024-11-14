@@ -401,32 +401,35 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fslightbox/3.0.9/index.js"></script>
     <script>
       
-      const slider = document.querySelector('.scroll-hg');
+      const slider = document.querySelectorAll('.scroll-hg');
       let isDown = false;
       let startX;
       let scrollLeft;
 
-      slider.addEventListener('mousedown', (e) => {
-        isDown = true;  
-        slider.classList.add('active');
-        startX = e.pageX - slider.offsetLeft;
-        scrollLeft = slider.scrollLeft;
-      });
-      slider.addEventListener('mouseleave', () => {
-        isDown = false;
-        slider.classList.remove('active');
-      });
-      slider.addEventListener('mouseup', () => {
-        isDown = false;
-        slider.classList.remove('active');
-      });
-      slider.addEventListener('mousemove', (e) => {
-        if(!isDown) return;
-        e.preventDefault();
-        const x = e.pageX - slider.offsetLeft;
-        const walk = (x - startX) * 3; //scroll-fast
-        slider.scrollLeft = scrollLeft - walk;
-      });
+      slider.forEach((slide)=>{
+          slide.addEventListener('mousedown', (e) => {
+          isDown = true;  
+          slide.classList.add('active');
+          startX = e.pageX - slide.offsetLeft;
+          scrollLeft = slide.scrollLeft;
+        });
+        slide.addEventListener('mouseleave', () => {
+          isDown = false;
+          slide.classList.remove('active');
+        });
+        slide.addEventListener('mouseup', () => {
+          isDown = false;
+          slide.classList.remove('active');
+        });
+        slide.addEventListener('mousemove', (e) => {
+          if(!isDown) return;
+          e.preventDefault();
+          const x = e.pageX - slide.offsetLeft;
+          const walk = (x - startX) * 3; //scroll-fast
+          slide.scrollLeft = scrollLeft - walk;
+        });
+      })
+     
     
     </script>
 
