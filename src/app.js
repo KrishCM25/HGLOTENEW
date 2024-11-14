@@ -4,7 +4,7 @@ import axios from 'axios';
 
 const app = express();
 
-
+app.use(cors());
 
 // Datos estáticos (puedes cambiar esto para recibir el DNI desde el cliente)
 const token = 'apis-token-11030.SCSv4kKYWlHpNtJT2xmm5h0Wd4NEHhOw';
