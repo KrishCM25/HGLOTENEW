@@ -81,7 +81,7 @@ app.get('/api/posts', async (req, res) => {
         res.json(processedPosts);
     } catch (error) {   
         console.error('Error al obtener los posts:', error.message);
-        res.status(500).json({ message: 'Error al obtener los posts' });
+        res.status(500).json({ message: `Error al obtener los posts ${error.message}` });
     }
 });
 
