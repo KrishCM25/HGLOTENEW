@@ -329,6 +329,7 @@ section.evento-container {
   overflow: hidden;
   border-radius: 20px;
   width: 37%;
+  pointer-events: none;
 }
 
 .btn-title-evento {
