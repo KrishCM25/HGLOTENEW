@@ -4,7 +4,6 @@ import axios from 'axios';
 
 const app = express();
 
-app.use(cors());
 
 // Datos estáticos (puedes cambiar esto para recibir el DNI desde el cliente)
 const token = 'apis-token-11030.SCSv4kKYWlHpNtJT2xmm5h0Wd4NEHhOw';
@@ -32,11 +31,11 @@ app.get('/dni/:dni', async (req, res) => {
 
 
 // Middleware para permitir solo campinhouse.com en iframes
-// app.use((req, res, next) => {
-//     res.setHeader('Content-Security-Policy', "frame-ancestors 'self' https://vivehg.com");
-//     console.log('Content-Security-Policy header set'); // Para depuración
-//     next();
-// });
+app.use((req, res, next) => {
+    res.setHeader('Content-Security-Policy', "frame-ancestors 'self' https://vivehg.com");
+    console.log('Content-Security-Policy header set'); // Para depuración
+    next();
+});
 
 // Ruta para mostrar el archivo lotehg.html
 app.get('/lotehg', (req, res) => {
@@ -65,18 +64,17 @@ app.get('/api/posts', async (req, res) => {
         const response = await axios.get('https://vivehg.com/blog/wp-json/wp/v2/posts?per_page=5');
         const posts = response.data;
 
-        // Procesar los datos antes de enviarlos al frontend
+        // Formatea los datos antes de enviarlos al frontend
         const processedPosts = await Promise.all(
             posts.map(async (post) => {
                 let image = null;
 
-                // Si hay featured_media, busca la URL de la imagen
                 if (post.featured_media) {
                     try {
                         const mediaResponse = await axios.get(`https://vivehg.com/blog/wp-json/wp/v2/media/${post.featured_media}`);
                         image = mediaResponse.data.media_details.sizes.medium?.source_url || mediaResponse.data.source_url;
                     } catch (error) {
-                        console.error(`Error al obtener la imagen destacada para el post ${post.id}:`, error.message);
+                        console.error(`Error obteniendo imagen destacada para el post ${post.id}: ${error.message}`);
                     }
                 }
 
