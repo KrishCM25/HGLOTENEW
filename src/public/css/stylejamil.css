@@ -198,6 +198,7 @@ section.testimonios-container {
   /* width: 330px; */
   display: block;
 }
+.container-multiple-elem-evento::-webkit-scrollbar,
 .container-testimonio-video::-webkit-scrollbar {
   display: none;
 }
