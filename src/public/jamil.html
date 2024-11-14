@@ -363,6 +363,46 @@
     </section>
 
 
+    <section id="posts-container">
+      <h2>Últimos Posts del Blog</h2>
+      <div id="posts"></div>
+    </section>
+    
+    <script>
+      async function fetchPosts() {
+        try {
+          const response = await fetch('/api/posts');
+          const posts = await response.json();
+          const postsContainer = document.getElementById('posts');
+          
+          posts.forEach(post => {
+            const postDiv = document.createElement('div');
+            postDiv.className = 'post';
+            
+            let imageHTML = '';
+            if (post.image) {
+              imageHTML = `<img src="${post.image}" alt="${post.title}" style="width: 100%; height: auto;">`;
+            }
+    
+            postDiv.innerHTML = `
+              ${imageHTML}
+              <h3>${post.title}</h3>
+              <p>${post.excerpt}</p>
+              <a href="${post.link}" target="_blank">Leer más</a>
+            `;
+    
+            postsContainer.appendChild(postDiv);
+          });
+        } catch (error) {
+          console.error('Error al obtener los posts:', error.message);
+        }
+      }
+    
+      // Llama a la función para obtener y mostrar los posts
+      fetchPosts();
+    </script>
+
+
 
     <script>
       function startCountdown(targetDate) {

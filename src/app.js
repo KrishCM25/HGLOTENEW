@@ -64,4 +64,25 @@ app.get('/api', (req, res) => {
     res.send('¡API está funcionando!');
 });
 
+// Ruta para obtener posts de WordPress
+app.get('/api/posts', async (req, res) => {
+    try {
+        const response = await axios.get('https://vivehg.com/blog/wp-json/wp/v2/posts?per_page=5');
+        const posts = response.data;
+
+        // Procesar los datos antes de enviarlos al frontend
+        const processedPosts = posts.map(post => ({
+            title: post.title.rendered,
+            excerpt: post.excerpt.rendered,
+            link: post.link,
+            image: post.featured_media ? `https://vivehg.com/blog/wp-json/wp/v2/media/${post.featured_media}` : null
+        }));
+
+        res.json(processedPosts);
+    } catch (error) {   
+        console.error('Error al obtener los posts:', error.message);
+        res.status(500).json({ message: 'Error al obtener los posts' });
+    }
+});
+
 export default app;
