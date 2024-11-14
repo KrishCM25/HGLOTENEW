@@ -312,7 +312,9 @@ section.evento-container {
   gap: 20px;
   width: 100%;
   flex-shrink: 0;
-  padding: 10px 0;
+  padding: 10px;
+  border-radius: 25px;
+  background: #101010;
 }
 
 .text-title-evento {
