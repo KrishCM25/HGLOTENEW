@@ -1,6 +1,7 @@
 body {
   font-family: 'Blinker';
   margin: 0;
+  color: #fff;
 }
 
 * {
@@ -274,4 +275,110 @@ section.banner-container {background: url( https://s.leadgods.com/application-we
 
 .frase-b-text {
     font-size: 17px;
+}
+
+.countdown {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+.countdown .time-box {
+  background-color: #ff3636;
+  border-radius: 10px;
+  padding: 10px 20px;
+  text-align: center;
+  aspect-ratio: 1;
+  width: 80px;
+}
+.countdown .time-box span {
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+}
+.countdown .time-box small {
+  display: block;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+section.evento-container {
+  background: #000;
+}
+
+.container-elem-evento {
+  display: flex;
+  gap: 20px;
+}
+
+.text-title-evento {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.title-evento {}
+
+.title-evento {width: 27%;display: flex;flex-direction: column;gap: 20px;}
+
+.img-elem-evento {
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  border-radius: 20px;
+  width: 37%;
+}
+
+.btn-title-evento {
+  border: 1px solid #fff;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+.text-fecha-evento b {
+  color: red;
+  font-size: 25px;
+}
+
+.text-fecha-evento {
+  font-size: 25px;
+}
+
+.contador-evento-hg {
+  font-size: 17px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.fecha-evento-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.evento-hg-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.img-elem-evento img {
+  width: 100%;
+}
+
+.fecha-evento:before {
+  content: '';
+  /* position: absolute; */
+  background: red;
+  width: 30px;
+  height: 4px;
+  border-radius: 10px;
+}
+
+.fecha-evento {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
 }
