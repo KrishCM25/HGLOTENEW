@@ -254,7 +254,7 @@ section.testimonios-container {
   font-weight: 600;
   font-size: 30px;
   margin-left: 10px;
-  color: #ff3636;
+  color: var(--color-principal);
 }
 section.banner-container {background: url( https://s.leadgods.com/application-web/jk-one/dist/img/bg-academic.jpg);background-size: cover;background-repeat: no-repeat;background-position: center;}
 
@@ -275,7 +275,7 @@ section.banner-container {background: url( https://s.leadgods.com/application-we
 }
 
 .btn-frase-b a {
-  background: #ff3636;
+  background: var(--color-principal);
   padding: 10px;
   border-radius: 20px;
 }
@@ -290,7 +290,7 @@ section.banner-container {background: url( https://s.leadgods.com/application-we
   width: 100%;
 }
 .countdown .time-box {
-  background-color: #ff3636;
+  background-color: var(--color-principal);
   border-radius: 10px;
   padding: 10px 20px;
   text-align: center;
