@@ -477,3 +477,34 @@ section.post-container {
 section.footer-hg {
   background: #000;
 }
+.container-elem-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+img.logo-foot-hg {
+  width: 130px;
+  object-fit: contain;
+}
+
+.title-foot-hg {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.elem-foot-hg {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.list-elem-foot-hg {
+
+}
+
+.list-foot-hg {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
