@@ -1,3 +1,7 @@
+:root{
+  --color-principal: #ff3636;
+}
+
 body {
   font-family: 'Blinker';
   margin: 0;
@@ -28,7 +32,7 @@ ul.list-menu a {
 
 .inner-nav {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   height: 70px;
   gap: 50px;
@@ -399,4 +403,13 @@ section.evento-container {
 .scroll-hg{
   user-select: none;
   cursor: grab;
+}
+.btn-register-hg {
+  background: var(--color-principal);
+  color: #fff;
+  border-radius: 20px;
+  padding: 10px 25px;
+  text-transform: uppercase;
+  font-size: 13px;
+  cursor: pointer;
 }
