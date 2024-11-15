@@ -496,37 +496,40 @@
 
 
     <script>
-      function startCountdown(targetDate) {
-        const countdown = document.querySelector(".countdown");
-  
-        function updateTimer() {
-          const now = new Date();
-          const diff = targetDate - now;
-  
-          if (diff <= 0) {
-            countdown.innerHTML = "<h1>¡Tiempo Finalizado!</h1>";
-            clearInterval(interval);
-            return;
+      function initializeCountdowns() {
+        const countdowns = document.querySelectorAll(".countdown");
+
+        countdowns.forEach((countdown) => {
+          const targetDate = new Date(countdown.dataset.target);
+
+          function updateTimer() {
+            const now = new Date();
+            const diff = targetDate - now;
+
+            if (diff <= 0) {
+              countdown.innerHTML = "<h1>¡Tiempo Finalizado!</h1>";
+              clearInterval(interval);
+              return;
+            }
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            countdown.querySelector("#days").textContent = String(days).padStart(2, "0");
+            countdown.querySelector("#hours").textContent = String(hours).padStart(2, "0");
+            countdown.querySelector("#minutes").textContent = String(minutes).padStart(2, "0");
+            countdown.querySelector("#seconds").textContent = String(seconds).padStart(2, "0");
           }
-  
-          const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-          const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-          const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-          const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-  
-          document.getElementById("days").textContent = String(days).padStart(2, "0");
-          document.getElementById("hours").textContent = String(hours).padStart(2, "0");
-          document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
-          document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
-        }
-  
-        updateTimer(); // Initial call
-        const interval = setInterval(updateTimer, 1000);
+
+          updateTimer(); // Initial call
+          const interval = setInterval(updateTimer, 1000);
+        });
       }
-  
-      // Configura la fecha de destino aquí
-      const targetDate = new Date("2024-12-01T00:00:00");
-      startCountdown(targetDate);
+
+      // Initialize all countdowns
+      initializeCountdowns();
     </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fslightbox/3.0.9/index.js"></script>
