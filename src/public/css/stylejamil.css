@@ -17,6 +17,9 @@ ul,li {
   margin: 0;
   padding: 0;
 }
+img {
+  width: 100%;
+}
 
 header.nav-header {
   /* background: #000; */
@@ -412,4 +415,60 @@ section.evento-container {
   text-transform: uppercase;
   font-size: 13px;
   cursor: pointer;
+}
+
+section.post-container {
+  background: #000;
+}
+
+.elem-post-hg {
+  display: flex;
+  width: 100%;
+  position: relative;
+}
+
+.img-post-hg {
+  width: 40%;
+  min-width: 300px;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.title-post-hg {
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.contain-elem-post-hg {
+  padding: 0 0 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  left: 0px;
+}
+
+.container-post-hg {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.btn-post-hg {
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid #fff;
+  display: inline-block;
+  align-self: flex-start;
+}
+
+.img-post-hg:before {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
 }
