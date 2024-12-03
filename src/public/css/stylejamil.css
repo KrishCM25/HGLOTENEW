@@ -1,5 +1,5 @@
 :root{
-  --color-principal: #ff3636;
+  --color-principal: #ff5d00;
 }
 
 body {
@@ -333,13 +333,13 @@ section.evento-container {
 
 .title-evento {}
 
-.title-evento {width: 27%;display: flex;flex-direction: column;gap: 20px;}
+.title-evento {width: 40%;display: flex;flex-direction: column;gap: 20px;}
 
 .img-elem-evento {
   aspect-ratio: 16/9;
   overflow: hidden;
   border-radius: 20px;
-  width: 37%;
+  width: 25%;
   pointer-events: none;
 }
 
