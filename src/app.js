@@ -45,10 +45,29 @@ app.get('/jamil', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'jamil.html'));
 });
 
+// Ruta para validar el webhook
+app.get('/webhook', (req, res) => {
+    const VERIFY_TOKEN = 'your_verify_token'; // Define tu propio token
+
+    const mode = req.query['hub.mode'];
+    const token = req.query['hub.verify_token'];
+    const challenge = req.query['hub.challenge'];
+
+    // Verifica el token y responde con el desafío
+    if (mode === 'subscribe' && token === VERIFY_TOKEN) {
+        console.log('Webhook verified successfully!');
+        res.status(200).send(challenge);
+    } else {
+        res.sendStatus(403); // Token inválido
+    }
+});
+
+// Ruta para recibir eventos
 app.post('/webhook', (req, res) => {
     console.log('Webhook received:', req.body);
     res.sendStatus(200);
 });
+
 // Ruta para mostrar el archivo lotehg.html
 // app.get('/lotehg', (req, res) => {
 //     res.sendFile(path.join(__dirname, 'public', 'lotehg.html'));
