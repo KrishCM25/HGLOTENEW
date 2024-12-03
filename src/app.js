@@ -1,6 +1,7 @@
 import express from 'express';
 import path from 'path';
 import axios from 'axios';
+const fs = require('fs');
 
 const app = express();
 
@@ -64,8 +65,28 @@ app.get('/webhook', (req, res) => {
 
 // Ruta para recibir eventos
 app.post('/webhook', (req, res) => {
-    console.log('Webhook received:', req.body);
-    res.sendStatus(200);
+    const body = req.body;
+
+    if (body.object === 'whatsapp_business_account') {
+        body.entry.forEach((entry) => {
+            const changes = entry.changes;
+            changes.forEach((change) => {
+                const messageData = change.value.messages;
+                if (messageData) {
+                    messageData.forEach((message) => {
+                        console.log('Mensaje recibido:', message);
+                        messages.push(message); // Guarda el mensaje en memoria
+                    });
+                }
+            });
+        });
+
+        // Guarda mensajes en un archivo JSON
+        fs.writeFileSync('messages.json', JSON.stringify(messages, null, 2));
+        res.sendStatus(200); // Confirma la recepción
+    } else {
+        res.sendStatus(404);
+    }
 });
 
 // Ruta para mostrar el archivo lotehg.html
