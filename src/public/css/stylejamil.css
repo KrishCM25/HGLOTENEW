@@ -121,7 +121,7 @@ ul.redes-social-container {
 }
 
 .hero-number {
-  background: red;
+  background: var(--color-principal);
   display: inline-block;
   position: relative;
   padding: 0 10px;
@@ -353,7 +353,7 @@ section.evento-container {
 }
 
 .text-fecha-evento b {
-  color: red;
+  color: var(--color-principal);
   font-size: 25px;
 }
 
@@ -387,7 +387,7 @@ section.evento-container {
 .fecha-evento:before {
   content: '';
   /* position: absolute; */
-  background: red;
+  color: var(--color-principal);
   width: 30px;
   height: 4px;
   border-radius: 10px;
