@@ -44,6 +44,11 @@ app.get('/lotehg', (req, res) => {
 app.get('/jamil', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'jamil.html'));
 });
+
+app.post('/webhook', (req, res) => {
+    console.log('Webhook received:', req.body);
+    res.sendStatus(200);
+});
 // Ruta para mostrar el archivo lotehg.html
 // app.get('/lotehg', (req, res) => {
 //     res.sendFile(path.join(__dirname, 'public', 'lotehg.html'));
