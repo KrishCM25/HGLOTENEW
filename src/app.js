@@ -64,10 +64,7 @@ app.get('/webhook', (req, res) => {
     }
 });
 
-// Ruta para recibir eventos
-app.post('/webhook', (req, res) => {
 
-});
 
 // Ruta para mostrar el archivo lotehg.html
 // app.get('/lotehg', (req, res) => {
@@ -76,7 +73,7 @@ app.post('/webhook', (req, res) => {
 
 
 // WEBHOOK WHATSAPP
-const token = process.env.WHATSAPP_TOKEN;
+const token = 'EAAhgbVzGu70BOZBtnbqrKhxR149BJpGZANxvFjpj6LPVZADIdbvZCDOgixPI9EYMz4bc6mLm0bA16mn3yT8m24EAXQMgowZBJp4soGuRE6t5S9EItnKiJ5TYPYxAez6TMN7CMllhxUNitR5WnA1L1yA8Xdj5Fg4VxAJ9eTLz5Q3sZB7FixUUQvNptc1e2ZA3SfT0ZAu91UokFb2EZCLRNexLeZAJR8c3RY9MRcZBlFG5qQ7';
 // Accepts POST requests at /webhook endpoint
 app.post("/webhook", async (req, res) => {
     // Parse the request body from the POST
@@ -120,7 +117,7 @@ app.post("/webhook", async (req, res) => {
           headers: {
             "Content-Type": "application/json",
             Authorization:
-              `Bearer ${process.env.OPENAI_API_KEY}`,
+              'Bearer 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',
           },
           data: openai_data,
         };
@@ -164,7 +161,7 @@ app.post("/webhook", async (req, res) => {
      * UPDATE YOUR VERIFY TOKEN
      *This will be the Verify Token value when you set up webhook
      **/
-    const verify_token = process.env.VERIFY_TOKEN;
+    const verify_token = 'EAAhgbVzGu70BOZBtnbqrKhxR149BJpGZANxvFjpj6LPVZADIdbvZCDOgixPI9EYMz4bc6mLm0bA16mn3yT8m24EAXQMgowZBJp4soGuRE6t5S9EItnKiJ5TYPYxAez6TMN7CMllhxUNitR5WnA1L1yA8Xdj5Fg4VxAJ9eTLz5Q3sZB7FixUUQvNptc1e2ZA3SfT0ZAu91UokFb2EZCLRNexLeZAJR8c3RY9MRcZBlFG5qQ7';
   
     // Parse params from the webhook verification request
     let mode = req.query["hub.mode"];
