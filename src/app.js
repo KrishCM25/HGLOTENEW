@@ -47,23 +47,6 @@ app.get('/jamil', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'jamil.html'));
 });
 
-// Ruta para validar el webhook
-app.get('/webhook', (req, res) => {
-    const VERIFY_TOKEN = 'EAAhgbVzGu70BOZBtnbqrKhxR149BJpGZANxvFjpj6LPVZADIdbvZCDOgixPI9EYMz4bc6mLm0bA16mn3yT8m24EAXQMgowZBJp4soGuRE6t5S9EItnKiJ5TYPYxAez6TMN7CMllhxUNitR5WnA1L1yA8Xdj5Fg4VxAJ9eTLz5Q3sZB7FixUUQvNptc1e2ZA3SfT0ZAu91UokFb2EZCLRNexLeZAJR8c3RY9MRcZBlFG5qQ7'; // Define tu propio token
-
-    const mode = req.query['hub.mode'];
-    const token = req.query['hub.verify_token'];
-    const challenge = req.query['hub.challenge'];
-
-    // Verifica el token y responde con el desafío
-    if (mode === 'subscribe' && token === VERIFY_TOKEN) {
-        console.log('Webhook verified successfully!');
-        res.status(200).send(challenge);
-    } else {
-        res.sendStatus(403); // Token inválido
-    }
-});
-
 
 
 // Ruta para mostrar el archivo lotehg.html
