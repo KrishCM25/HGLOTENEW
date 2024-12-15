@@ -120,7 +120,7 @@ app.post("/webhook", async (req, res) => {
           headers: {
             "Content-Type": "application/json",
             Authorization:
-              "Bearer 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",
+              `Bearer ${process.env.OPENAI_API_KEY}`,
           },
           data: openai_data,
         };
