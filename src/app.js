@@ -2,7 +2,6 @@ import express from 'express';
 import path from 'path';
 import axios from 'axios';
 import { config } from "dotenv";
-const fs = require('fs');
 const app = express();
 
 config();
@@ -66,7 +65,7 @@ app.post("/webhook", async (req, res) => {
     console.log(JSON.stringify(req.body, null, 2));
   
     // info on WhatsApp text message payload: https://developers.facebook.com/docs/whatsapp/cloud-api/webhooks/payload-examples#text-messages
-    if (req.body.object) {
+    if (req.body) {
       if (
         req.body.entry &&
         req.body.entry[0].changes &&
