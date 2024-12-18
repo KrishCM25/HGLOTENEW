@@ -57,41 +57,36 @@ app.get('/jamil', (req, res) => {
 // WEBHOOK WHATSAPP
 const token = 'EAATUi17tjHUBOw7kyV2v21rvI7siVzp4jGOUdHnRr4CvfDA4o5lG2Sywchsz9szZC9W9lmvyyuPll0JCqXREM5HZAPJYsv0WsUDE6ETQpDIruARFDsHPyZABiWOQTWzcZChK1ZAMIpImO8fZAwNB3to5xFWf83qE3HuTejq7X3RGUjt1clkipho6REsYimbixtTQZDZD';
 // Accepts POST requests at /webhook endpoint
+
 app.post("/webhook", async (req, res) => {
-
-
-
-  app.post("/webhook", async (req, res) => {
-    try {
-      // Configuración de la petición POST con el token en Authorization
-      const response = await axios.post(
-        "https://graph.facebook.com/v12.0/549002308287189/messages",
-        {
-          messaging_product: "whatsapp",
-          to: "51935120994", // Número de destino
-          type: "template", // Enviar usando plantilla
-          template: {
-            name: "hello_world", // Nombre de la plantilla (debe coincidir con la plantilla configurada en tu cuenta)
-            language: { code: "en_US" } // Código de idioma
-          }
-        },
-        {
-          headers: {
-            "Content-Type": "application/json",
-            "Authorization": `Bearer ${token}`, // Token en el header
-          },
+  try {
+    // Configuración de la petición POST
+    const response = await axios.post(
+      "https://graph.facebook.com/v12.0/549002308287189/messages?access_token=" + token,
+      {
+        messaging_product: "whatsapp",
+        to: "51935120994", // Número de destino
+        type: "template", // Enviar usando plantilla
+        template: {
+          name: "hello_world", // Nombre de la plantilla (debe coincidir con la plantilla configurada en tu cuenta)
+          language: { code: "en_US" } // Código de idioma
         }
-      );
-  
-      console.log("Mensaje enviado:", response.data);
-      res.send("Mensaje enviado correctamente");
-    } catch (error) {
-      console.error("Error al enviar mensaje:", error.response ? error.response.data : error.message);
-      res.status(500).send("Error al enviar mensaje");
-    }
-  });
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
 
-  });
+    console.log("Mensaje enviado:", response.data);
+    res.send("Mensaje enviado correctamente");
+  } catch (error) {
+    console.error("Error al enviar mensaje:", error.response ? error.response.data : error.message);
+    res.status(500).send("Error al enviar mensaje");
+  }
+});
+
   
   // Accepts GET requests at the /webhook endpoint. You need this URL to setup webhook initially.
   // info on verification request payload: https://developers.facebook.com/docs/graph-api/webhooks/getting-started#verification-requests
