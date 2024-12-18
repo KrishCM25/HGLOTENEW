@@ -59,13 +59,7 @@ const token = 'EAAhgbVzGu70BO7qUhhGYVZBrU2FibIU9HnkeIvOX3SyfNZBuGXDKJkCDKSKAIYvP
 // Accepts POST requests at /webhook endpoint
 app.post("/webhook", async (req, res) => {
 
-  
-        await axios
-          .request(config)
-          .then((response) => {
-            const response_data = response.data;
-            console.log(JSON.stringify(response.data));
-  
+
             axios({
               method: "POST", // Required, HTTP method, a string, e.g. POST, GET
               url:
@@ -80,10 +74,8 @@ app.post("/webhook", async (req, res) => {
               },
               headers: { "Content-Type": "application/json" },
             });
-          })
-          .catch((error) => {
-            console.log(error);
-          });
+          
+
 
   });
   
