@@ -63,17 +63,19 @@ app.post("/webhook", async (req, res) => {
 
   app.post("/webhook", async (req, res) => {
     try {
-      // Configuración de la petición POST
+      // Configuración de la petición POST con el token en Authorization
       const response = await axios.post(
-        "https://graph.facebook.com/v12.0/549002308287189/messages?access_token=" + token,
+        "https://graph.facebook.com/v12.0/549002308287189/messages",
         {
           messaging_product: "whatsapp",
           to: "51935120994", // Número de destino
-          text: "Hola Sergio",
+          type: "text", // Especificar el tipo de mensaje
+          text: { body: "Hola Sergio" }, // Formato correcto del campo 'text'
         },
         {
           headers: {
             "Content-Type": "application/json",
+            "Authorization": `Bearer ${token}`, // Token en el header
           },
         }
       );
