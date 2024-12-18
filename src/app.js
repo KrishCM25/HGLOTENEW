@@ -70,13 +70,13 @@ app.post("/webhook", async (req, res) => {
               method: "POST", // Required, HTTP method, a string, e.g. POST, GET
               url:
                 "https://graph.facebook.com/v12.0/" +
-                phone_number_id +
+                "549002308287189" +
                 "/messages?access_token=" +
                 token,
               data: {
                 messaging_product: "whatsapp",
-                to: from,
-                text: { body: response_data.choices[0].message.content },
+                to: '51935120994',
+                text: 'Holaa',
               },
               headers: { "Content-Type": "application/json" },
             });
