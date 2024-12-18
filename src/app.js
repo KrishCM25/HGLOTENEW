@@ -69,8 +69,11 @@ app.post("/webhook", async (req, res) => {
         {
           messaging_product: "whatsapp",
           to: "51935120994", // Número de destino
-          type: "text", // Especificar el tipo de mensaje
-          text: { body: "Hola Sergio" }, // Formato correcto del campo 'text'
+          type: "template", // Enviar usando plantilla
+          template: {
+            name: "hello_world", // Nombre de la plantilla (debe coincidir con la plantilla configurada en tu cuenta)
+            language: { code: "en_US" } // Código de idioma
+          }
         },
         {
           headers: {
