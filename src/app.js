@@ -66,6 +66,7 @@ app.post("/webhook", async (req, res) => {
   
     // info on WhatsApp text message payload: https://developers.facebook.com/docs/whatsapp/cloud-api/webhooks/payload-examples#text-messages
     if (req.body) {
+      console.log('ENTRO ', req.body)
       if (
         req.body.entry &&
         req.body.entry[0].changes &&
