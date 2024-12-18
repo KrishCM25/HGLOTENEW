@@ -55,27 +55,40 @@ app.get('/jamil', (req, res) => {
 
 
 // WEBHOOK WHATSAPP
-const token = 'EAAhgbVzGu70BO7qUhhGYVZBrU2FibIU9HnkeIvOX3SyfNZBuGXDKJkCDKSKAIYvP1Ml5HrfMrBZBF3s9PAWzkGYcUIzAItyWx1zx2Lmw5rX0GKUeKbqtXmnZClXEKnd8Mh4ZAAYfJo70IhxG0MT2VMhZBPhGUuX1Xp1f5In2H22tXgPhNqJ5uY5eJHdUiBE6WMjgZDZD';
+const token = 'EAATUi17tjHUBOw7kyV2v21rvI7siVzp4jGOUdHnRr4CvfDA4o5lG2Sywchsz9szZC9W9lmvyyuPll0JCqXREM5HZAPJYsv0WsUDE6ETQpDIruARFDsHPyZABiWOQTWzcZChK1ZAMIpImO8fZAwNB3to5xFWf83qE3HuTejq7X3RGUjt1clkipho6REsYimbixtTQZDZD';
 // Accepts POST requests at /webhook endpoint
 app.post("/webhook", async (req, res) => {
 
 
-            axios({
-              method: "POST", // Required, HTTP method, a string, e.g. POST, GET
-              url:
-                "https://graph.facebook.com/v12.0/" +
-                "549002308287189" +
-                "/messages?access_token=" +
-                token,
-              data: {
-                messaging_product: "whatsapp",
-                to: '51935120994',
-                text: 'Holaa',
-              },
-              headers: { "Content-Type": "application/json" },
-            });
-          
 
+  app.post("/webhook", async (req, res) => {
+    try {
+      // Configuración de la petición POST
+      const response = await axios.post(
+        "https://graph.facebook.com/v12.0/549002308287189/messages?access_token=" + token,
+        {
+          messaging_product: "whatsapp",
+          to: "51935120994", // Número de destino
+          type: "template", // Enviar usando plantilla
+          template: {
+            name: "hello_world", // Nombre de la plantilla (debe coincidir con la plantilla configurada en tu cuenta)
+            language: { code: "en_US" } // Código de idioma
+          }
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+  
+      console.log("Mensaje enviado:", response.data);
+      res.send("Mensaje enviado correctamente");
+    } catch (error) {
+      console.error("Error al enviar mensaje:", error.response ? error.response.data : error.message);
+      res.status(500).send("Error al enviar mensaje");
+    }
+  });
 
   });
   
@@ -160,3 +173,5 @@ app.get('/api/posts', async (req, res) => {
 
 
 export default app;
+
+
