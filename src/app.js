@@ -32,11 +32,11 @@ app.get('/dni/:dni', async (req, res) => {
 
 
 // Middleware para permitir solo campinhouse.com en iframes
-app.use((req, res, next) => {
-    res.setHeader('Content-Security-Policy', "frame-ancestors 'self' https://vivehg.com");
-    console.log('Content-Security-Policy header set'); // Para depuración
-    next();
-});
+// app.use((req, res, next) => {
+//     res.setHeader('Content-Security-Policy', "frame-ancestors 'self' https://vivehg.com");
+//     console.log('Content-Security-Policy header set'); // Para depuración
+//     next();
+// });
 
 // Ruta para mostrar el archivo lotehg.html
 app.get('/lotehg', (req, res) => {
@@ -58,34 +58,34 @@ app.get('/jamil', (req, res) => {
 const token = 'EAATUi17tjHUBOw7kyV2v21rvI7siVzp4jGOUdHnRr4CvfDA4o5lG2Sywchsz9szZC9W9lmvyyuPll0JCqXREM5HZAPJYsv0WsUDE6ETQpDIruARFDsHPyZABiWOQTWzcZChK1ZAMIpImO8fZAwNB3to5xFWf83qE3HuTejq7X3RGUjt1clkipho6REsYimbixtTQZDZD';
 // Accepts POST requests at /webhook endpoint
 
-app.post("/webhook", async (req, res) => {
-  try {
-    // Configuración de la petición POST
-    const response = await axios.post(
-      "https://graph.facebook.com/v12.0/549002308287189/messages?access_token=" + token,
-      {
-        messaging_product: "whatsapp",
-        to: "51935120994", // Número de destino
-        type: "template", // Enviar usando plantilla
-        template: {
-          name: "hello_world", // Nombre de la plantilla (debe coincidir con la plantilla configurada en tu cuenta)
-          language: { code: "en_US" } // Código de idioma
-        }
-      },
-      {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
+// app.post("/webhook", async (req, res) => {
+//   try {
+//     // Configuración de la petición POST
+//     const response = await axios.post(
+//       "https://graph.facebook.com/v12.0/549002308287189/messages?access_token=" + token,
+//       {
+//         messaging_product: "whatsapp",
+//         to: "51935120994", // Número de destino
+//         type: "template", // Enviar usando plantilla
+//         template: {
+//           name: "hello_world", // Nombre de la plantilla (debe coincidir con la plantilla configurada en tu cuenta)
+//           language: { code: "en_US" } // Código de idioma
+//         }
+//       },
+//       {
+//         headers: {
+//           "Content-Type": "application/json",
+//         },
+//       }
+//     );
 
-    console.log("Mensaje enviado:", response.data);
-    res.send("Mensaje enviado correctamente");
-  } catch (error) {
-    console.error("Error al enviar mensaje:", error.response ? error.response.data : error.message);
-    res.status(500).send("Error al enviar mensaje");
-  }
-});
+//     console.log("Mensaje enviado:", response.data);
+//     res.send("Mensaje enviado correctamente");
+//   } catch (error) {
+//     console.error("Error al enviar mensaje:", error.response ? error.response.data : error.message);
+//     res.status(500).send("Error al enviar mensaje");
+//   }
+// });
 
   
   // Accepts GET requests at the /webhook endpoint. You need this URL to setup webhook initially.
@@ -128,40 +128,42 @@ app.get('/', (req, res) => {
   });
   
 // Ruta para obtener posts de WordPress
-app.get('/api/posts', async (req, res) => {
-    try {
-        const response = await axios.get('https://vivehg.com/blog/wp-json/wp/v2/posts?per_page=5');
-        const posts = response.data;
+// app.get('/api/posts', async (req, res) => {
+//     try {
+//         const response = await axios.get('https://vivehg.com/blog/wp-json/wp/v2/posts?per_page=5');
+//         const posts = response.data;
 
-        // Formatea los datos antes de enviarlos al frontend
-        const processedPosts = await Promise.all(
-            posts.map(async (post) => {
-                let image = null;
+//         // Formatea los datos antes de enviarlos al frontend
+//         const processedPosts = await Promise.all(
+//             posts.map(async (post) => {
+//                 let image = null;
 
-                if (post.featured_media) {
-                    try {
-                        const mediaResponse = await axios.get(`https://vivehg.com/blog/wp-json/wp/v2/media/${post.featured_media}`);
-                        image = mediaResponse.data.media_details.sizes.medium?.source_url || mediaResponse.data.source_url;
-                    } catch (error) {
-                        console.error(`Error obteniendo imagen destacada para el post ${post.id}: ${error.message}`);
-                    }
-                }
+//                 if (post.featured_media) {
+//                     try {
+//                         const mediaResponse = await axios.get(`https://vivehg.com/blog/wp-json/wp/v2/media/${post.featured_media}`);
+//                         image = mediaResponse.data.media_details.sizes.medium?.source_url || mediaResponse.data.source_url;
+//                     } catch (error) {
+//                         console.error(`Error obteniendo imagen destacada para el post ${post.id}: ${error.message}`);
+//                     }
+//                 }
 
-                return {
-                    title: post.title.rendered,
-                    excerpt: post.excerpt.rendered,
-                    link: post.link,
-                    image,
-                };
-            })
-        );
+//                 return {
+//                     title: post.title.rendered,
+//                     excerpt: post.excerpt.rendered,
+//                     link: post.link,
+//                     image,
+//                 };
+//             })
+//         );
 
-        res.json(processedPosts);
-    } catch (error) {
-        console.error('Error al obtener los posts:', error.message);
-        res.status(500).json({ message: 'Error al obtener los posts' });
-    }
-});
+//         res.json(processedPosts);
+//     } catch (error) {
+//         console.error('Error al obtener los posts:', error.message);
+//         res.status(500).json({ message: 'Error al obtener los posts' });
+//     }
+// });
+
+
 // // Ruta para API
 // app.get('/api', (req, res) => {
 //     res.send('¡API está funcionando!');
